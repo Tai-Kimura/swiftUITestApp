@@ -7,7 +7,7 @@
   git reset --hard HEAD
   git clean -fd
 
-  cd "$SCRIPT_DIR/bindingTestApp"
+  cd "$SCRIPT_DIR/swiftUITestApp"
   rm -rf swiftui_builder
   cd ..
 
