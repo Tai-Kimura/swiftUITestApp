@@ -14,6 +14,6 @@
   # Download installer from GitHub
   echo "Downloading SwiftJsonUI installer..."
   curl -fsSL
-  https://raw.githubusercontent.com/Tai-Kimura/SwiftJsonUI/master/installer/bootstrap.sh | bash -s -- -v 7.0.0-alpha -d ./bindingTestApp -m swiftui -s
+  curl -fsSL https://raw.githubusercontent.com/Tai-Kimura/SwiftJsonUI/master/installer/bootstrap.sh | bash -s -- -v 7.0.0-alpha -d ./swiftUITestApp -m swiftui --skip-bundle
 
   cd "$SCRIPT_DIR/bindingTestApp/swiftui_builder/"
