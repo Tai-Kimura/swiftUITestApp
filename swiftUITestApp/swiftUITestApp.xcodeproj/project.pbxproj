@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B6EA0B192E40964F00F81080 /* SwiftJsonUI in Frameworks */ = {isa = PBXBuildFile; productRef = B6EA0B182E40964F00F81080 /* SwiftJsonUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B62F75272E4049C800D73687 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6EA0B192E40964F00F81080 /* SwiftJsonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				B62F75162E4049C500D73687 /* swiftUITestApp */,
 				B62F75292E4049C800D73687 /* swiftUITestAppTests */,
 				B62F75332E4049C800D73687 /* swiftUITestAppUITests */,
+				B62F758C2E4059AA00D73687 /* Frameworks */,
 				B62F75152E4049C500D73687 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				B62F75302E4049C800D73687 /* swiftUITestAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B62F758C2E4059AA00D73687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = swiftUITestApp;
 			packageProductDependencies = (
+				B6EA0B182E40964F00F81080 /* SwiftJsonUI */,
 			);
 			productName = swiftUITestApp;
 			productReference = B62F75142E4049C500D73687 /* swiftUITestApp.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = B62F750B2E4049C500D73687;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B6EA0B172E40964F00F81080 /* XCRemoteSwiftPackageReference "SwiftJsonUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B62F75152E4049C500D73687 /* Products */;
 			projectDirPath = "";
@@ -578,6 +595,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6EA0B172E40964F00F81080 /* XCRemoteSwiftPackageReference "SwiftJsonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Tai-Kimura/SwiftJsonUI";
+			requirement = {
+				kind = revision;
+				revision = b31be046cc532bf647d0e9ca7c055a5a99570c65;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6EA0B182E40964F00F81080 /* SwiftJsonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6EA0B172E40964F00F81080 /* XCRemoteSwiftPackageReference "SwiftJsonUI" */;
+			productName = SwiftJsonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B62F750C2E4049C500D73687 /* Project object */;
 }
