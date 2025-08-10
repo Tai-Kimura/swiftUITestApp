@@ -41,7 +41,7 @@ cat > sjui.config.json << 'EOF'
   "swiftui": {
     "output_directory": "Generated"
   },
-  "use_network": false
+  "use_network": true
 }
 EOF
 
