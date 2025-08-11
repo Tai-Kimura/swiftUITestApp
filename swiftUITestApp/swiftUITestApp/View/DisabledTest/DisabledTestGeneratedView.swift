@@ -143,12 +143,10 @@ struct DisabledTestGeneratedView: View {
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                         .cornerRadius(8)
-                    HStack {
-                        Text("Current state: \(viewModel.data.isEnabled)")
+                    Text("Current state: \(viewModel.data.isEnabled)")
                         .font(.system(size: 14))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.top, 10)
-                    }.frame(maxWidth: .infinity, alignment: .center)
                 }
                     .frame(maxWidth: .infinity)
             }

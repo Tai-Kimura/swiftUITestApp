@@ -41,61 +41,59 @@ struct ConverterTestGeneratedView: View {
                             RelativeChildConfig(
                                 id: "view_0",
                                 view: AnyView(
-                                                                                            RelativePositionContainer(
-                                                                                                children: [
-                                                                                                    RelativeChildConfig(
-                                                                                                        id: "view_0",
-                                                                                                        view: AnyView(
-                                                                                                                                                                                                    Text("BACKGROUND TEXT")
-                                                                                                                                                                                                        .font(.system(size: 24))
-                                                                                                                                                                                                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                                                                                        ),
-                                                                                                        constraints: [
-                                                                                                            RelativePositionConstraint(type: .parentCenter, targetId: "")
-                                                                                                        ],
-                                                                                                        margins: .init()
-                                                                                                    ),
-                                                                                                    RelativeChildConfig(
-                                                                                                        id: "view_1",
-                                                                                                        view: AnyView(
-                                                                                                                                                                                                    Text("This will be blurred")
-                                                                                                                                                                                                        .font(.system(size: 16))
-                                                                                                                                                                                                        .foregroundColor(Color(red: 1.0, green: 0.8431372549019608, blue: 0.0))
-                                                                                                                                                                                                        .padding(.top, 50)
-                                                                                                                                                                                                        .padding(.leading, 20)
-                                                                                                        ),
-                                                                                                        constraints: [
-                                                                                                        ],
-                                                                                                        margins: EdgeInsets(top: 50, leading: 20, bottom: 0, trailing: 0)
-                                                                                                    )
-                                                                                                ],
-                                                                                                alignment: .center,
-                                                                                                backgroundColor: nil
-                                                                                            )
-                                                                                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    RelativePositionContainer(
+                                        children: [
+                                            RelativeChildConfig(
+                                                id: "view_0",
+                                                view: AnyView(
+                                                    Text("BACKGROUND TEXT")
+                                                        .font(.system(size: 24))
+                                                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                                ),
+                                                constraints: [
+                                                    RelativePositionConstraint(type: .parentCenter, targetId: ""),
+                                                ],
+                                                margins: .init()
+                                            ),
+                                            RelativeChildConfig(
+                                                id: "view_1",
+                                                view: AnyView(
+                                                    Text("This will be blurred")
+                                                        .font(.system(size: 16))
+                                                        .foregroundColor(Color(red: 1.0, green: 0.8431372549019608, blue: 0.0))
+                                                        .padding(.top, 50)
+                                                        .padding(.leading, 20)
+                                                ),
+                                                constraints: [],
+                                                margins: EdgeInsets(top: 50, leading: 20, bottom: 0, trailing: 0)
+                                            )
+                                        ],
+                                        alignment: .topLeading,
+                                        backgroundColor: nil
+                                    )
+                                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                                 ),
-                                constraints: [
-                                ],
+                                constraints: [],
                                 margins: .init()
                             ),
                             RelativeChildConfig(
                                 id: "view_1",
                                 view: AnyView(
-                                                                                            Text("Clear Text on Blur Layer")
-                                                                                                .font(.system(size: 18))
-                                                                                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                                                                                .background(.ultraThinMaterial)
-                                                                                                .frame(maxWidth: .infinity)
-                                                                                                .frame(height: 60)
-                                                                                                .background(Color(red: 0.0, green: 0.0, blue: 0.2, opacity: 0.0))
+                                    Text("Clear Text on Blur Layer")
+                                        .font(.system(size: 18))
+                                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                        .background(.ultraThinMaterial)
+                                        .frame(maxWidth: .infinity)
+                                        .frame(height: 60)
+                                        .background(Color(red: 0.0, green: 0.0, blue: 0.2, opacity: 0.0))
                                 ),
                                 constraints: [
-                                    RelativePositionConstraint(type: .parentCenter, targetId: "")
+                                    RelativePositionConstraint(type: .parentCenter, targetId: ""),
                                 ],
                                 margins: .init()
                             )
                         ],
-                        alignment: .center,
+                        alignment: .topLeading,
                         backgroundColor: Color(red: 0.2980392156862745, green: 0.6862745098039216, blue: 0.3137254901960784)
                     )
                         .frame(maxWidth: .infinity)
