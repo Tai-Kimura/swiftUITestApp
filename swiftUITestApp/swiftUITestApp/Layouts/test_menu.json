@@ -145,6 +145,16 @@
         "fontColor": "#FFFFFF",
         "padding": 15,
         "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "TextView Hint Test",
+        "onclick": "navigateToTextviewHintTest",
+        "background": "#8E8E93",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
         "bottomMargin": 20
       },
       {
@@ -180,6 +190,24 @@
         "text": "Converter Components Test",
         "onclick": "navigateToConverterTest",
         "background": "#FF3B30",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Forms & Keyboard",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Form & Keyboard Avoidance Test",
+        "onclick": "navigateToFormTest",
+        "background": "#5856D6",
         "fontColor": "#FFFFFF",
         "padding": 15,
         "cornerRadius": 8,

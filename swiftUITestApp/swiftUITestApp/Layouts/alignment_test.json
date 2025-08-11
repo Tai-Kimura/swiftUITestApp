@@ -1,153 +1,253 @@
 {
-  "type": "View",
+  "type": "ScrollView",
   "width": "matchParent",
   "height": "matchParent",
   "background": "#F0F0F0",
-  "orientation": "vertical",
   "child": [
     {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Alignment Test"
-        }
-      ]
-    },
-    {
-      "type": "Label",
-      "id": "title_label",
-      "width": "wrapContent",
+      "type": "View",
+      "width": "matchParent",
       "height": "wrapContent",
-      "topMargin": 20,
-      "text": "@{title}",
-      "fontSize": 24,
-      "fontColor": "#000000",
-      "centerHorizontal": true
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 20,
-      "background": "#E0E0E0",
+      "orientation": "vertical",
+      "padding": 20,
       "child": [
         {
-          "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "centerInParent",
-          "centerInParent": true,
-          "background": "#FFD0D0",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#D0D0D0",
-      "child": [
+          "data": [
+            {
+              "name": "title",
+              "class": "String",
+              "defaultValue": "Single Alignment Test"
+            }
+          ]
+        },
         {
           "type": "Label",
+          "id": "title_label",
           "width": "wrapContent",
           "height": "wrapContent",
-          "text": "centerVertical",
-          "centerVertical": true,
-          "background": "#D0FFD0",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#C0C0C0",
-      "child": [
-        {
-          "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "centerHorizontal",
+          "text": "@{title}",
+          "fontSize": 24,
+          "fontColor": "#000000",
           "centerHorizontal": true,
-          "background": "#D0D0FF",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#B0B0B0",
-      "child": [
+          "bottomMargin": 20
+        },
         {
           "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignTop",
-          "alignTop": true,
-          "background": "#FFFFD0",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#A0A0A0",
-      "child": [
+          "text": "Parent Alignment - Single Properties",
+          "fontSize": 18,
+          "fontColor": "#333333",
+          "fontWeight": "bold",
+          "bottomMargin": 10
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#E0E0E0",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "alignTop",
+              "alignTop": true,
+              "background": "#FFD0D0",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#D8D8D8",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "alignBottom",
+              "alignBottom": true,
+              "background": "#D0FFD0",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#D0D0D0",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "alignLeft",
+              "alignLeft": true,
+              "background": "#D0D0FF",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#C8C8C8",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "alignRight",
+              "alignRight": true,
+              "background": "#FFFFD0",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#C0C0C0",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "centerHorizontal",
+              "centerHorizontal": true,
+              "background": "#FFD0FF",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#B8B8B8",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "centerVertical",
+              "centerVertical": true,
+              "background": "#D0FFFF",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 120,
+          "background": "#B0B0B0",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "centerInParent",
+              "centerInParent": true,
+              "background": "#FFCCCC",
+              "fontSize": 14,
+              "padding": 8
+            }
+          ]
+        },
         {
           "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignBottom",
-          "alignBottom": true,
-          "background": "#FFD0FF",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#909090",
-      "child": [
+          "text": "HStack Alignment Tests",
+          "fontSize": 18,
+          "fontColor": "#333333",
+          "fontWeight": "bold",
+          "topMargin": 20,
+          "bottomMargin": 10
+        },
+        {
+          "type": "View",
+          "width": "matchParent",
+          "height": 100,
+          "background": "#A8A8A8",
+          "orientation": "horizontal",
+          "bottomMargin": 10,
+          "child": [
+            {
+              "type": "Label",
+              "text": "Top",
+              "alignTop": true,
+              "background": "#FFE0E0",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "Default",
+              "background": "#E0E0E0",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "Bottom",
+              "alignBottom": true,
+              "background": "#E0E0FF",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "Center",
+              "centerVertical": true,
+              "background": "#E0FFE0",
+              "padding": 8
+            }
+          ]
+        },
         {
           "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignLeft",
-          "alignLeft": true,
-          "background": "#D0FFFF",
-          "fontSize": 14
-        }
-      ]
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 100,
-      "topMargin": 10,
-      "background": "#808080",
-      "child": [
+          "text": "VStack Alignment Tests",
+          "fontSize": 18,
+          "fontColor": "#333333",
+          "fontWeight": "bold",
+          "topMargin": 20,
+          "bottomMargin": 10
+        },
         {
-          "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignRight",
-          "alignRight": true,
-          "background": "#FFCCCC",
-          "fontSize": 14
+          "type": "View",
+          "width": "matchParent",
+          "height": 200,
+          "background": "#A0A0A0",
+          "orientation": "vertical",
+          "child": [
+            {
+              "type": "Label",
+              "text": "alignLeft",
+              "alignLeft": true,
+              "background": "#FFE0E0",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "Default",
+              "background": "#E0E0E0",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "alignRight",
+              "alignRight": true,
+              "background": "#E0E0FF",
+              "padding": 8
+            },
+            {
+              "type": "Label",
+              "text": "centerHorizontal",
+              "centerHorizontal": true,
+              "background": "#E0FFE0",
+              "padding": 8
+            }
+          ]
         }
       ]
     }

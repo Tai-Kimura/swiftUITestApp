@@ -34,12 +34,16 @@ struct TestMenuView: View {
                         SecureFieldTestView()
                     case .datePickerTest:
                         DatePickerTestView()
+                    case .textviewHintTest:
+                        TextviewHintTestView()
                     case .relativeTest:
                         RelativeTestView()
                     case .bindingTest:
                         BindingTestView()
                     case .converterTest:
                         ConverterTestView()
+                    case .formTest:
+                        FormTestView()
                     }
                 }
         }

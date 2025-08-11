@@ -14,9 +14,11 @@ enum TestDestination: Hashable {
     case lineBreakTest
     case secureFieldTest
     case datePickerTest
+    case textviewHintTest
     case relativeTest
     case bindingTest
     case converterTest
+    case formTest
 }
 
 class TestMenuViewModel: ObservableObject {
@@ -75,6 +77,10 @@ class TestMenuViewModel: ObservableObject {
         navigationPath.append(TestDestination.datePickerTest)
     }
     
+    func navigateToTextviewHintTest() {
+        navigationPath.append(TestDestination.textviewHintTest)
+    }
+    
     func navigateToRelativeTest() {
         navigationPath.append(TestDestination.relativeTest)
     }
@@ -85,5 +91,9 @@ class TestMenuViewModel: ObservableObject {
     
     func navigateToConverterTest() {
         navigationPath.append(TestDestination.converterTest)
+    }
+    
+    func navigateToFormTest() {
+        navigationPath.append(TestDestination.formTest)
     }
 }

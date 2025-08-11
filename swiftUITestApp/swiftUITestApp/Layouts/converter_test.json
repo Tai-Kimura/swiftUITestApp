@@ -65,18 +65,53 @@
           "topMargin": 20
         },
         {
-          "type": "BlurView",
+          "type": "View",
           "width": "matchParent",
-          "height": 100,
+          "height": 150,
           "topMargin": 10,
-          "blurRadius": 10,
+          "background": "#4CAF50",
+          "zIndex": true,
           "child": [
             {
-              "type": "Label",
-              "text": "Blurred Background",
-              "fontSize": 16,
-              "fontColor": "#000000",
-              "centerInParent": true
+              "type": "View",
+              "width": "matchParent",
+              "height": "matchParent",
+              "child": [
+                {
+                  "type": "Label",
+                  "text": "BACKGROUND TEXT",
+                  "fontSize": 24,
+                  "fontColor": "#FFFFFF",
+                  "fontWeight": "bold",
+                  "centerInParent": true
+                },
+                {
+                  "type": "Label",
+                  "text": "This will be blurred",
+                  "fontSize": 16,
+                  "fontColor": "#FFD700",
+                  "topMargin": 50,
+                  "leftMargin": 20
+                }
+              ]
+            },
+            {
+              "type": "BlurView",
+              "width": "matchParent",
+              "height": 60,
+              "centerInParent": true,
+              "blurRadius": 20,
+              "background": "#00000033",
+              "child": [
+                {
+                  "type": "Label",
+                  "text": "Clear Text on Blur Layer",
+                  "fontSize": 18,
+                  "fontColor": "#FFFFFF",
+                  "fontWeight": "bold",
+                  "centerInParent": true
+                }
+              ]
             }
           ]
         },
@@ -162,6 +197,23 @@
           "srcName": "star.fill",
           "defaultImage": "exclamationmark.triangle",
           "contentMode": "scaleAspectFit"
+        },
+        {
+          "type": "Label",
+          "text": "NetworkImage Test",
+          "fontSize": 18,
+          "fontColor": "#333333",
+          "topMargin": 20
+        },
+        {
+          "type": "NetworkImage",
+          "width": 200,
+          "height": 150,
+          "topMargin": 10,
+          "url": "https://picsum.photos/400/300",
+          "defaultImage": "photo",
+          "contentMode": "scaleAspectFill",
+          "cornerRadius": 10
         }
       ]
     }

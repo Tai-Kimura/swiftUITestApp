@@ -139,6 +139,16 @@ struct TestMenuGeneratedView: View {
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                     }
                         .background(Color(red: 0.6862745098039216, green: 0.3215686274509804, blue: 0.8705882352941177))
+                        .padding(.bottom, 8)
+                        .padding(15)
+                        .cornerRadius(8)
+                    Button(action: {
+                        viewModel.navigateToTextviewHintTest()
+                    }) {
+                        Text("TextView Hint Test")
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                    }
+                        .background(Color(red: 0.5568627450980392, green: 0.5568627450980392, blue: 0.5764705882352941))
                         .padding(.bottom, 20)
                         .padding(15)
                         .cornerRadius(8)
@@ -174,6 +184,21 @@ struct TestMenuGeneratedView: View {
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                     }
                         .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
+                        .padding(.bottom, 20)
+                        .padding(15)
+                        .cornerRadius(8)
+                    Text("Forms & Keyboard")
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        .fontWeight(.bold)
+                        .padding(.bottom, 10)
+                    Button(action: {
+                        viewModel.navigateToFormTest()
+                    }) {
+                        Text("Form & Keyboard Avoidance Test")
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                    }
+                        .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
                         .padding(.bottom, 8)
                         .padding(15)
                         .cornerRadius(8)

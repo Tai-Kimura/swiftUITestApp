@@ -56,7 +56,6 @@ struct BindingTestGeneratedView: View {
                             Text("Decrease")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                         }
-                            .frame(width: geometry.size.width * 0.5)
                             .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                             .padding(.trailing, 5)
@@ -76,7 +75,6 @@ struct BindingTestGeneratedView: View {
                             Text("Increase")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                         }
-                            .frame(width: geometry.size.width * 0.5)
                             .frame(height: 44)
                             .background(Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724))
                             .padding(.leading, 5)
@@ -105,12 +103,24 @@ struct BindingTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.top, 10)
                         .padding(.leading, 20)
-                    ZStack(alignment: .center) {
-                        Color.clear
-                        Text("ON/OFF")
-                            .font(.system(size: 16))
-                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                    }
+                    RelativePositionContainer(
+                        children: [
+                            RelativeChildConfig(
+                                id: "view_0",
+                                view: AnyView(
+                                                                                            Text("ON/OFF")
+                                                                                                .font(.system(size: 16))
+                                                                                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                ),
+                                constraints: [
+                                    RelativePositionConstraint(type: .parentCenter, targetId: "")
+                                ],
+                                margins: .init()
+                            )
+                        ],
+                        alignment: .center,
+                        backgroundColor: Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724)
+                    )
                         .frame(maxWidth: .infinity)
                         .frame(height: 50)
                         .background(Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724))

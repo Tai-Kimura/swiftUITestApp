@@ -4,5 +4,5 @@ import SwiftJsonUI
 
 struct AlignmentComboTestData {
     // Data properties from JSON
-    var title: String = "Alignment Combination Test"
+    var title: String = "Alignment Combinations Test"
 }

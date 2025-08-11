@@ -151,7 +151,7 @@ struct LineBreakTestGeneratedView: View {
                         .padding(.top, 10)
                     Text("\(viewModel.data.longText)")
                         .font(.system(size: 14))
-                        .lineLimit(0)
+                        .lineLimit(nil)
                         .frame(maxWidth: .infinity)
                         .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                         .padding(.leading, 20)

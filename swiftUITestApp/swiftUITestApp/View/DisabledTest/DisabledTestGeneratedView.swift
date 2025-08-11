@@ -15,7 +15,7 @@ struct DisabledTestGeneratedView: View {
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .center, spacing: 0) {
                     Text("\(viewModel.data.title)")
                         .font(.system(size: 24))
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
@@ -143,10 +143,12 @@ struct DisabledTestGeneratedView: View {
                         .padding(.leading, 20)
                         .padding(.trailing, 20)
                         .cornerRadius(8)
-                    Text("Current state: \(viewModel.data.isEnabled)")
+                    HStack {
+                        Text("Current state: \(viewModel.data.isEnabled)")
                         .font(.system(size: 14))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.top, 10)
+                    }.frame(maxWidth: .infinity, alignment: .center)
                 }
                     .frame(maxWidth: .infinity)
             }
