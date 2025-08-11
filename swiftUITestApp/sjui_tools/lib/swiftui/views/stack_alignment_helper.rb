@@ -118,10 +118,19 @@ module SjuiTools
           # 垂直方向のアライメント
           if child['alignTop']
             vertical = 'top'
+            # alignTopだけの場合はleadingをデフォルトにする
+            horizontal = horizontal || 'leading'
           elsif child['alignBottom']
             vertical = 'bottom'
+            # alignBottomだけの場合はleadingをデフォルトにする
+            horizontal = horizontal || 'leading'
           elsif child['centerVertical'] || child['centerInParent']
             vertical = 'center'
+          end
+          
+          # alignLeft/Rightだけの場合はtopをデフォルトにする
+          if horizontal && !vertical
+            vertical = 'top'
           end
           
           # SwiftUIのアライメントに変換

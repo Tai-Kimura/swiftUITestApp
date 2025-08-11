@@ -123,7 +123,23 @@ module SjuiTools
         
         def generate_relative_positioning_zstack(children)
           # RelativePositionContainerを使用した実装
-          alignment = get_zstack_alignment
+          # 親のみの制約を持つ子要素がある場合、その要素のアライメントから決定
+          parent_only_children = children.select do |child|
+            next false unless child.is_a?(Hash)
+            # 親への制約のみ持つかチェック（他のビューへの制約がない）
+            has_parent = child['alignTop'] || child['alignBottom'] || child['alignLeft'] || child['alignRight'] ||
+                        child['centerHorizontal'] || child['centerVertical'] || child['centerInParent']
+            has_relative = child['toLeftOf'] || child['toRightOf'] || child['above'] || child['below'] ||
+                          child['toStartOf'] || child['toEndOf']
+            has_parent && !has_relative
+          end
+          
+          if parent_only_children.any?
+            # 親のみの制約を持つ最初の要素のアライメントを使用
+            alignment = get_zstack_alignment_for_child(parent_only_children.first) || '.center'
+          else
+            alignment = get_zstack_alignment
+          end
           
           add_line "RelativePositionContainer("
           indent do
@@ -141,11 +157,11 @@ module SjuiTools
                     # View
                     add_line "view: AnyView("
                     indent do
-                      child_converter = @converter_factory.create_converter(child, @indent_level + 4, @action_manager, @converter_factory, @view_registry)
+                      child_converter = @converter_factory.create_converter(child, @indent_level + 2, @action_manager, @converter_factory, @view_registry)
                       child_code = child_converter.convert
                       child_lines = child_code.split("\n")
                       child_lines.each do |line|
-                        @generated_code << "#{' ' * (@indent_level + 4) * 4}#{line}"
+                        add_line line.strip unless line.strip.empty?
                       end
                     end
                     add_line "),"
@@ -180,7 +196,7 @@ module SjuiTools
                         constraint_added = true
                       end
                       
-                      # アライメント制約
+                      # アライメント制約（水平方向を先に）
                       if child['alignLeft']
                         target = child['alignLeft'].is_a?(String) ? "\"#{child['alignLeft']}\"" : "\"\""
                         add_line "RelativePositionConstraint(type: .#{child['alignLeft'].is_a?(String) ? 'left' : 'parentLeft'}, targetId: #{target}),"
