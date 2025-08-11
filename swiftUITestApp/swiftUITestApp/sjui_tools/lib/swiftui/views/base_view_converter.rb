@@ -86,11 +86,6 @@ module SjuiTools
 
         # 共通のモディファイア適用メソッド
         def apply_modifiers
-          # weightフレームがある場合は最初に適用
-          if @component['_weight_frame']
-            add_modifier_line @component['_weight_frame']
-          end
-          
           # アライメント処理を先に適用
           apply_center_alignment
           apply_edge_alignment
@@ -116,12 +111,10 @@ module SjuiTools
           # サイズ
           if @component['width'] || @component['height']
             # weightがある場合、width: 0 or height: 0は無視する
-            # また、matchParentもweightがある場合は無視する（weightで制御されるため）
-            has_horizontal_weight = (@component['weight'] || @component['widthWeight']) && @component['parent_orientation'] == 'horizontal'
-            has_vertical_weight = (@component['weight'] || @component['heightWeight']) && @component['parent_orientation'] == 'vertical'
-            
-            should_ignore_width = ((@component['width'] == 0 || @component['width'] == '0' || @component['width'] == 'matchParent') && has_horizontal_weight)
-            should_ignore_height = ((@component['height'] == 0 || @component['height'] == '0' || @component['height'] == 'matchParent') && has_vertical_weight)
+            should_ignore_width = (@component['width'] == 0 || @component['width'] == '0') && 
+                                 (@component['weight'] || @component['widthWeight'])
+            should_ignore_height = (@component['height'] == 0 || @component['height'] == '0') && 
+                                  (@component['weight'] || @component['heightWeight'])
             
             # widthの処理
             if !should_ignore_width

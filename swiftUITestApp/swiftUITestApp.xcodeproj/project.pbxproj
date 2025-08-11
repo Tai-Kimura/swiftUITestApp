@@ -40,9 +40,6 @@
 		EA68E0E43DAF4716849041C7 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				sjui_tools/bin/install_deps,
-				sjui_tools/bin/sjui,
-				sjui_tools/config/library_versions.json,
 				sjui_tools/Gemfile,
 				sjui_tools/Gemfile.lock,
 				sjui_tools/IMPORTANT_NOTES.md,
@@ -822,14 +819,6 @@
 				sjui_tools/lib/swiftui/views/toggle_converter.rb,
 				sjui_tools/lib/swiftui/views/view_converter.rb,
 				sjui_tools/lib/swiftui/views/web_converter.rb,
-				sjui_tools/MODE,
-				sjui_tools/README.md,
-				sjui_tools/scripts/cleanup_xcode_project.rb,
-				sjui_tools/scripts/hotload_build_phase.sh,
-				sjui_tools/scripts/ip_monitor.log,
-				sjui_tools/scripts/ip_monitor.sh,
-				sjui_tools/scripts/README.md,
-				sjui_tools/VERSION,
 			);
 			target = B62F75132E4049C500D73687 /* swiftUITestApp */;
 		};

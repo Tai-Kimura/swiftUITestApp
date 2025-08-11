@@ -15,11 +15,13 @@ struct AlignmentTestGeneratedView: View {
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .center, spacing: 0) {
-                    Text("\(viewModel.data.title)")
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        Text("\(viewModel.data.title)")
                         .font(.system(size: 24))
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
                         .padding(.bottom, 20)
+                    }.frame(maxWidth: .infinity, alignment: .center)
                     Text("Parent Alignment - Single Properties")
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -190,19 +192,25 @@ struct AlignmentTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
                         .padding(.top, 20)
                         .padding(.bottom, 10)
-                    HStack(alignment: .center, spacing: 0) {
-                        Text("Top")
+                    HStack(alignment: .top, spacing: 0) {
+                        VStack {
+                            Text("Top")
                             .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
                             .padding(8)
+                        }.frame(maxHeight: .infinity, alignment: .top)
                         Text("Default")
                             .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196))
                             .padding(8)
-                        Text("Bottom")
+                        VStack {
+                            Text("Bottom")
                             .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 1.0))
                             .padding(8)
-                        Text("Center")
+                        }.frame(maxHeight: .infinity, alignment: .bottom)
+                        VStack {
+                            Text("Center")
                             .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
                             .padding(8)
+                        }.frame(maxHeight: .infinity, alignment: .center)
                     }
                         .frame(maxWidth: .infinity)
                         .frame(height: 100)
@@ -213,19 +221,25 @@ struct AlignmentTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
                         .padding(.top, 20)
                         .padding(.bottom, 10)
-                    VStack(alignment: .center, spacing: 0) {
-                        Text("alignLeft")
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            Text("alignLeft")
                             .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
                             .padding(8)
+                        }.frame(maxWidth: .infinity, alignment: .leading)
                         Text("Default")
                             .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196))
                             .padding(8)
-                        Text("alignRight")
+                        HStack {
+                            Text("alignRight")
                             .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 1.0))
                             .padding(8)
-                        Text("centerHorizontal")
+                        }.frame(maxWidth: .infinity, alignment: .trailing)
+                        HStack {
+                            Text("centerHorizontal")
                             .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
                             .padding(8)
+                        }.frame(maxWidth: .infinity, alignment: .center)
                     }
                         .frame(maxWidth: .infinity)
                         .frame(height: 200)
