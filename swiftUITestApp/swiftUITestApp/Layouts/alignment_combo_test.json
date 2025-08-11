@@ -1,0 +1,124 @@
+{
+  "type": "View",
+  "width": "matchParent",
+  "height": "matchParent",
+  "background": "#F0F0F0",
+  "orientation": "vertical",
+  "child": [
+    {
+      "data": [
+        {
+          "name": "title",
+          "class": "String",
+          "defaultValue": "Alignment Combination Test"
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "id": "title_label",
+      "width": "wrapContent",
+      "height": "wrapContent",
+      "topMargin": 20,
+      "text": "@{title}",
+      "fontSize": 24,
+      "fontColor": "#000000",
+      "centerHorizontal": true
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": 100,
+      "topMargin": 20,
+      "background": "#E0E0E0",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Right + Bottom",
+          "alignRight": true,
+          "alignBottom": true,
+          "background": "#FFD0D0",
+          "fontSize": 14
+        }
+      ]
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": 100,
+      "topMargin": 10,
+      "background": "#D0D0D0",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Left + Bottom",
+          "alignLeft": true,
+          "alignBottom": true,
+          "background": "#D0FFD0",
+          "fontSize": 14
+        }
+      ]
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": 100,
+      "topMargin": 10,
+      "background": "#C0C0C0",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Right + Top",
+          "alignRight": true,
+          "alignTop": true,
+          "background": "#D0D0FF",
+          "fontSize": 14
+        }
+      ]
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": 100,
+      "topMargin": 10,
+      "background": "#B0B0B0",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Center H + Bottom",
+          "centerHorizontal": true,
+          "alignBottom": true,
+          "background": "#FFFFD0",
+          "fontSize": 14
+        }
+      ]
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": 100,
+      "topMargin": 10,
+      "background": "#A0A0A0",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Right + Center V",
+          "alignRight": true,
+          "centerVertical": true,
+          "background": "#FFD0FF",
+          "fontSize": 14
+        }
+      ]
+    }
+  ]
+}

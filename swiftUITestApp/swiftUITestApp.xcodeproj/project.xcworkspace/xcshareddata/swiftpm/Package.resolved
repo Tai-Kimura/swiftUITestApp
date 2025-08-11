@@ -1,0 +1,23 @@
+{
+  "originHash" : "e2a0da9adea6259184c2c12ab753a08fa2248e5a741822db031e44d35158af55",
+  "pins" : [
+    {
+      "identity" : "simpleapinetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tai-Kimura/SimpleApiNetwork",
+      "state" : {
+        "revision" : "a6111f06c1de50fffcc5cacde017e343f2a63a26",
+        "version" : "2.1.8"
+      }
+    },
+    {
+      "identity" : "swiftjsonui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Tai-Kimura/SwiftJsonUI.git",
+      "state" : {
+        "revision" : "f75a9f77b04bf2e53b5a15c2d2716f34d56d46ba"
+      }
+    }
+  ],
+  "version" : 3
+}

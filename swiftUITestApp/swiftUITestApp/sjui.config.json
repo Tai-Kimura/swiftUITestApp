@@ -1,0 +1,26 @@
+{
+  "mode": "swiftui",
+  "project_name": "swiftUITestApp",
+  "project_file_name": "swiftUITestApp",
+  "source_directory": "swiftUITestApp",
+  "layouts_directory": "Layouts",
+  "bindings_directory": "Bindings",
+  "view_directory": "View",
+  "styles_directory": "Styles",
+  "custom_view_types": {},
+  "hot_loader_directory": "",
+  "use_network": true,
+  "swiftui": {
+    "output_directory": "Generated"
+  },
+  "hotloader": {
+    "ip": "192.168.3.32",
+    "port": 8081,
+    "watch_directories": [
+      "Layouts",
+      "Styles"
+    ]
+  },
+  "data_directory": "Data",
+  "viewmodel_directory": "ViewModel"
+}

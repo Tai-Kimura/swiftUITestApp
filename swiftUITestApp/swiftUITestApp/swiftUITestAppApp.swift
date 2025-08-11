@@ -7,14 +7,20 @@
 
 import SwiftUI
 import CoreData
+import SwiftJsonUI
 
 @main
 struct swiftUITestAppApp: App {
     let persistenceController = PersistenceController.shared
+    
+    init() {
+        // Set to static mode for testing generated views
+        ViewSwitcher.setDynamicMode(false)
+    }
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            TestMenuView()
         }
     }
 }

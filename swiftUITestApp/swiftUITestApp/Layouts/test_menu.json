@@ -1,0 +1,190 @@
+{
+  "type": "ScrollView",
+  "child": {
+    "type": "View",
+    "orientation": "vertical",
+    "padding": 20,
+    "background": "#F5F5F5",
+    "child": [
+      {
+        "type": "Label",
+        "text": "SwiftJsonUI Feature Tests",
+        "fontSize": 28,
+        "fontColor": "#333333",
+        "font": "bold",
+        "textAlign": "center",
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Layout & Positioning",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Margins & Padding Test",
+        "onclick": "navigateToMarginsTest",
+        "background": "#007AFF",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Alignment Test",
+        "onclick": "navigateToAlignmentTest",
+        "background": "#007AFF",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Alignment Combo Test",
+        "onclick": "navigateToAlignmentComboTest",
+        "background": "#007AFF",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Weight Distribution Test",
+        "onclick": "navigateToWeightTest",
+        "background": "#007AFF",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Style & Appearance",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Visibility & Opacity Test",
+        "onclick": "navigateToVisibilityTest",
+        "background": "#34C759",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Disabled States Test",
+        "onclick": "navigateToDisabledTest",
+        "background": "#34C759",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Text Features",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Text Styling Test",
+        "onclick": "navigateToTextStylingTest",
+        "background": "#FF9500",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Line Break & Spacing Test",
+        "onclick": "navigateToLineBreakTest",
+        "background": "#FF9500",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Input Components",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Secure Field Test",
+        "onclick": "navigateToSecureFieldTest",
+        "background": "#AF52DE",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Date Picker Test",
+        "onclick": "navigateToDatePickerTest",
+        "background": "#AF52DE",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 20
+      },
+      {
+        "type": "Label",
+        "text": "Advanced Features",
+        "fontSize": 20,
+        "fontColor": "#666666",
+        "font": "bold",
+        "bottomMargin": 10
+      },
+      {
+        "type": "Button",
+        "text": "Relative Positioning Test",
+        "onclick": "navigateToRelativeTest",
+        "background": "#FF3B30",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Binding Properties Test",
+        "onclick": "navigateToBindingTest",
+        "background": "#FF3B30",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Converter Components Test",
+        "onclick": "navigateToConverterTest",
+        "background": "#FF3B30",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      }
+    ]
+  }
+}
