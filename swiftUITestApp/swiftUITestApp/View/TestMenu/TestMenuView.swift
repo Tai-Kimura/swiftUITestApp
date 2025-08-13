@@ -1,53 +1,26 @@
-import Combine
-import SwiftJsonUI
 import SwiftUI
+import SwiftJsonUI
+import Combine
 
 struct TestMenuView: View {
-    @StateObject private var viewModel = TestMenuViewModel()
-
+    @StateObject private var viewModel: TestMenuViewModel
+    
+    // Default initializer
+    init() {
+        _viewModel = StateObject(wrappedValue: TestMenuViewModel())
+    }
+    
+    // Initializer with data parameter for Include support
+    init(data: [String: Any]) {
+        let vm = TestMenuViewModel()
+        vm.data.update(dictionary: data)
+        _viewModel = StateObject(wrappedValue: vm)
+    }
+    
     var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
-            TestMenuGeneratedView()
-                .environmentObject(viewModel)
-                .navigationTitle("SwiftJsonUI Tests")
-                .navigationBarTitleDisplayMode(.large)
-                .navigationDestination(for: TestDestination.self) {
-                    destination in
-                    switch destination {
-                    case .marginsTest:
-                        MarginsTestView()
-                    case .alignmentTest:
-                        AlignmentTestView()
-                    case .alignmentComboTest:
-                        AlignmentComboTestView()
-                    case .weightTest:
-                        WeightTestView()
-                    case .visibilityTest:
-                        VisibilityTestView()
-                    case .disabledTest:
-                        DisabledTestView()
-                    case .textStylingTest:
-                        TextStylingTestView()
-                    case .lineBreakTest:
-                        LineBreakTestView()
-                    case .secureFieldTest:
-                        SecureFieldTestView()
-                    case .datePickerTest:
-                        DatePickerTestView()
-                    case .textviewHintTest:
-                        TextviewHintTestView()
-                    case .relativeTest:
-                        RelativeTestView()
-                    case .bindingTest:
-                        BindingTestView()
-                    case .converterTest:
-                        ConverterTestView()
-                    case .formTest:
-                        FormTestView()
-                    }
-                }
-        }
-
+        TestMenuGeneratedView()
+            .environmentObject(viewModel)
+            // Add navigation destinations, sheets, or other view-level modifiers here
     }
 }
 

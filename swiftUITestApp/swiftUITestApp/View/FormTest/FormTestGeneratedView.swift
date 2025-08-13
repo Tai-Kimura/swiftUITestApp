@@ -14,7 +14,7 @@ struct FormTestGeneratedView: View {
             // Generated SwiftUI code from form_test.json
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
-            ScrollView(.vertical, showsIndicators: true) {
+            AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("\(viewModel.data.title)")
                         .font(.system(size: 28))
@@ -316,7 +316,6 @@ struct FormTestGeneratedView: View {
                     .frame(maxWidth: .infinity)
                     .padding(16)
             }
-                .keyboardAvoidance()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 0.9411764705882353, green: 0.9411764705882353, blue: 0.9411764705882353))
             // >>> GENERATED_CODE_END

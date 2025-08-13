@@ -1,0 +1,131 @@
+{
+  "type": "ScrollView",
+  "width": "matchParent",
+  "height": "matchParent",
+  "child": {
+    "type": "View",
+    "width": "matchParent",
+    "background": "#FFFFFF",
+    "orientation": "vertical",
+    "padding": 20,
+    "child": [
+      {
+        "data": [
+          {
+            "name": "title",
+            "class": "String",
+            "defaultValue": "Include Component Test"
+          },
+          {
+            "name": "mainStatus",
+            "class": "String",
+            "defaultValue": "Main Active"
+          },
+          {
+            "name": "mainCount",
+            "class": "Int",
+            "defaultValue": "100"
+          },
+          {
+            "name": "userName",
+            "class": "String",
+            "defaultValue": "Test User"
+          }
+        ]
+      },
+      {
+        "type": "Label",
+        "text": "@{title}",
+        "fontSize": 24,
+        "fontColor": "#000000",
+        "marginBottom": 20
+      },
+      {
+        "type": "View",
+        "orientation": "vertical",
+        "marginBottom": 20,
+        "child": [
+          {
+            "type": "Label",
+            "text": "1. Basic Include (no parameters):",
+            "fontSize": 16,
+            "fontColor": "#666666",
+            "marginBottom": 10
+          },
+          {
+            "include": "included_1"
+          }
+        ]
+      },
+      {
+        "type": "View",
+        "orientation": "vertical",
+        "marginBottom": 20,
+        "child": [
+          {
+            "type": "Label",
+            "text": "2. Include with data (static values):",
+            "fontSize": 16,
+            "fontColor": "#666666",
+            "marginBottom": 10
+          },
+          {
+            "include": "included_2",
+            "data": {
+              "viewTitle": "Static Title",
+              "viewStatus": "Static Status",
+              "viewCount": 42
+            }
+          }
+        ]
+      },
+      {
+        "type": "View",
+        "orientation": "vertical",
+        "marginBottom": 20,
+        "child": [
+          {
+            "type": "Label",
+            "text": "3. Include with data (using @{} references):",
+            "fontSize": 16,
+            "fontColor": "#666666",
+            "marginBottom": 10
+          },
+          {
+            "include": "included_2",
+            "data": {
+              "viewTitle": "@{userName}",
+              "viewStatus": "@{mainStatus}",
+              "viewCount": "@{mainCount}"
+            }
+          }
+        ]
+      },
+      {
+        "type": "View",
+        "orientation": "vertical",
+        "marginBottom": 20,
+        "child": [
+          {
+            "type": "Label",
+            "text": "4. Include with shared_data and data override:",
+            "fontSize": 16,
+            "fontColor": "#666666",
+            "marginBottom": 10
+          },
+          {
+            "include": "included_2",
+            "shared_data": {
+              "viewTitle": "@{userName}",
+              "viewStatus": "@{mainStatus}",
+              "viewCount": "@{mainCount}"
+            },
+            "data": {
+              "viewStatus": "Overridden Status"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

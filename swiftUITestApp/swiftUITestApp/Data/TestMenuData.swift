@@ -4,7 +4,10 @@ import SwiftJsonUI
 
 struct TestMenuData {
     // Data properties from JSON
-    var title: String = "TestMenu"
-    
-    // Add more data properties as needed based on your JSON structure
+    // No data properties defined in JSON
+
+    // Update properties from dictionary
+    mutating func update(dictionary: [String: Any]) {
+        // No properties to update
+    }
 }

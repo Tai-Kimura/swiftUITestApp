@@ -24,7 +24,7 @@ module SjuiTools
           
           # Load config to determine mode
           config = Core::ConfigManager.load_config
-          mode = config['mode'] || 'binding'
+          mode = config['mode'] || 'uikit'
           
           puts "Setting up SwiftJsonUI project in #{mode} mode..."
           
@@ -89,10 +89,10 @@ module SjuiTools
 
 
         def setup_library
-          require_relative '../../binding/xcode_project/setup/setup'
+          require_relative '../../uikit/xcode_project/setup/setup'
           
           # Use the full setup from the original setup.rb
-          setup = ::SjuiTools::Binding::XcodeProject::Setup::Setup.new(Core::ProjectFinder.project_file_path)
+          setup = ::SjuiTools::UIKit::XcodeProject::Setup::Setup.new(Core::ProjectFinder.project_file_path)
           setup.run_full_setup
         end
 

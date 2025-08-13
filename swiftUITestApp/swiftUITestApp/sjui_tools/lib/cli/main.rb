@@ -2,6 +2,7 @@
 
 require_relative 'version'
 require_relative '../core/config_manager'
+require_relative '../core/logger'
 
 module SjuiTools
   module CLI
@@ -13,7 +14,7 @@ module SjuiTools
         'g' => 'Alias for generate',
         'destroy' => 'Destroy files (view, partial, collection, binding)',
         'd' => 'Alias for destroy',
-        'build' => 'Build binding files',
+        'build' => 'Build UIKit/SwiftUI files',
         'convert' => 'Convert JSON to SwiftUI code',
         'watch' => 'Watch for file changes',
         'hotload' => 'Start HotLoader server',
@@ -24,6 +25,9 @@ module SjuiTools
       }.freeze
 
       def run(args)
+        # Parse global options
+        parse_global_options(args)
+        
         command = args.shift || 'help'
         
         # Handle shortcuts
@@ -77,10 +81,41 @@ module SjuiTools
 
       private
 
+      def parse_global_options(args)
+        # Extract log level option if present
+        log_level_index = args.index('--log-level')
+        if log_level_index
+          args.delete_at(log_level_index)
+          if log_level_index < args.length
+            log_level = args.delete_at(log_level_index)
+            Core::Logger.set_level(log_level)
+          else
+            Core::Logger.error "Missing value for --log-level option"
+            exit 1
+          end
+        end
+        
+        # Also check for shorthand versions
+        if args.include?('--quiet') || args.include?('-q')
+          args.delete('--quiet')
+          args.delete('-q')
+          Core::Logger.set_level(:error)
+        elsif args.include?('--verbose') || args.include?('-v')
+          args.delete('--verbose')
+          args.delete('-v')
+          Core::Logger.set_level(:debug)
+        end
+      end
+
       def show_help
         puts "SwiftJsonUI Unified Tools v#{VERSION}"
         puts
         puts "Usage: sjui COMMAND [options]"
+        puts
+        puts "Global Options:"
+        puts "  --log-level LEVEL   Set log level (error, warn, info, debug)"
+        puts "  --quiet, -q         Show only errors (same as --log-level error)"
+        puts "  --verbose, -v       Show debug information (same as --log-level debug)"
         puts
         puts "Commands:"
         
@@ -94,7 +129,8 @@ module SjuiTools
         puts "  sjui setup                   # Setup project structure"
         puts "  sjui g view HomeView         # Generate a new view"
         puts "  sjui d view splash           # Destroy a view and its files"
-        puts "  sjui build                   # Build binding files"
+        puts "  sjui build                   # Build UIKit/SwiftUI files"
+        puts "  sjui build --quiet           # Build with only error output"
         puts "  sjui watch                   # Watch for changes"
         puts "  sjui hotload                 # Start HotLoader server"
         puts

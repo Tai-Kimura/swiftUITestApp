@@ -3,7 +3,19 @@ import SwiftJsonUI
 import Combine
 
 struct FormTestView: View {
-    @StateObject private var viewModel = FormTestViewModel()
+    @StateObject private var viewModel: FormTestViewModel
+    
+    // Default initializer
+    init() {
+        _viewModel = StateObject(wrappedValue: FormTestViewModel())
+    }
+    
+    // Initializer with data parameter for Include support
+    init(data: [String: Any]) {
+        let vm = FormTestViewModel()
+        vm.data.update(dictionary: data)
+        _viewModel = StateObject(wrappedValue: vm)
+    }
     
     var body: some View {
         FormTestGeneratedView()

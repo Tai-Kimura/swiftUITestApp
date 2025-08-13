@@ -14,7 +14,7 @@ struct TestMenuGeneratedView: View {
             // Generated SwiftUI code from test_menu.json
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
-            ScrollView(.vertical, showsIndicators: true) {
+            AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("SwiftJsonUI Feature Tests")
                         .font(.system(size: 28))
@@ -61,6 +61,16 @@ struct TestMenuGeneratedView: View {
                         viewModel.navigateToWeightTest()
                     }) {
                         Text("Weight Distribution Test")
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                    }
+                        .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
+                        .padding(.bottom, 8)
+                        .padding(15)
+                        .cornerRadius(8)
+                    Button(action: {
+                        viewModel.navigateToWeightTestWithFixed()
+                    }) {
+                        Text("Weight + Fixed Size Test")
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                     }
                         .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
@@ -181,6 +191,16 @@ struct TestMenuGeneratedView: View {
                         viewModel.navigateToConverterTest()
                     }) {
                         Text("Converter Components Test")
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                    }
+                        .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
+                        .padding(.bottom, 8)
+                        .padding(15)
+                        .cornerRadius(8)
+                    Button(action: {
+                        viewModel.navigateToIncludeTest()
+                    }) {
+                        Text("Include Component Test")
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                     }
                         .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))

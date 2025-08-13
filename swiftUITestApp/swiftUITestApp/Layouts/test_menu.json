@@ -61,6 +61,16 @@
         "fontColor": "#FFFFFF",
         "padding": 15,
         "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Weight + Fixed Size Test",
+        "onclick": "navigateToWeightTestWithFixed",
+        "background": "#007AFF",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
         "bottomMargin": 20
       },
       {
@@ -189,6 +199,16 @@
         "type": "Button",
         "text": "Converter Components Test",
         "onclick": "navigateToConverterTest",
+        "background": "#FF3B30",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "Include Component Test",
+        "onclick": "navigateToIncludeTest",
         "background": "#FF3B30",
         "fontColor": "#FFFFFF",
         "padding": 15,

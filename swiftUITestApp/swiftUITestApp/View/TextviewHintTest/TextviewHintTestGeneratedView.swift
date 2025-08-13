@@ -2,16 +2,16 @@ import SwiftUI
 import SwiftJsonUI
 import Combine
 
-struct TextviewHintTestGeneratedView: View {
-    @EnvironmentObject var viewModel: TextviewHintTestViewModel
-    @StateObject private var dynamicViewModel = DynamicViewModel(jsonName: "textview_hint_test")
+struct TextViewHintTestGeneratedView: View {
+    @EnvironmentObject var viewModel: TextViewHintTestViewModel
+    @StateObject private var dynamicViewModel = DynamicViewModel(jsonName: "text_view_hint_test")
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "textview_hint_test", viewId: "textview_hint_test_view")
+            DynamicView(jsonName: "text_view_hint_test", viewId: "text_view_hint_test_view")
                 .environmentObject(dynamicViewModel)
         } else {
-            // Generated SwiftUI code from textview_hint_test.json
+            // Generated SwiftUI code from text_view_hint_test.json
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
             VStack(alignment: .leading, spacing: 0) {

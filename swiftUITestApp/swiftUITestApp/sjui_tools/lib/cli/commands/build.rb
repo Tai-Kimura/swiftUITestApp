@@ -3,6 +3,7 @@
 require 'optparse'
 require_relative '../../core/config_manager'
 require_relative '../../core/project_finder'
+require_relative '../../core/logger'
 
 module SjuiTools
   module CLI
@@ -15,8 +16,8 @@ module SjuiTools
           mode = options[:mode] || Core::ConfigManager.detect_mode
           
           case mode
-          when 'binding', 'all'
-            build_binding
+          when 'uikit', 'all'
+            build_uikit
           end
           
           if mode == 'swiftui' || mode == 'all'
@@ -32,8 +33,8 @@ module SjuiTools
           OptionParser.new do |opts|
             opts.banner = "Usage: sjui build [options]"
             
-            opts.on('--mode MODE', ['all', 'binding', 'swiftui'], 
-                    'Build mode (all, binding, swiftui)') do |mode|
+            opts.on('--mode MODE', ['all', 'uikit', 'swiftui'], 
+                    'Build mode (all, uikit, swiftui)') do |mode|
               options[:mode] = mode
             end
             
@@ -46,12 +47,12 @@ module SjuiTools
           options
         end
 
-        def build_binding
-          puts "Building binding files..."
+        def build_uikit
+          Core::Logger.info "Building UIKit files..."
           
           # Setup project paths
           unless Core::ProjectFinder.setup_paths
-            puts "Error: Could not find project file (.xcodeproj or Package.swift)"
+            Core::Logger.error "Could not find project file (.xcodeproj or Package.swift)"
             exit 1
           end
           
@@ -61,8 +62,8 @@ module SjuiTools
           
           # Setup custom view types
           if custom_view_types.any?
-            require_relative '../../binding/json_loader'
-            require_relative '../../binding/import_module_manager'
+            require_relative '../../uikit/json_loader'
+            require_relative '../../uikit/import_module_manager'
             
             view_type_mappings = {}
             import_mappings = {}
@@ -77,26 +78,26 @@ module SjuiTools
             end
             
             # Extend view type set
-            Binding::JsonLoader.view_type_set.merge!(view_type_mappings) unless view_type_mappings.empty?
+            UIKit::JsonLoader.view_type_set.merge!(view_type_mappings) unless view_type_mappings.empty?
             
             # Add import mappings
             import_mappings.each do |type, module_name|
-              Binding::ImportModuleManager.add_type_import_mapping(type, module_name)
+              UIKit::ImportModuleManager.add_type_import_mapping(type, module_name)
             end
           end
           
           # Run JsonLoader
-          require_relative '../../binding/json_loader'
-          loader = Binding::JsonLoader.new
+          require_relative '../../uikit/json_loader'
+          loader = UIKit::JsonLoader.new
           loader.start_analyze
         end
 
         def build_swiftui
-          puts "Building SwiftUI files..."
+          Core::Logger.info "Building SwiftUI files..."
           
           # Setup project paths
           unless Core::ProjectFinder.setup_paths
-            puts "Error: Could not find project file (.xcodeproj or Package.swift)"
+            Core::Logger.error "Could not find project file (.xcodeproj or Package.swift)"
             exit 1
           end
           
@@ -113,7 +114,7 @@ module SjuiTools
           json_files = Dir.glob(File.join(layouts_dir, '**/*.json'))
           
           if json_files.empty?
-            puts "No JSON files found in #{layouts_dir}"
+            Core::Logger.warn "No JSON files found in #{layouts_dir}"
             return
           end
           
@@ -141,7 +142,7 @@ module SjuiTools
             end
             
             if File.exist?(swift_file)
-              puts "Processing: #{relative_path}"
+              Core::Logger.info "Processing: #{relative_path}"
               
               # Convert JSON to SwiftUI code
               swiftui_code = converter.convert_json_to_view(json_file)
@@ -149,13 +150,13 @@ module SjuiTools
               # Update the existing Swift file's generatedBody
               updater.update_generated_body(swift_file, swiftui_code)
               
-              puts "  Updated: #{swift_file}"
+              Core::Logger.info "  Updated: #{swift_file}"
             else
-              puts "  Skipping: #{relative_path} (no corresponding Swift file)"
+              Core::Logger.debug "  Skipping: #{relative_path} (no corresponding Swift file)"
             end
           end
           
-          puts "SwiftUI build completed!"
+          Core::Logger.success "SwiftUI build completed!"
         end
       end
     end

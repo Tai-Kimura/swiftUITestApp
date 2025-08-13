@@ -37,51 +37,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		EA68E0E43DAF4716849041C7 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */ = {
+		85169ACC2B7EDCA9231E8E69 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"sjui_tools/.ruby-version",
+				sjui_tools/bin/install_deps,
+				sjui_tools/bin/sjui,
+				sjui_tools/config/library_versions.json,
 				sjui_tools/Gemfile,
 				sjui_tools/Gemfile.lock,
 				sjui_tools/IMPORTANT_NOTES.md,
-				sjui_tools/lib/binding/binding_file_manager.rb,
-				sjui_tools/lib/binding/build_cache_manager.rb,
-				sjui_tools/lib/binding/handlers/button_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/check_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/icon_label_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/image_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/label_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/network_image_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/radio_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/scroll_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/select_box_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/switch_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/text_field_binding_handler.rb,
-				sjui_tools/lib/binding/handlers/text_view_binding_handler.rb,
-				sjui_tools/lib/binding/import_module_manager.rb,
-				sjui_tools/lib/binding/json_analyzer.rb,
-				sjui_tools/lib/binding/json_loader_config.rb,
-				sjui_tools/lib/binding/json_loader.rb,
-				sjui_tools/lib/binding/string_module.rb,
-				sjui_tools/lib/binding/tools/cleanup_duplicate_references.rb,
-				sjui_tools/lib/binding/tools/convert_to_group_reference.rb,
-				sjui_tools/lib/binding/ui_control_event_manager.rb,
-				sjui_tools/lib/binding/view_binding_handler_factory.rb,
-				sjui_tools/lib/binding/view_binding_handler.rb,
-				sjui_tools/lib/binding/xcode_project/cleanup_references.rb,
-				sjui_tools/lib/binding/xcode_project/destroyers/binding_destroyer.rb,
-				sjui_tools/lib/binding/xcode_project/destroyers/destroyer.rb,
-				sjui_tools/lib/binding/xcode_project/destroyers/view_destroyer.rb,
-				sjui_tools/lib/binding/xcode_project/generators/base_binding_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/base_collection_view_cell_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/base_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/base_view_controller_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/collection_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/partial_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/ui_view_creator_generator.rb,
-				sjui_tools/lib/binding/xcode_project/generators/view_generator.rb,
-				sjui_tools/lib/binding/xcode_project/setup/app_delegate_setup.rb,
-				sjui_tools/lib/binding/xcode_project/setup/directory_setup.rb,
-				sjui_tools/lib/binding/xcode_project/setup/setup.rb,
 				sjui_tools/lib/cli/command_base.rb,
 				sjui_tools/lib/cli/commands/build.rb,
 				sjui_tools/lib/cli/commands/convert.rb,
@@ -476,21 +441,11 @@
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/constants/maxSafeInteger.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/constants/maxValue.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/floor.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isFinite.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isInteger.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isNaN.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isNegativeZero.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/LICENSE",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/max.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/min.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/mod.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/package.json",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/pow.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/README.md",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/round.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/sign.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/test/index.js",
-				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/tsconfig.json",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/HISTORY.md",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/index.js",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/LICENSE",
@@ -786,6 +741,7 @@
 				sjui_tools/lib/swiftui/binding/handlers/toggle_binding_handler.rb,
 				sjui_tools/lib/swiftui/binding/view_binding_handler.rb,
 				sjui_tools/lib/swiftui/converter_factory.rb,
+				sjui_tools/lib/swiftui/data_model_updater.rb,
 				sjui_tools/lib/swiftui/generators/collection_generator.rb,
 				sjui_tools/lib/swiftui/generators/view_generator.rb,
 				sjui_tools/lib/swiftui/json_to_swiftui_converter.rb,
@@ -794,31 +750,90 @@
 				sjui_tools/lib/swiftui/view_registry.rb,
 				sjui_tools/lib/swiftui/view_updater.rb,
 				sjui_tools/lib/swiftui/views/alignment_helper.rb,
+				sjui_tools/lib/swiftui/views/alignment_wrapper_helper.rb,
 				sjui_tools/lib/swiftui/views/base_view_converter.rb,
 				sjui_tools/lib/swiftui/views/blur_converter.rb,
 				sjui_tools/lib/swiftui/views/button_converter.rb,
+				sjui_tools/lib/swiftui/views/child_renderer.rb,
+				sjui_tools/lib/swiftui/views/child_rendering_helper.rb,
 				sjui_tools/lib/swiftui/views/collection_converter.rb,
+				sjui_tools/lib/swiftui/views/color_helper.rb,
 				sjui_tools/lib/swiftui/views/dynamic_component_converter.rb,
+				sjui_tools/lib/swiftui/views/frame_helper.rb,
 				sjui_tools/lib/swiftui/views/gradient_view_converter.rb,
 				sjui_tools/lib/swiftui/views/icon_label_converter.rb,
 				sjui_tools/lib/swiftui/views/image_converter.rb,
 				sjui_tools/lib/swiftui/views/include_converter.rb,
 				sjui_tools/lib/swiftui/views/indicator_converter.rb,
 				sjui_tools/lib/swiftui/views/label_converter.rb,
+				sjui_tools/lib/swiftui/views/modifier_helper.rb,
 				sjui_tools/lib/swiftui/views/network_image_converter.rb,
+				sjui_tools/lib/swiftui/views/positioning_helper.rb,
 				sjui_tools/lib/swiftui/views/progress_converter.rb,
 				sjui_tools/lib/swiftui/views/radio_converter.rb,
+				sjui_tools/lib/swiftui/views/relative_positioning_helper.rb,
 				sjui_tools/lib/swiftui/views/scrollview_converter.rb,
 				sjui_tools/lib/swiftui/views/segment_converter.rb,
 				sjui_tools/lib/swiftui/views/selectbox_converter.rb,
 				sjui_tools/lib/swiftui/views/slider_converter.rb,
+				sjui_tools/lib/swiftui/views/spacing_helper.rb,
+				sjui_tools/lib/swiftui/views/stack_alignment_helper.rb,
+				sjui_tools/lib/swiftui/views/tab_view_converter.rb,
 				sjui_tools/lib/swiftui/views/table_converter.rb,
 				sjui_tools/lib/swiftui/views/template_helper.rb,
 				sjui_tools/lib/swiftui/views/textfield_converter.rb,
 				sjui_tools/lib/swiftui/views/textview_converter.rb,
 				sjui_tools/lib/swiftui/views/toggle_converter.rb,
 				sjui_tools/lib/swiftui/views/view_converter.rb,
+				sjui_tools/lib/swiftui/views/visibility_helper.rb,
 				sjui_tools/lib/swiftui/views/web_converter.rb,
+				sjui_tools/lib/uikit/binding_file_manager.rb,
+				sjui_tools/lib/uikit/build_cache_manager.rb,
+				sjui_tools/lib/uikit/handlers/button_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/check_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/icon_label_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/image_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/label_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/network_image_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/radio_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/scroll_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/select_box_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/switch_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/text_field_binding_handler.rb,
+				sjui_tools/lib/uikit/handlers/text_view_binding_handler.rb,
+				sjui_tools/lib/uikit/import_module_manager.rb,
+				sjui_tools/lib/uikit/json_analyzer.rb,
+				sjui_tools/lib/uikit/json_loader_config.rb,
+				sjui_tools/lib/uikit/json_loader.rb,
+				sjui_tools/lib/uikit/string_module.rb,
+				sjui_tools/lib/uikit/tools/cleanup_duplicate_references.rb,
+				sjui_tools/lib/uikit/tools/convert_to_group_reference.rb,
+				sjui_tools/lib/uikit/ui_control_event_manager.rb,
+				sjui_tools/lib/uikit/view_binding_handler_factory.rb,
+				sjui_tools/lib/uikit/view_binding_handler.rb,
+				sjui_tools/lib/uikit/xcode_project/cleanup_references.rb,
+				sjui_tools/lib/uikit/xcode_project/destroyers/binding_destroyer.rb,
+				sjui_tools/lib/uikit/xcode_project/destroyers/destroyer.rb,
+				sjui_tools/lib/uikit/xcode_project/destroyers/view_destroyer.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/base_binding_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/base_collection_view_cell_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/base_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/base_view_controller_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/collection_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/partial_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/ui_view_creator_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/generators/view_generator.rb,
+				sjui_tools/lib/uikit/xcode_project/setup/app_delegate_setup.rb,
+				sjui_tools/lib/uikit/xcode_project/setup/directory_setup.rb,
+				sjui_tools/lib/uikit/xcode_project/setup/setup.rb,
+				sjui_tools/MODE,
+				sjui_tools/README.md,
+				sjui_tools/scripts/cleanup_xcode_project.rb,
+				sjui_tools/scripts/hotload_build_phase.sh,
+				sjui_tools/scripts/ip_monitor.log,
+				sjui_tools/scripts/ip_monitor.sh,
+				sjui_tools/scripts/README.md,
+				sjui_tools/VERSION,
 			);
 			target = B62F75132E4049C500D73687 /* swiftUITestApp */;
 		};
@@ -828,7 +843,7 @@
 		B62F75162E4049C500D73687 /* swiftUITestApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				EA68E0E43DAF4716849041C7 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */,
+				85169ACC2B7EDCA9231E8E69 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */,
 			);
 			path = swiftUITestApp;
 			sourceTree = "<group>";
@@ -1217,6 +1232,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1249,6 +1265,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1405,7 +1422,7 @@
 			repositoryURL = "https://github.com/Tai-Kimura/SwiftJsonUI.git";
 			requirement = {
 				kind = revision;
-				revision = ad2f439130c6b30fda2bdf348ca8b1785c8b1794;
+				revision = 658a8ac89d4b242cccad679b0015dfd98e8ec65a;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

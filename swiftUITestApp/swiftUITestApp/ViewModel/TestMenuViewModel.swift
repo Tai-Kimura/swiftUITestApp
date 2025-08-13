@@ -8,6 +8,7 @@ enum TestDestination: Hashable {
     case alignmentTest
     case alignmentComboTest
     case weightTest
+    case weightTestWithFixed
     case visibilityTest
     case disabledTest
     case textStylingTest
@@ -18,6 +19,7 @@ enum TestDestination: Hashable {
     case relativeTest
     case bindingTest
     case converterTest
+    case includeTest
     case formTest
 }
 
@@ -51,6 +53,10 @@ class TestMenuViewModel: ObservableObject {
     
     func navigateToWeightTest() {
         navigationPath.append(TestDestination.weightTest)
+    }
+    
+    func navigateToWeightTestWithFixed() {
+        navigationPath.append(TestDestination.weightTestWithFixed)
     }
     
     func navigateToVisibilityTest() {
@@ -91,6 +97,10 @@ class TestMenuViewModel: ObservableObject {
     
     func navigateToConverterTest() {
         navigationPath.append(TestDestination.converterTest)
+    }
+    
+    func navigateToIncludeTest() {
+        navigationPath.append(TestDestination.includeTest)
     }
     
     func navigateToFormTest() {
