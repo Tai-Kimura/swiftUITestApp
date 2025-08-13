@@ -2,31 +2,31 @@ import SwiftUI
 import SwiftJsonUI
 import Combine
 
-struct TableTestView: View {
-    @StateObject private var viewModel: TableTestViewModel
+struct MarginsTestView: View {
+    @StateObject private var viewModel: MarginsTestViewModel
     
     // Default initializer
     init() {
-        _viewModel = StateObject(wrappedValue: TableTestViewModel())
+        _viewModel = StateObject(wrappedValue: MarginsTestViewModel())
     }
     
     // Initializer with data parameter for Include support
     init(data: [String: Any]) {
-        let vm = TableTestViewModel()
+        let vm = MarginsTestViewModel()
         vm.data.update(dictionary: data)
         _viewModel = StateObject(wrappedValue: vm)
     }
     
     var body: some View {
-        TableTestGeneratedView()
+        MarginsTestGeneratedView()
             .environmentObject(viewModel)
             // Add navigation destinations, sheets, or other view-level modifiers here
     }
 }
 
 // MARK: - Preview
-struct TableTestView_Previews: PreviewProvider {
+struct MarginsTestView_Previews: PreviewProvider {
     static var previews: some View {
-        TableTestView()
+        MarginsTestView()
     }
 }

@@ -1,8 +1,10 @@
 {
   "type": "View",
   "width": "matchParent",
-  "height": "matchParent",
-  "background": "#FFFFFF",
+  "height": "wrapContent",
+  "padding": 16,
+  "background": "#F0F0F0",
+  "cornerRadius": 8,
   "orientation": "vertical",
   "child": [
     {
@@ -10,19 +12,63 @@
         {
           "name": "title",
           "class": "String",
-          "defaultValue": "Included1"
+          "defaultValue": "Default Title"
+        },
+        {
+          "name": "message",
+          "class": "String",
+          "defaultValue": "Default Message"
+        },
+        {
+          "name": "count",
+          "class": "Int",
+          "defaultValue": "0"
         }
       ]
     },
     {
       "type": "Label",
-      "id": "title_label",
       "width": "wrapContent",
       "height": "wrapContent",
-      "topMargin": 20,
       "text": "@{title}",
-      "fontSize": 24,
-      "fontColor": "#000000"
+      "fontSize": 20,
+      "fontWeight": "bold",
+      "fontColor": "#333333"
+    },
+    {
+      "type": "Label",
+      "width": "wrapContent",
+      "height": "wrapContent",
+      "topMargin": 8,
+      "text": "@{message}",
+      "fontSize": 16,
+      "fontColor": "#666666"
+    },
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": "wrapContent",
+      "topMargin": 12,
+      "orientation": "horizontal",
+      "child": [
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "Count: ",
+          "fontSize": 14,
+          "fontColor": "#999999"
+        },
+        {
+          "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
+          "text": "@{count}",
+          "fontSize": 14,
+          "fontWeight": "semibold",
+          "fontColor": "#007AFF"
+        }
+      ]
     }
   ]
 }

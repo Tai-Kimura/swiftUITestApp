@@ -18,9 +18,48 @@ struct TestMenuView: View {
     }
     
     var body: some View {
-        TestMenuGeneratedView()
-            .environmentObject(viewModel)
-            // Add navigation destinations, sheets, or other view-level modifiers here
+        NavigationStack(path: $viewModel.navigationPath) {
+            TestMenuGeneratedView()
+                .environmentObject(viewModel)
+                .navigationDestination(for: TestDestination.self) { destination in
+                    switch destination {
+                    case .marginsTest:
+                        MarginsTestView()
+                    case .alignmentTest:
+                        AlignmentTestView()
+                    case .alignmentComboTest:
+                        AlignmentComboTestView()
+                    case .weightTest:
+                        WeightTestView()
+                    case .weightTestWithFixed:
+                        WeightTestWithFixedView()
+                    case .visibilityTest:
+                        VisibilityTestView()
+                    case .disabledTest:
+                        DisabledTestView()
+                    case .textStylingTest:
+                        TextStylingTestView()
+                    case .lineBreakTest:
+                        LineBreakTestView()
+                    case .secureFieldTest:
+                        SecureFieldTestView()
+                    case .datePickerTest:
+                        DatePickerTestView()
+                    case .textviewHintTest:
+                        TextViewHintTestView()
+                    case .relativeTest:
+                        RelativeTestView()
+                    case .bindingTest:
+                        BindingTestView()
+                    case .converterTest:
+                        ConverterTestView()
+                    case .includeTest:
+                        IncludeTestView()
+                    case .formTest:
+                        FormTestView()
+                    }
+                }
+        }
     }
 }
 

@@ -17,9 +17,6 @@ module SjuiTools
         base_name = include_path.split('/').last
         view_name = base_name.split('_').map(&:capitalize).join + 'View'
         
-        # パラメータを収集
-        params = []
-        
         # shared_dataとdataをマージ
         merged_data = {}
         
@@ -33,24 +30,32 @@ module SjuiTools
           merged_data.merge!(@component['data'])
         end
         
-        # マージしたデータがある場合はパラメータとして追加
+        # マージしたデータがある場合
         unless merged_data.empty?
-          dict_content = process_data_hash(merged_data)
-          params << "data: [#{dict_content}]"
-        end
-        
-        # variablesの処理
-        if @component['variables']
-          add_line "// variables: #{@component['variables'].to_json}"
-          # 将来的にはパラメータとして渡す
-          # params << "variables: #{format_variables(@component['variables'])}"
-        end
-        
-        # includeされたビューを呼び出し
-        if params.empty?
-          add_line "#{view_name}()"
+          # @{}参照があるかチェック
+          has_reactive_data = merged_data.values.any? { |v| v.is_a?(String) && v.match?(/@\{/) }
+          
+          if has_reactive_data
+            # リアクティブなデータ用 - SwiftUIのビューを再作成させる
+            # IDを使って親データが変わったときに再レンダリング
+            reactive_keys = extract_reactive_keys(merged_data)
+            # Create a combined string for the ID
+            id_parts = reactive_keys.map { |key| "\\(viewModel.data.#{key})" }
+            id_expression = id_parts.join("_")
+            
+            dict_content = process_data_hash(merged_data)
+            add_line "#{view_name}(data: [#{dict_content}])"
+            indent do
+              add_line ".id(\"#{id_expression}\")"
+            end
+          else
+            # 静的データの場合は今まで通り
+            dict_content = process_data_hash(merged_data)
+            add_line "#{view_name}(data: [#{dict_content}])"
+          end
         else
-          add_line "#{view_name}(#{params.join(', ')})"
+          # データがない場合
+          add_line "#{view_name}()"
         end
         
         # 共通プロパティの適用
@@ -66,6 +71,21 @@ module SjuiTools
           formatted_value = format_value(value)
           "\"#{key}\": #{formatted_value}"
         }.join(", ")
+      end
+      
+      def extract_reactive_keys(hash)
+        keys = []
+        hash.each do |_, value|
+          if value.is_a?(String) && value.match?(/@\{([^}]+)\}/)
+            value.scan(/@\{([^}]+)\}/) do |match|
+              var_name = match[0]
+              # Remove 'this.' prefix if present
+              var_name = var_name.gsub(/^this\./, '')
+              keys << var_name unless keys.include?(var_name)
+            end
+          end
+        end
+        keys
       end
       
       def format_value(value)

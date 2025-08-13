@@ -255,7 +255,7 @@ module SjuiTools
                         // This will be updated when you run 'sjui build'
                         // >>> GENERATED_CODE_START
                         VStack {
-                            Text(viewModel.title)
+                            Text(viewModel.data.title)
                                 .font(.title)
                                 .padding()
                             
@@ -286,6 +286,15 @@ module SjuiTools
                 var title: String = "#{view_name}"
                 
                 // Add more data properties as needed based on your JSON structure
+                
+                // Update properties from dictionary
+                mutating func update(dictionary: [String: Any]) {
+                    if let value = dictionary["title"] {
+                        if let stringValue = value as? String {
+                            self.title = stringValue
+                        }
+                    }
+                }
             }
           SWIFT
           

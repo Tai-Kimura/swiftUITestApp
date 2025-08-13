@@ -2,12 +2,12 @@ import Foundation
 import Combine
 import SwiftJsonUI
 
-class Included1ViewModel: ObservableObject {
+class StackAlignmentTestViewModel: ObservableObject {
     // JSON file reference for hot reload
-    let jsonFileName = "included1"
+    let jsonFileName = "stack_alignment_test"
     
     // Data model
-    @Published var data = Included1Data()
+    @Published var data = StackAlignmentTestData()
     
     // Action handlers
     func onAppear() {

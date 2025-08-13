@@ -18,4 +18,32 @@ class IncludeTestViewModel: ObservableObject {
     func onTap() {
         // Handle tap events
     }
+    
+    // Function to increment count for real-time update testing
+    func incrementCount() {
+        data.mainCount += 1
+    }
+    
+    // Function to decrement count
+    func decrementCount() {
+        data.mainCount -= 1
+    }
+    
+    // Function to reset count
+    func resetCount() {
+        data.mainCount = 100
+    }
+    
+    // Function to change user name
+    func changeUserName() {
+        let names = ["John Doe", "Jane Smith", "Test User", "Admin User", "Guest"]
+        if let randomName = names.randomElement() {
+            data.userName = randomName
+        }
+    }
+    
+    // Function to toggle status
+    func toggleStatus() {
+        data.mainStatus = data.mainStatus == "Main Active" ? "Main Inactive" : "Main Active"
+    }
 }
