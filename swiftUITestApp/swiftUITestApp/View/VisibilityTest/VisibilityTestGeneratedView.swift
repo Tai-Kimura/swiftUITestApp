@@ -8,7 +8,7 @@ struct VisibilityTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "visibility_test", viewId: "visibility_test_view")
+            DynamicView(jsonName: "visibility_test", viewId: "visibility_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from visibility_test.json

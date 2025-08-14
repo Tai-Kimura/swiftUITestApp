@@ -14,4 +14,14 @@ struct AlignmentComboTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: AlignmentComboTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        
+        return dict
+    }
 }

@@ -8,7 +8,7 @@ struct RelativePositionTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "relative_position_test", viewId: "relative_position_test_view")
+            DynamicView(jsonName: "relative_position_test", viewId: "relative_position_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from relative_position_test.json

@@ -14,4 +14,14 @@ struct TextStylingTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: TextStylingTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        
+        return dict
+    }
 }

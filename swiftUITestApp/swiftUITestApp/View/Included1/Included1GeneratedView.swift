@@ -8,7 +8,7 @@ struct Included1GeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "included1", viewId: "included1_view")
+            DynamicView(jsonName: "included1", viewId: "included1_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from included1.json

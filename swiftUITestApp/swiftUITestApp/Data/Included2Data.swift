@@ -14,4 +14,14 @@ struct Included2Data {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: Included2ViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        
+        return dict
+    }
 }

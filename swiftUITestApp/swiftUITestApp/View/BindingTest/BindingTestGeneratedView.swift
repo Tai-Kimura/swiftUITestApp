@@ -8,7 +8,7 @@ struct BindingTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "binding_test", viewId: "binding_test_view")
+            DynamicView(jsonName: "binding_test", viewId: "binding_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from binding_test.json

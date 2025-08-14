@@ -8,7 +8,7 @@ struct AlignmentComboTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "alignment_combo_test", viewId: "alignment_combo_test_view")
+            DynamicView(jsonName: "alignment_combo_test", viewId: "alignment_combo_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from alignment_combo_test.json

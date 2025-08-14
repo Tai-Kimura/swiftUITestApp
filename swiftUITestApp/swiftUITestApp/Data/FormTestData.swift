@@ -98,4 +98,34 @@ struct FormTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: FormTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["firstName"] = firstName
+        dict["lastName"] = lastName
+        dict["email"] = email
+        dict["phone"] = phone
+        dict["address"] = address
+        dict["city"] = city
+        dict["zipCode"] = zipCode
+        dict["country"] = country
+        dict["company"] = company
+        dict["jobTitle"] = jobTitle
+        dict["bio"] = bio
+        dict["notes"] = notes
+        dict["comments"] = comments
+        dict["agreeToTerms"] = agreeToTerms
+        
+        // Add onclick action closures if viewModel is provided
+        if let viewModel = viewModel {
+            dict["submitForm"] = { [weak viewModel] in viewModel?.submitForm() }
+            dict["clearForm"] = { [weak viewModel] in viewModel?.clearForm() }
+        }
+        
+        return dict
+    }
 }

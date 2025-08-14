@@ -32,4 +32,26 @@ struct IncludeTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: IncludeTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["mainStatus"] = mainStatus
+        dict["mainCount"] = mainCount
+        dict["userName"] = userName
+        
+        // Add onclick action closures if viewModel is provided
+        if let viewModel = viewModel {
+            dict["incrementCount"] = { [weak viewModel] in viewModel?.incrementCount() }
+            dict["decrementCount"] = { [weak viewModel] in viewModel?.decrementCount() }
+            dict["resetCount"] = { [weak viewModel] in viewModel?.resetCount() }
+            dict["changeUserName"] = { [weak viewModel] in viewModel?.changeUserName() }
+            dict["toggleStatus"] = { [weak viewModel] in viewModel?.toggleStatus() }
+        }
+        
+        return dict
+    }
 }

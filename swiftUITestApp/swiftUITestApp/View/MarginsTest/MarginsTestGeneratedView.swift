@@ -8,7 +8,7 @@ struct MarginsTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "margins_test", viewId: "margins_test_view")
+            DynamicView(jsonName: "margins_test", viewId: "margins_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from margins_test.json

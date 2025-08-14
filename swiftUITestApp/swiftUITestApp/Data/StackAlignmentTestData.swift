@@ -10,4 +10,12 @@ struct StackAlignmentTestData {
     mutating func update(dictionary: [String: Any]) {
         // No properties to update
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: StackAlignmentTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        // No properties to add
+        
+        return dict
+    }
 }

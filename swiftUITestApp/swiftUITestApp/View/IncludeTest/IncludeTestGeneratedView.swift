@@ -8,7 +8,7 @@ struct IncludeTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "include_test", viewId: "include_test_view")
+            DynamicView(jsonName: "include_test", viewId: "include_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from include_test.json

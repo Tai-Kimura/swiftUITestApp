@@ -8,7 +8,7 @@ struct LineBreakTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "line_break_test", viewId: "line_break_test_view")
+            DynamicView(jsonName: "line_break_test", viewId: "line_break_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from line_break_test.json

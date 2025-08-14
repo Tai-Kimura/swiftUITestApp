@@ -20,4 +20,15 @@ struct ConverterTestCellData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: ConverterTestCellViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["subtitle"] = subtitle
+        
+        return dict
+    }
 }

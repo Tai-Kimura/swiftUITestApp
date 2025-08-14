@@ -145,7 +145,7 @@ module SjuiTools
               Core::Logger.info "Processing: #{relative_path}"
               
               # Convert JSON to SwiftUI code
-              swiftui_code = converter.convert_json_to_view(json_file)
+              swiftui_code, _ = converter.convert_json_to_view(json_file)
               
               # Update the existing Swift file's generatedBody
               updater.update_generated_body(swift_file, swiftui_code)

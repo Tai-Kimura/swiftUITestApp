@@ -32,4 +32,17 @@ struct DatePickerTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: DatePickerTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["selectedDate"] = selectedDate
+        dict["startDate"] = startDate
+        dict["endDate"] = endDate
+        
+        return dict
+    }
 }

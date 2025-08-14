@@ -8,7 +8,7 @@ struct DatePickerTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "date_picker_test", viewId: "date_picker_test_view")
+            DynamicView(jsonName: "date_picker_test", viewId: "date_picker_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from date_picker_test.json

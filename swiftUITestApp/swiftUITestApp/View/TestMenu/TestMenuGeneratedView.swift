@@ -8,7 +8,7 @@ struct TestMenuGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "test_menu", viewId: "test_menu_view")
+            DynamicView(jsonName: "test_menu", viewId: "test_menu_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from test_menu.json

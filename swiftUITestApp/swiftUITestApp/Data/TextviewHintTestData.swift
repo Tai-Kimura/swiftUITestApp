@@ -20,4 +20,15 @@ struct TextViewHintTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: TextViewHintTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["simpleText"] = simpleText
+        dict["flexibleText"] = flexibleText
+        
+        return dict
+    }
 }

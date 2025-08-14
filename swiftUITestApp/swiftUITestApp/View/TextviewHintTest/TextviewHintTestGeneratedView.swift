@@ -8,7 +8,7 @@ struct TextViewHintTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "text_view_hint_test", viewId: "text_view_hint_test_view")
+            DynamicView(jsonName: "text_view_hint_test", viewId: "text_view_hint_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from text_view_hint_test.json

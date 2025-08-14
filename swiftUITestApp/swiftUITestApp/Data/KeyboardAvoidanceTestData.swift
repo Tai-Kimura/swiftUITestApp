@@ -50,4 +50,25 @@ struct KeyboardAvoidanceTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: KeyboardAvoidanceTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["textField1"] = textField1
+        dict["textField2"] = textField2
+        dict["textField3"] = textField3
+        dict["textField4"] = textField4
+        dict["textField5"] = textField5
+        dict["textView"] = textView
+        
+        // Add onclick action closures if viewModel is provided
+        if let viewModel = viewModel {
+            dict["submitForm"] = { [weak viewModel] in viewModel?.submitForm() }
+        }
+        
+        return dict
+    }
 }

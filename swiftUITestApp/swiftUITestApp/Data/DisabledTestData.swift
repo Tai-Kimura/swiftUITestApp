@@ -26,4 +26,25 @@ struct DisabledTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: DisabledTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["textFieldValue"] = textFieldValue
+        dict["isEnabled"] = isEnabled
+        
+        // Add onclick action closures if viewModel is provided
+        if let viewModel = viewModel {
+            dict["onEnabledButtonTap"] = { [weak viewModel] in viewModel?.onEnabledButtonTap() }
+            dict["onDisabledButtonTap"] = { [weak viewModel] in viewModel?.onDisabledButtonTap() }
+            dict["onTouchDisabledTap"] = { [weak viewModel] in viewModel?.onTouchDisabledTap() }
+            dict["toggleEnableState"] = { [weak viewModel] in viewModel?.toggleEnableState() }
+            dict["onDynamicButtonTap"] = { [weak viewModel] in viewModel?.onDynamicButtonTap() }
+        }
+        
+        return dict
+    }
 }

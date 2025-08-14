@@ -8,7 +8,7 @@ struct ComponentsTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "components_test", viewId: "components_test_view")
+            DynamicView(jsonName: "components_test", viewId: "components_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from components_test.json
@@ -22,33 +22,52 @@ struct ComponentsTestGeneratedView: View {
                     Text("Toggle/Checkbox Components")
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
-                    Toggle(isOn: $viewModel.toggle1IsOn) {
+                    Toggle(isOn: $viewModel.data.toggle1IsOn) {
                         Text("Enable Notifications")
                     }
-                    Toggle(isOn: $viewModel.checkbox1IsOn) {
+                    Toggle(isOn: $viewModel.data.checkbox1IsOn) {
                         Text("I agree to terms")
                     }
                     Text("Progress & Slider")
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
-                    ProgressView(value: progress1Value)
-                    Slider(value: $sliderValueslider1, in: 0...1)
+                    ProgressView(value: viewModel.data.progress1Value)
+                    Slider(value: $viewModel.data.slider1Value, in: 0...1)
                     Text("Selection Components")
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
-                    Picker("", selection: $selectedSegment1) {
+                    Picker("", selection: $viewModel.data.selectedSegment1) {
                         Text("List").tag(0)
                         Text("Grid").tag(1)
                         Text("Map").tag(2)
                     }
                         .pickerStyle(.segmented)
-                    HStack {
-                        Image(systemName: selectedDefaultgroup == "radio1" ? "largecircle.fill.circle" : "circle")
-                            .foregroundColor(.blue)
-                            .onTapGesture {
-                            selectedDefaultgroup = "radio1"
-                        }
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Select Size")
+                        HStack {
+                            Image(systemName: viewModel.data.selectedRadio1 == "Small" ? "largecircle.fill.circle" : "circle")
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                viewModel.data.selectedRadio1 = "Small"
+                            }
+                            Text("Small")
+                        }
+                        HStack {
+                            Image(systemName: viewModel.data.selectedRadio1 == "Medium" ? "largecircle.fill.circle" : "circle")
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                viewModel.data.selectedRadio1 = "Medium"
+                            }
+                            Text("Medium")
+                        }
+                        HStack {
+                            Image(systemName: viewModel.data.selectedRadio1 == "Large" ? "largecircle.fill.circle" : "circle")
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                viewModel.data.selectedRadio1 = "Large"
+                            }
+                            Text("Large")
+                        }
                     }
                     Text("Loading Indicator")
                         .font(.system(size: 18))
@@ -66,14 +85,16 @@ struct ComponentsTestGeneratedView: View {
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     Color.clear
-                        .frame(width: fill, height: 100)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 100)
                         .cornerRadius(10)
                     Text("Blur View")
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     Color.clear
                         .background(.ultraThinMaterial)
-                        .frame(width: fill, height: 80)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 80)
                         .cornerRadius(10)
                 }
                     .frame(maxWidth: .infinity)

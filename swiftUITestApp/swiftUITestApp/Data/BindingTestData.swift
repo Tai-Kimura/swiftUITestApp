@@ -44,4 +44,26 @@ struct BindingTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: BindingTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["textValue"] = textValue
+        dict["sliderValue"] = sliderValue
+        dict["toggleValue"] = toggleValue
+        dict["counter"] = counter
+        dict["selectedOption"] = selectedOption
+        
+        // Add onclick action closures if viewModel is provided
+        if let viewModel = viewModel {
+            dict["decreaseCounter"] = { [weak viewModel] in viewModel?.decreaseCounter() }
+            dict["increaseCounter"] = { [weak viewModel] in viewModel?.increaseCounter() }
+            dict["toggleChanged"] = { [weak viewModel] in viewModel?.toggleChanged() }
+        }
+        
+        return dict
+    }
 }

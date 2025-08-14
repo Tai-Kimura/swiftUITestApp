@@ -8,7 +8,7 @@ struct WeightTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "weight_test", viewId: "weight_test_view")
+            DynamicView(jsonName: "weight_test", viewId: "weight_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from weight_test.json

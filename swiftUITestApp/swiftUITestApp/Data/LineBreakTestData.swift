@@ -20,4 +20,15 @@ struct LineBreakTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: LineBreakTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["longText"] = longText
+        
+        return dict
+    }
 }

@@ -8,7 +8,7 @@ struct ConverterTestCellGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "converter_test_cell", viewId: "converter_test_cell_view")
+            DynamicView(jsonName: "converter_test_cell", viewId: "converter_test_cell_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from converter_test_cell.json

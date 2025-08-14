@@ -32,4 +32,17 @@ struct SecureFieldTestData {
             }
         }
     }
+
+    // Convert properties to dictionary for Dynamic mode
+    func toDictionary(viewModel: SecureFieldTestViewModel? = nil) -> [String: Any] {
+        var dict: [String: Any] = [:]
+        
+        // Data properties
+        dict["title"] = title
+        dict["password"] = password
+        dict["confirmPassword"] = confirmPassword
+        dict["regularText"] = regularText
+        
+        return dict
+    }
 }

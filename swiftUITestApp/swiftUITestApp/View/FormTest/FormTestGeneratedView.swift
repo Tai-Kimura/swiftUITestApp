@@ -8,7 +8,7 @@ struct FormTestGeneratedView: View {
     
     var body: some View {
         if ViewSwitcher.isDynamicMode {
-            DynamicView(jsonName: "form_test", viewId: "form_test_view")
+            DynamicView(jsonName: "form_test", viewId: "form_test_view", data: viewModel.data.toDictionary(viewModel: viewModel))
                 .environmentObject(dynamicViewModel)
         } else {
             // Generated SwiftUI code from form_test.json
@@ -274,7 +274,7 @@ struct FormTestGeneratedView: View {
                             .stroke(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196), lineWidth: 1)
                     )
                     HStack(alignment: .top, spacing: 0) {
-                        Toggle(isOn: $viewModel.agreeToggleIsOn) {
+                        Toggle(isOn: $viewModel.data.agreeToTerms) {
                             Text("")
                         }
                             .padding(.trailing, 12)
