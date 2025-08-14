@@ -11,6 +11,22 @@ module SjuiTools
           @converter_factory = converter_factory
           @view_registry = view_registry
         end
+        
+        def extract_horizontal_from_gravity(gravity)
+          gravity = gravity || 'left|top'
+          if gravity.is_a?(Array)
+            gravity.find { |g| ['left', 'center', 'right'].include?(g) } || 'left'
+          elsif gravity.is_a?(String)
+            if gravity.include?('|')
+              parts = gravity.split('|')
+              parts.find { |p| ['left', 'center', 'right'].include?(p) } || 'left'
+            else
+              ['left', 'center', 'right'].include?(gravity) ? gravity : 'left'
+            end
+          else
+            'left'
+          end
+        end
 
         def convert
           child_data = @component['child'] || []
@@ -50,18 +66,64 @@ module SjuiTools
           
           indent do
             if children.length == 1
-              if @converter_factory
-                child_converter = @converter_factory.create_converter(children.first, @indent_level, @action_manager, @converter_factory, @view_registry)
-                child_code = child_converter.convert
-                child_code.split("\n").each { |line| @generated_code << line }
+              # Single child - wrap in VStack/HStack with alignment-based Spacer
+              if axes == '.vertical'
+                # VStack - check child's gravity for horizontal alignment
+                child_gravity = children.first['gravity'] if children.first.is_a?(Hash)
+                horizontal = extract_horizontal_from_gravity(child_gravity)
+                alignment = case horizontal
+                when 'center'
+                  'alignment: .center'
+                when 'right'
+                  'alignment: .trailing'
+                else
+                  'alignment: .leading'
+                end
                 
-                # Propagate state variables
-                if child_converter.respond_to?(:state_variables) && child_converter.state_variables
-                  @state_variables.concat(child_converter.state_variables)
+                add_line "#{stack_type}(#{alignment}, spacing: 0) {"
+                indent do
+                  if @converter_factory
+                    child_converter = @converter_factory.create_converter(children.first, @indent_level, @action_manager, @converter_factory, @view_registry)
+                    child_code = child_converter.convert
+                    child_code.split("\n").each { |line| @generated_code << line }
+                    
+                    # Propagate state variables
+                    if child_converter.respond_to?(:state_variables) && child_converter.state_variables
+                      @state_variables.concat(child_converter.state_variables)
+                    end
+                  end
+                  # Add Spacer for leading alignment (default)
+                  if horizontal != 'center' && horizontal != 'right'
+                    add_line "Spacer(minLength: 0)"
+                  end
+                end
+              else
+                # HStack for horizontal scroll
+                alignment = 'alignment: .top'
+                add_line "#{stack_type}(#{alignment}, spacing: 0) {"
+                indent do
+                  if @converter_factory
+                    child_converter = @converter_factory.create_converter(children.first, @indent_level, @action_manager, @converter_factory, @view_registry)
+                    child_code = child_converter.convert
+                    child_code.split("\n").each { |line| @generated_code << line }
+                    
+                    # Propagate state variables
+                    if child_converter.respond_to?(:state_variables) && child_converter.state_variables
+                      @state_variables.concat(child_converter.state_variables)
+                    end
+                  end
+                  # Add Spacer to fill remaining space
+                  add_line "Spacer(minLength: 0)"
                 end
               end
+              add_line "}"
+              
+              # Add frame modifier to fill available space in ScrollView
+              add_modifier_line ".frame(maxWidth: .infinity, maxHeight: .infinity)"
             else
-              add_line "#{stack_type}(spacing: 0) {"
+              # デフォルトのアライメントを左上にする
+              alignment = axes == '.vertical' ? 'alignment: .leading' : 'alignment: .top'
+              add_line "#{stack_type}(#{alignment}, spacing: 0) {"
               indent do
                 children.each do |child|
                   if @converter_factory
@@ -75,8 +137,13 @@ module SjuiTools
                     end
                   end
                 end
+                # Add Spacer to fill remaining space (same as Dynamic mode)
+                add_line "Spacer(minLength: 0)"
               end
               add_line "}"
+              
+              # Add frame modifier to fill available space in ScrollView
+              add_modifier_line ".frame(maxWidth: .infinity, maxHeight: .infinity)"
             end
           end
           add_line "}"

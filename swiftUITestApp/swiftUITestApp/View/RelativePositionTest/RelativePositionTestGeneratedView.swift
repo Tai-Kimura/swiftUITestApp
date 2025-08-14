@@ -19,6 +19,7 @@ struct RelativePositionTestGeneratedView: View {
                     .font(.system(size: 24))
                     .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
                     .padding(.top, 20)
+                Spacer(minLength: 0)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 1.0, green: 1.0, blue: 1.0))

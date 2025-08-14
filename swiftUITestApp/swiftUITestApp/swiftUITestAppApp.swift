@@ -14,8 +14,8 @@ struct swiftUITestAppApp: App {
     let persistenceController = PersistenceController.shared
     
     init() {
-        // Set to static mode for testing generated views
-        ViewSwitcher.setDynamicMode(false)
+        HotLoaderSetup.configure()
+        ViewSwitcher.setDynamicMode(true)
     }
 
     var body: some Scene {

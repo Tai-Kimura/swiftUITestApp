@@ -75,11 +75,6 @@
 				sjui_tools/lib/hotloader/layout_loader.js,
 				sjui_tools/lib/hotloader/node_modules/.bin/mime,
 				"sjui_tools/lib/hotloader/node_modules/.package-lock.json",
-				sjui_tools/lib/hotloader/node_modules/accepts/HISTORY.md,
-				sjui_tools/lib/hotloader/node_modules/accepts/index.js,
-				sjui_tools/lib/hotloader/node_modules/accepts/LICENSE,
-				sjui_tools/lib/hotloader/node_modules/accepts/package.json,
-				sjui_tools/lib/hotloader/node_modules/accepts/README.md,
 				sjui_tools/lib/hotloader/node_modules/anymatch/index.js,
 				sjui_tools/lib/hotloader/node_modules/anymatch/LICENSE,
 				sjui_tools/lib/hotloader/node_modules/anymatch/package.json,
@@ -161,11 +156,6 @@
 				"sjui_tools/lib/hotloader/node_modules/content-type/LICENSE",
 				"sjui_tools/lib/hotloader/node_modules/content-type/package.json",
 				"sjui_tools/lib/hotloader/node_modules/content-type/README.md",
-				"sjui_tools/lib/hotloader/node_modules/cookie-signature/.npmignore",
-				"sjui_tools/lib/hotloader/node_modules/cookie-signature/History.md",
-				"sjui_tools/lib/hotloader/node_modules/cookie-signature/index.js",
-				"sjui_tools/lib/hotloader/node_modules/cookie-signature/package.json",
-				"sjui_tools/lib/hotloader/node_modules/cookie-signature/Readme.md",
 				sjui_tools/lib/hotloader/node_modules/cookie/index.js,
 				sjui_tools/lib/hotloader/node_modules/cookie/LICENSE,
 				sjui_tools/lib/hotloader/node_modules/cookie/package.json,
@@ -291,11 +281,6 @@
 				sjui_tools/lib/hotloader/node_modules/finalhandler/package.json,
 				sjui_tools/lib/hotloader/node_modules/finalhandler/README.md,
 				sjui_tools/lib/hotloader/node_modules/finalhandler/SECURITY.md,
-				sjui_tools/lib/hotloader/node_modules/forwarded/HISTORY.md,
-				sjui_tools/lib/hotloader/node_modules/forwarded/index.js,
-				sjui_tools/lib/hotloader/node_modules/forwarded/LICENSE,
-				sjui_tools/lib/hotloader/node_modules/forwarded/package.json,
-				sjui_tools/lib/hotloader/node_modules/forwarded/README.md,
 				sjui_tools/lib/hotloader/node_modules/fresh/HISTORY.md,
 				sjui_tools/lib/hotloader/node_modules/fresh/index.js,
 				sjui_tools/lib/hotloader/node_modules/fresh/LICENSE,
@@ -377,11 +362,6 @@
 				sjui_tools/lib/hotloader/node_modules/hasown/package.json,
 				sjui_tools/lib/hotloader/node_modules/hasown/README.md,
 				sjui_tools/lib/hotloader/node_modules/hasown/tsconfig.json,
-				"sjui_tools/lib/hotloader/node_modules/http-errors/HISTORY.md",
-				"sjui_tools/lib/hotloader/node_modules/http-errors/index.js",
-				"sjui_tools/lib/hotloader/node_modules/http-errors/LICENSE",
-				"sjui_tools/lib/hotloader/node_modules/http-errors/package.json",
-				"sjui_tools/lib/hotloader/node_modules/http-errors/README.md",
 				"sjui_tools/lib/hotloader/node_modules/iconv-lite/Changelog.md",
 				"sjui_tools/lib/hotloader/node_modules/iconv-lite/encodings/dbcs-codec.js",
 				"sjui_tools/lib/hotloader/node_modules/iconv-lite/encodings/dbcs-data.js",
@@ -496,15 +476,6 @@
 				sjui_tools/lib/hotloader/node_modules/ms/license.md,
 				sjui_tools/lib/hotloader/node_modules/ms/package.json,
 				sjui_tools/lib/hotloader/node_modules/ms/readme.md,
-				sjui_tools/lib/hotloader/node_modules/negotiator/HISTORY.md,
-				sjui_tools/lib/hotloader/node_modules/negotiator/index.js,
-				sjui_tools/lib/hotloader/node_modules/negotiator/lib/charset.js,
-				sjui_tools/lib/hotloader/node_modules/negotiator/lib/encoding.js,
-				sjui_tools/lib/hotloader/node_modules/negotiator/lib/language.js,
-				sjui_tools/lib/hotloader/node_modules/negotiator/lib/mediaType.js,
-				sjui_tools/lib/hotloader/node_modules/negotiator/LICENSE,
-				sjui_tools/lib/hotloader/node_modules/negotiator/package.json,
-				sjui_tools/lib/hotloader/node_modules/negotiator/README.md,
 				"sjui_tools/lib/hotloader/node_modules/normalize-path/index.js",
 				"sjui_tools/lib/hotloader/node_modules/normalize-path/LICENSE",
 				"sjui_tools/lib/hotloader/node_modules/normalize-path/package.json",
@@ -855,6 +826,13 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				5848DCE6744DE0E4236374C4 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */,
+			);
+			explicitFolders = (
+				sjui_tools/lib/hotloader/node_modules/accepts,
+				"sjui_tools/lib/hotloader/node_modules/cookie-signature",
+				sjui_tools/lib/hotloader/node_modules/forwarded,
+				"sjui_tools/lib/hotloader/node_modules/http-errors",
+				sjui_tools/lib/hotloader/node_modules/negotiator,
 			);
 			path = swiftUITestApp;
 			sourceTree = "<group>";
@@ -1433,7 +1411,7 @@
 			repositoryURL = "https://github.com/Tai-Kimura/SwiftJsonUI.git";
 			requirement = {
 				kind = revision;
-				revision = 6f248e295af58d92c8fe93652336ccaa93b3034e;
+				revision = f19fcab99c459be83aad93198a6808a028c921ca;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

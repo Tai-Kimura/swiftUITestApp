@@ -29,13 +29,15 @@ struct Included1GeneratedView: View {
                     Text("\(viewModel.data.count)")
                         .font(.system(size: 14))
                         .foregroundColor(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
+                    Spacer(minLength: 0)
                 }
                     .frame(maxWidth: .infinity)
                     .padding(.top, 12)
+                Spacer(minLength: 0)
             }
                 .frame(maxWidth: .infinity)
-                .background(Color(red: 0.9411764705882353, green: 0.9411764705882353, blue: 0.9411764705882353))
                 .padding(16)
+                .background(Color(red: 0.9411764705882353, green: 0.9411764705882353, blue: 0.9411764705882353))
                 .cornerRadius(8)
             // >>> GENERATED_CODE_END
         }

@@ -36,8 +36,8 @@ struct TextViewHintTestGeneratedView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 100)
                     .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                    .padding(.bottom, 20)
                     .cornerRadius(8)
+                    .padding(.bottom, 20)
                 Text("Flexible TextView with multi-line hint:")
                     .font(.system(size: 14))
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
@@ -58,12 +58,13 @@ struct TextViewHintTestGeneratedView: View {
                     .frame(minHeight: 80, maxHeight: 200)
                     .frame(maxWidth: .infinity)
                     .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                    .padding(.bottom, 20)
                     .cornerRadius(8)
+                    .padding(.bottom, 20)
+                Spacer(minLength: 0)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))
                 .padding(20)
+                .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))
             // >>> GENERATED_CODE_END
         }
     }

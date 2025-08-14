@@ -23,10 +23,11 @@ struct ConverterTestCellGeneratedView: View {
                 Text("\(viewModel.data.subtitle)")
                     .font(.system(size: 12))
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                Spacer(minLength: 0)
             }
                 .frame(maxWidth: .infinity)
-                .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                 .padding(10)
+                .background(Color(red: 1.0, green: 1.0, blue: 1.0))
             // >>> GENERATED_CODE_END
         }
     }

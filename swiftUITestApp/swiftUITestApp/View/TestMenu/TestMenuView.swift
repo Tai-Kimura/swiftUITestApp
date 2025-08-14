@@ -22,8 +22,7 @@ struct TestMenuView: View {
             TestMenuGeneratedView()
                 .environmentObject(viewModel)
                 .onAppear {
-                    // Reset to static mode when returning to menu
-                    ViewSwitcher.setDynamicMode(false)
+                    // Update dynamic mode status display
                     viewModel.updateDynamicModeStatus()
                 }
                 .navigationDestination(for: TestDestination.self) { destination in

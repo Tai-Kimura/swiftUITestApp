@@ -5,6 +5,8 @@ require_relative 'base_view_converter'
 module SjuiTools
   module SwiftUI
     module Views
+      # Generated code button converter
+      # Dynamic mode equivalent: Sources/SwiftJsonUI/Classes/SwiftUI/Dynamic/Converters/ButtonConverter.swift
       class ButtonConverter < BaseViewConverter
         def convert
           text = @component['text'] || "Button"
@@ -32,44 +34,68 @@ module SjuiTools
           indent do
             add_line "Text(\"#{text}\")"
             
-            # fontColor
+            # fontColor (デフォルトは白)
             if @component['fontColor']
               color = hex_to_swiftui_color(@component['fontColor'])
               add_modifier_line ".foregroundColor(#{color})"
+            else
+              add_modifier_line ".foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))"
             end
             
-            # fontSize
-            if @component['fontSize']
-              add_modifier_line ".font(.system(size: #{@component['fontSize'].to_i}))"
-            end
-            
-            # font
-            if @component['font'] == 'bold'
-              add_modifier_line ".fontWeight(.bold)"
-            elsif @component['font']
-              add_modifier_line ".font(.custom(\"#{@component['font']}\", size: #{(@component['fontSize'] || 17).to_i}))"
-            end
+            # Apply padding to Text inside button (same as Dynamic mode)
+            apply_padding_to_text
           end
           add_line "}"
+          
+          # Button's background and corner radius (using buttonStyle)
+          if @component['background']
+            color = hex_to_swiftui_color(@component['background'])
+            add_modifier_line ".background(#{color})"
+          end
+          
+          if @component['cornerRadius']
+            add_modifier_line ".cornerRadius(#{@component['cornerRadius'].to_i})"
+          end
+          
+          # Apply margins (outer spacing)
+          apply_margins
           
           # enabled属性
           if @component['enabled'] == false
             add_modifier_line ".disabled(true)"
           end
           
-          # iOS 15+ configuration
-          if @component['config'] && @component['config']['style']
-            style = button_style_to_swiftui(@component['config']['style'])
-            add_modifier_line ".buttonStyle(#{style})"
+          # opacity
+          if @component['alpha']
+            add_modifier_line ".opacity(#{@component['alpha']})"
+          elsif @component['opacity']
+            add_modifier_line ".opacity(#{@component['opacity']})"
           end
           
-          # 共通のモディファイアを適用（onTapGestureはここで追加される）
-          apply_modifiers
+          # hidden
+          if @component['hidden'] == true
+            add_modifier_line ".hidden()"
+          end
           
           generated_code
         end
         
         private
+        
+        def apply_padding_to_text
+          # Apply padding to the Text inside the button (not to the button itself)
+          if @component['padding']
+            add_modifier_line ".padding(#{@component['padding'].to_i})"
+          elsif @component['paddingTop'] || @component['paddingBottom'] || 
+                @component['paddingLeft'] || @component['paddingRight']
+            top = @component['paddingTop'] || @component['topPadding'] || 0
+            bottom = @component['paddingBottom'] || @component['bottomPadding'] || 0
+            left = @component['paddingLeft'] || @component['leftPadding'] || 0
+            right = @component['paddingRight'] || @component['rightPadding'] || 0
+            
+            add_modifier_line ".padding(EdgeInsets(top: #{top}, leading: #{left}, bottom: #{bottom}, trailing: #{right}))"
+          end
+        end
         
         def button_style_to_swiftui(style)
           case style
