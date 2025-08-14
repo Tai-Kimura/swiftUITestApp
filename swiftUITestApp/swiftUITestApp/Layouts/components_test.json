@@ -1,8 +1,16 @@
 {
   "type": "ScrollView",
-  "padding": [20, 20, 20, 20],
+  "width": "matchParent",
+  "height": "matchParent",
   "background": "#F5F5F5",
-  "children": [
+  "child": [
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": "wrapContent",
+      "orientation": "vertical",
+      "padding": [20, 20, 20, 20],
+      "child": [
     {
       "type": "Text",
       "text": "New Components Test",
@@ -151,6 +159,8 @@
           "fontColor": "#333333",
           "centerInParent": true
         }
+      ]
+    }
       ]
     }
   ]

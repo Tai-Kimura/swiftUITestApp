@@ -15,9 +15,7 @@ struct WeightTestWithFixedGeneratedView: View {
             // This will be updated when you run 'sjui build'
             // >>> GENERATED_CODE_START
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
-                VStack(spacing: 0) {
-                    Text("Unsupported component: ")
-                        .foregroundColor(.red)
+                VStack(alignment: .leading, spacing: 0) {
                     Text("\(viewModel.data.title)")
                         .font(.system(size: 24))
                         .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
@@ -463,6 +461,7 @@ struct WeightTestWithFixedGeneratedView: View {
                         .frame(height: 120)
                         .padding(.top, 10)
                 }
+                    .frame(maxWidth: .infinity)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))

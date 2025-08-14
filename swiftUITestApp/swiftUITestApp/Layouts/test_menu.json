@@ -1,7 +1,12 @@
 {
   "type": "ScrollView",
-  "child": {
-    "type": "View",
+  "width": "matchParent",
+  "height": "matchParent",
+  "child": [
+    {
+      "type": "View",
+      "width": "matchParent",
+      "height": "wrapContent",
     "orientation": "vertical",
     "padding": 20,
     "background": "#F5F5F5",
@@ -277,5 +282,6 @@
         "bottomMargin": 8
       }
     ]
-  }
+    }
+  ]
 }

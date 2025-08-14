@@ -247,9 +247,11 @@ struct TestMenuGeneratedView: View {
                         .padding(15)
                         .cornerRadius(8)
                 }
+                    .frame(maxWidth: .infinity)
                     .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))
                     .padding(20)
             }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             // >>> GENERATED_CODE_END
         }
     }
