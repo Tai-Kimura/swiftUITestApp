@@ -37,7 +37,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		85169ACC2B7EDCA9231E8E69 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */ = {
+		5848DCE6744DE0E4236374C4 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"sjui_tools/.ruby-version",
@@ -441,11 +441,21 @@
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/constants/maxSafeInteger.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/constants/maxValue.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/floor.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isFinite.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isInteger.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isNaN.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/isNegativeZero.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/LICENSE",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/max.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/min.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/mod.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/package.json",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/pow.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/README.md",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/round.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/sign.js",
 				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/test/index.js",
+				"sjui_tools/lib/hotloader/node_modules/math-intrinsics/tsconfig.json",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/HISTORY.md",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/index.js",
 				"sjui_tools/lib/hotloader/node_modules/media-typer/LICENSE",
@@ -787,6 +797,7 @@
 				sjui_tools/lib/swiftui/views/view_converter.rb,
 				sjui_tools/lib/swiftui/views/visibility_helper.rb,
 				sjui_tools/lib/swiftui/views/web_converter.rb,
+				sjui_tools/lib/swiftui/views/weighted_stack_helper.rb,
 				sjui_tools/lib/uikit/binding_file_manager.rb,
 				sjui_tools/lib/uikit/build_cache_manager.rb,
 				sjui_tools/lib/uikit/handlers/button_binding_handler.rb,
@@ -843,7 +854,7 @@
 		B62F75162E4049C500D73687 /* swiftUITestApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				85169ACC2B7EDCA9231E8E69 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */,
+				5848DCE6744DE0E4236374C4 /* Exceptions for "swiftUITestApp" folder in "swiftUITestApp" target */,
 			);
 			path = swiftUITestApp;
 			sourceTree = "<group>";
@@ -1422,7 +1433,7 @@
 			repositoryURL = "https://github.com/Tai-Kimura/SwiftJsonUI.git";
 			requirement = {
 				kind = revision;
-				revision = 658a8ac89d4b242cccad679b0015dfd98e8ec65a;
+				revision = 88f13c612637ce26d572d092e01d4cb83f8588dc;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

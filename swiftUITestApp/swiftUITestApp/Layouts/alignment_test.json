@@ -33,6 +33,8 @@
         },
         {
           "type": "Label",
+          "width": "wrapContent",
+          "height": "wrapContent",
           "text": "Parent Alignment - Single Properties",
           "fontSize": 18,
           "fontColor": "#333333",
@@ -99,6 +101,8 @@
           "child": [
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "alignRight",
               "alignRight": true,
               "background": "#FFFFD0",
@@ -116,6 +120,8 @@
           "child": [
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "centerHorizontal",
               "centerHorizontal": true,
               "background": "#FFD0FF",
@@ -133,6 +139,8 @@
           "child": [
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "centerVertical",
               "centerVertical": true,
               "background": "#D0FFFF",
@@ -177,6 +185,8 @@
           "child": [
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "Top",
               "alignTop": true,
               "background": "#FFE0E0",
@@ -184,12 +194,16 @@
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "Default",
               "background": "#E0E0E0",
               "padding": 8
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "Bottom",
               "alignBottom": true,
               "background": "#E0E0FF",
@@ -197,6 +211,8 @@
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "Center",
               "centerVertical": true,
               "background": "#E0FFE0",
@@ -222,6 +238,8 @@
           "child": [
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "alignLeft",
               "alignLeft": true,
               "background": "#FFE0E0",
@@ -229,12 +247,16 @@
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "Default",
               "background": "#E0E0E0",
               "padding": 8
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "alignRight",
               "alignRight": true,
               "background": "#E0E0FF",
@@ -242,6 +264,8 @@
             },
             {
               "type": "Label",
+              "width": "wrapContent",
+              "height": "wrapContent",
               "text": "centerHorizontal",
               "centerHorizontal": true,
               "background": "#E0FFE0",

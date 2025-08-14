@@ -1,0 +1,77 @@
+{
+  "type": "View",
+  "width": "matchParent",
+  "height": "matchParent",
+  "background": "#F5F5F5",
+  "padding": 20,
+  "orientation": "vertical",
+  "child": [
+    {
+      "data": [
+        {
+          "name": "simpleText",
+          "class": "String",
+          "defaultValue": ""
+        },
+        {
+          "name": "flexibleText",
+          "class": "String",
+          "defaultValue": ""
+        }
+      ]
+    },
+    {
+      "type": "Label",
+      "text": "TextView Hint Test",
+      "fontSize": 24,
+      "fontColor": "#000000",
+      "bottomMargin": 20
+    },
+    {
+      "type": "Label",
+      "text": "Simple TextView with hint:",
+      "fontSize": 14,
+      "fontColor": "#666666",
+      "bottomMargin": 8
+    },
+    {
+      "type": "TextView",
+      "id": "simpleTextView",
+      "width": "matchParent",
+      "height": 100,
+      "text": "@{simpleText}",
+      "hint": "This is a simple hint",
+      "hintColor": "#FF0000",
+      "fontSize": 16,
+      "fontColor": "#000000",
+      "background": "#FFFFFF",
+      "cornerRadius": 8,
+      "containerInset": 12,
+      "bottomMargin": 20
+    },
+    {
+      "type": "Label",
+      "text": "Flexible TextView with multi-line hint:",
+      "fontSize": 14,
+      "fontColor": "#666666",
+      "bottomMargin": 8
+    },
+    {
+      "type": "TextView",
+      "id": "flexibleTextView",
+      "width": "matchParent",
+      "flexible": true,
+      "minHeight": 80,
+      "maxHeight": 200,
+      "text": "@{flexibleText}",
+      "hint": "Multi-line hint\nLine 2 of hint\nLine 3 of hint",
+      "hintColor": "#0000FF",
+      "fontSize": 16,
+      "fontColor": "#000000",
+      "background": "#FFFFFF",
+      "cornerRadius": 8,
+      "containerInset": 12,
+      "bottomMargin": 20
+    }
+  ]
+}

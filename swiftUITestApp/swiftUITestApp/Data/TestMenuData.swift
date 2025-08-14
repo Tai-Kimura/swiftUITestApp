@@ -4,10 +4,14 @@ import SwiftJsonUI
 
 struct TestMenuData {
     // Data properties from JSON
-    // No data properties defined in JSON
+    var dynamicModeStatus: String = "OFF"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        // No properties to update
+        if let value = dictionary["dynamicModeStatus"] {
+            if let stringValue = value as? String {
+                self.dynamicModeStatus = stringValue
+            }
+        }
     }
 }

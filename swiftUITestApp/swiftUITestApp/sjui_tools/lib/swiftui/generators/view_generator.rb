@@ -198,19 +198,7 @@ module SjuiTools
             import Combine
 
             struct #{view_name}View: View {
-                @StateObject private var viewModel: #{view_name}ViewModel
-                
-                // Default initializer
-                init() {
-                    _viewModel = StateObject(wrappedValue: #{view_name}ViewModel())
-                }
-                
-                // Initializer with data parameter for Include support
-                init(data: [String: Any]) {
-                    let vm = #{view_name}ViewModel()
-                    vm.data.update(dictionary: data)
-                    _viewModel = StateObject(wrappedValue: vm)
-                }
+                @StateObject private var viewModel = #{view_name}ViewModel()
                 
                 var body: some View {
                     #{view_name}GeneratedView()

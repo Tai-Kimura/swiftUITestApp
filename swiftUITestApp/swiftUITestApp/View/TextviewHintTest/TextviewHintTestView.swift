@@ -3,19 +3,7 @@ import SwiftJsonUI
 import Combine
 
 struct TextViewHintTestView: View {
-    @StateObject private var viewModel: TextViewHintTestViewModel
-    
-    // Default initializer
-    init() {
-        _viewModel = StateObject(wrappedValue: TextViewHintTestViewModel())
-    }
-    
-    // Initializer with data parameter for Include support
-    init(data: [String: Any]) {
-        let vm = TextViewHintTestViewModel()
-        vm.data.update(dictionary: data)
-        _viewModel = StateObject(wrappedValue: vm)
-    }
+    @StateObject private var viewModel = TextViewHintTestViewModel()
     
     var body: some View {
         TextViewHintTestGeneratedView()

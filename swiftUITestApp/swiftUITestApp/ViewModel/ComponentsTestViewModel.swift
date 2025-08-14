@@ -2,12 +2,12 @@ import Foundation
 import Combine
 import SwiftJsonUI
 
-class TextViewHintTestViewModel: ObservableObject {
+class ComponentsTestViewModel: ObservableObject {
     // JSON file reference for hot reload
-    let jsonFileName = "text_view_hint_test"
+    let jsonFileName = "components_test"
     
     // Data model
-    @Published var data = TextViewHintTestData()
+    @Published var data = ComponentsTestData()
     
     // Action handlers
     func onAppear() {

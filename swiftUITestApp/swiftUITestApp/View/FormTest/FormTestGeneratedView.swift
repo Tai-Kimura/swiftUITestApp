@@ -201,7 +201,7 @@ struct FormTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.bottom, 6)
                     TextViewWithPlaceholder(
-                        text: $viewModel.bioText,
+                        text: $viewModel.data.bio,
                         hint: "Tell us about yourself...\nThis field will grow as you type",
                         hintColor: Color(red: 0.6, green: 0.6, blue: 0.6),
                         fontSize: 16,
@@ -227,7 +227,7 @@ struct FormTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.bottom, 6)
                     TextViewWithPlaceholder(
-                        text: $viewModel.notesText,
+                        text: $viewModel.data.notes,
                         hint: "Additional notes...\nFixed height field",
                         hintColor: Color(red: 0.6666666666666666, green: 0.6666666666666666, blue: 0.6666666666666666),
                         hideOnFocused: false,
@@ -251,7 +251,7 @@ struct FormTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.bottom, 6)
                     TextViewWithPlaceholder(
-                        text: $viewModel.commentsText,
+                        text: $viewModel.data.comments,
                         hint: "Any comments?\nThis can grow very tall (up to 300pt)",
                         hintColor: Color(red: 0.7333333333333333, green: 0.7333333333333333, blue: 0.7333333333333333),
                         // hintAttributes: {"fontColor":"#BBBBBB","fontSize":14,"fontStyle":"italic"}

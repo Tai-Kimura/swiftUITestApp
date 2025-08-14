@@ -24,7 +24,7 @@ struct TextViewHintTestGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .padding(.bottom, 8)
                 TextViewWithPlaceholder(
-                    text: $viewModel.simpleTextViewText,
+                    text: $viewModel.data.simpleText,
                     hint: "This is a simple hint",
                     hintColor: Color(red: 1.0, green: 0.0, blue: 0.0),
                     fontSize: 16,
@@ -43,7 +43,7 @@ struct TextViewHintTestGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .padding(.bottom, 8)
                 TextViewWithPlaceholder(
-                    text: $viewModel.flexibleTextViewText,
+                    text: $viewModel.data.flexibleText,
                     hint: "Multi-line hint\nLine 2 of hint\nLine 3 of hint",
                     hintColor: Color(red: 0.0, green: 0.0, blue: 1.0),
                     fontSize: 16,

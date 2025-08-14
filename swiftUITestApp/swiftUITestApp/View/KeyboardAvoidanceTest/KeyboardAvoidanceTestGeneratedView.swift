@@ -85,7 +85,7 @@ struct KeyboardAvoidanceTestGeneratedView: View {
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                         .padding(.bottom, 8)
                     TextViewWithPlaceholder(
-                        text: $viewModel.textviewText,
+                        text: $viewModel.data.textView,
                         hint: "Multi-line text input\nType here...",
                         hintColor: Color(red: 0.6, green: 0.6, blue: 0.6),
                         fontSize: 16,

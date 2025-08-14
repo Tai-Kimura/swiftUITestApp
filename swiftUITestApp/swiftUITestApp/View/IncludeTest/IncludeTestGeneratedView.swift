@@ -97,21 +97,27 @@ struct IncludeTestGeneratedView: View {
                         Text("1. Basic Include with static data:")
                             .font(.system(size: 16))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        // Component will be replaced by IncludeConverter
                         // include: included_1
+                        // data: {"title":"Included View 1","message":"This is the first included view","count":1}
                         Included1View(data: ["title": "Included View 1", "message": "This is the first included view", "count": 1])
                     }
                     VStack(alignment: .leading, spacing: 0) {
                         Text("2. Include with data (static values):")
                             .font(.system(size: 16))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        // Component will be replaced by IncludeConverter
                         // include: included_2
+                        // data: {"viewTitle":"Static Title","viewStatus":"Static Status","viewCount":42}
                         Included2View(data: ["viewTitle": "Static Title", "viewStatus": "Static Status", "viewCount": 42])
                     }
                     VStack(alignment: .leading, spacing: 0) {
                         Text("3. Include with data (using @{} references):")
                             .font(.system(size: 16))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        // Component will be replaced by IncludeConverter
                         // include: included_2
+                        // data: {"viewTitle":"@{userName}","viewStatus":"@{mainStatus}","viewCount":"@{mainCount}"}
                         Included2View(data: ["viewTitle": viewModel.data.userName, "viewStatus": viewModel.data.mainStatus, "viewCount": viewModel.data.mainCount])
                             .id("\(viewModel.data.userName)_\(viewModel.data.mainStatus)_\(viewModel.data.mainCount)")
                     }
@@ -119,7 +125,10 @@ struct IncludeTestGeneratedView: View {
                         Text("4. Include with shared_data and data override:")
                             .font(.system(size: 16))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        // Component will be replaced by IncludeConverter
                         // include: included_2
+                        // shared_data: {"viewTitle":"@{userName}","viewStatus":"@{mainStatus}","viewCount":"@{mainCount}"}
+                        // data: {"viewStatus":"Overridden Status"}
                         Included2View(data: ["viewTitle": viewModel.data.userName, "viewStatus": "Overridden Status", "viewCount": viewModel.data.mainCount])
                             .id("\(viewModel.data.userName)_\(viewModel.data.mainCount)")
                         // shared_data: {"viewTitle"=>"@{userName}", "viewStatus"=>"@{mainStatus}", "viewCount"=>"@{mainCount}"}
@@ -128,7 +137,9 @@ struct IncludeTestGeneratedView: View {
                         Text("5. Another included_1 with @{} references:")
                             .font(.system(size: 16))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                        // Component will be replaced by IncludeConverter
                         // include: included_1
+                        // data: {"title":"@{userName}","message":"@{mainStatus}","count":"@{mainCount}"}
                         Included1View(data: ["title": viewModel.data.userName, "message": viewModel.data.mainStatus, "count": viewModel.data.mainCount])
                             .id("\(viewModel.data.userName)_\(viewModel.data.mainStatus)_\(viewModel.data.mainCount)")
                     }

@@ -22,6 +22,20 @@ struct TestMenuGeneratedView: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 20)
+                    HStack(alignment: .top, spacing: 0) {
+                        Text("Dynamic Mode Status:")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                            .padding(.trailing, 10)
+                        Text("\(viewModel.data.dynamicModeStatus ?? "OFF")")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
+                            .fontWeight(.bold)
+                    }
+                        .background(Color(red: 0.9098039215686274, green: 0.9568627450980393, blue: 1.0))
+                        .padding(.bottom, 20)
+                        .padding(15)
+                        .cornerRadius(8)
                     Text("Layout & Positioning")
                         .font(.system(size: 20))
                         .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
@@ -111,6 +125,16 @@ struct TestMenuGeneratedView: View {
                         viewModel.navigateToTextStylingTest()
                     }) {
                         Text("Text Styling Test")
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                    }
+                        .background(Color(red: 1.0, green: 0.5843137254901961, blue: 0.0))
+                        .padding(.bottom, 8)
+                        .padding(15)
+                        .cornerRadius(8)
+                    Button(action: {
+                        viewModel.navigateToComponentsTest()
+                    }) {
+                        Text("New Components Test")
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                     }
                         .background(Color(red: 1.0, green: 0.5843137254901961, blue: 0.0))

@@ -7,6 +7,15 @@
     "background": "#F5F5F5",
     "child": [
       {
+        "data": [
+          {
+            "name": "dynamicModeStatus",
+            "class": "String",
+            "defaultValue": "OFF"
+          }
+        ]
+      },
+      {
         "type": "Label",
         "text": "SwiftJsonUI Feature Tests",
         "fontSize": 28,
@@ -14,6 +23,30 @@
         "font": "bold",
         "textAlign": "center",
         "bottomMargin": 20
+      },
+      {
+        "type": "View",
+        "orientation": "horizontal",
+        "padding": 15,
+        "background": "#E8F4FF",
+        "cornerRadius": 8,
+        "bottomMargin": 20,
+        "child": [
+          {
+            "type": "Label",
+            "text": "Dynamic Mode Status:",
+            "fontSize": 16,
+            "fontColor": "#333333",
+            "rightMargin": 10
+          },
+          {
+            "type": "Label",
+            "text": "@{dynamicModeStatus ?? \"OFF\"}",
+            "fontSize": 16,
+            "fontColor": "#007AFF",
+            "font": "bold"
+          }
+        ]
       },
       {
         "type": "Label",
@@ -113,6 +146,16 @@
         "type": "Button",
         "text": "Text Styling Test",
         "onclick": "navigateToTextStylingTest",
+        "background": "#FF9500",
+        "fontColor": "#FFFFFF",
+        "padding": 15,
+        "cornerRadius": 8,
+        "bottomMargin": 8
+      },
+      {
+        "type": "Button",
+        "text": "New Components Test",
+        "onclick": "navigateToComponentsTest",
         "background": "#FF9500",
         "fontColor": "#FFFFFF",
         "padding": 15,

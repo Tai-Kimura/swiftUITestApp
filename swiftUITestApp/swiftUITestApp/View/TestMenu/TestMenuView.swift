@@ -21,6 +21,11 @@ struct TestMenuView: View {
         NavigationStack(path: $viewModel.navigationPath) {
             TestMenuGeneratedView()
                 .environmentObject(viewModel)
+                .onAppear {
+                    // Reset to static mode when returning to menu
+                    ViewSwitcher.setDynamicMode(false)
+                    viewModel.updateDynamicModeStatus()
+                }
                 .navigationDestination(for: TestDestination.self) { destination in
                     switch destination {
                     case .marginsTest:
@@ -57,6 +62,8 @@ struct TestMenuView: View {
                         IncludeTestView()
                     case .formTest:
                         FormTestView()
+                    case .componentsTest:
+                        ComponentsTestView()
                     }
                 }
         }
