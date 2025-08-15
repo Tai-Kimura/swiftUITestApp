@@ -97,8 +97,6 @@ struct KeyboardAvoidanceTestGeneratedView: View {
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
                             .padding(12)
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .cornerRadius(8)
                             .padding(.bottom, 16)
                         Button(action: {
                             viewModel.submitForm()

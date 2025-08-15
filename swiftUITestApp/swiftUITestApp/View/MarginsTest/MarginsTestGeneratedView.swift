@@ -46,7 +46,7 @@ struct MarginsTestGeneratedView: View {
                             .font(.system(size: 16))
                             .background(Color(red: 1.0, green: 0.8784313725490196, blue: 1.0))
                             .padding(.bottom, 30)
-                        ZStack(alignment: .center) {
+                        ZStack(alignment: .topLeading) {
                             Group {
                                                 Text("Parent has leftPadding: 20, rightPadding: 20")
                                                     .font(.system(size: 14))
@@ -58,7 +58,7 @@ struct MarginsTestGeneratedView: View {
                             .padding(.trailing, 20)
                             .background(Color(red: 0.8666666666666667, green: 0.8666666666666667, blue: 0.8666666666666667))
                             .padding(.top, 20)
-                        ZStack(alignment: .center) {
+                        ZStack(alignment: .topLeading) {
                             Group {
                                                 Text("MaxWidth: 200")
                                                     .font(.system(size: 14))
@@ -70,7 +70,7 @@ struct MarginsTestGeneratedView: View {
                             .frame(height: 100)
                             .background(Color(red: 0.8, green: 0.8, blue: 0.8))
                             .padding(.top, 20)
-                        ZStack(alignment: .center) {
+                        ZStack(alignment: .topLeading) {
                             Group {
                                                 Text("MinWidth: 150")
                                                     .font(.system(size: 14))

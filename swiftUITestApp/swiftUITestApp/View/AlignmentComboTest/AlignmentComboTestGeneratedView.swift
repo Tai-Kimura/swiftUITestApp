@@ -34,8 +34,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Top-Left")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: ""),
@@ -58,8 +58,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Top-Right")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: ""),
@@ -82,8 +82,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Bottom-Left")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: ""),
@@ -106,8 +106,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Bottom-Right")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 1.0, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 1.0, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: ""),
@@ -135,8 +135,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Top-Center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8156862745098039, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8156862745098039, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentTop, targetId: ""),
@@ -159,8 +159,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Bottom-Center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 1.0, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 1.0, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentBottom, targetId: ""),
@@ -183,8 +183,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Left-Center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8, blue: 0.8))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8, blue: 0.8))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: ""),
@@ -207,8 +207,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Right-Center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8, green: 1.0, blue: 0.8))
+                                            .padding(8)
+                                            .background(Color(red: 0.8, green: 1.0, blue: 0.8))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: ""),
@@ -236,8 +236,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("TL")
                                         .font(.system(size: 12))
-                                        .padding(5)
-                                        .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
+                                            .padding(5)
+                                            .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: ""),
@@ -250,8 +250,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("TR")
                                         .font(.system(size: 12))
-                                        .padding(5)
-                                        .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
+                                            .padding(5)
+                                            .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: ""),
@@ -264,8 +264,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("BL")
                                         .font(.system(size: 12))
-                                        .padding(5)
-                                        .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 1.0))
+                                            .padding(5)
+                                            .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: ""),
@@ -278,8 +278,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("BR")
                                         .font(.system(size: 12))
-                                        .padding(5)
-                                        .background(Color(red: 1.0, green: 1.0, blue: 0.8784313725490196))
+                                            .padding(5)
+                                            .background(Color(red: 1.0, green: 1.0, blue: 0.8784313725490196))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: ""),
@@ -292,8 +292,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Center")
                                         .font(.system(size: 12))
-                                        .padding(5)
-                                        .background(Color(red: 1.0, green: 0.8784313725490196, blue: 1.0))
+                                            .padding(5)
+                                            .background(Color(red: 1.0, green: 0.8784313725490196, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenter, targetId: "")
@@ -381,8 +381,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Only horizontal center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.9098039215686274, blue: 0.9098039215686274))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.9098039215686274, blue: 0.9098039215686274))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenterHorizontal, targetId: "")
@@ -404,8 +404,8 @@ struct AlignmentComboTestGeneratedView: View {
                                     view: AnyView(
                                         Text("Only vertical center")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.9098039215686274, green: 1.0, blue: 0.9098039215686274))
+                                            .padding(8)
+                                            .background(Color(red: 0.9098039215686274, green: 1.0, blue: 0.9098039215686274))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenterVertical, targetId: "")

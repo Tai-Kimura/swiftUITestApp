@@ -62,8 +62,6 @@ struct ConverterTestGeneratedView: View {
                                         Text("This will be blurred")
                                         .font(.system(size: 16))
                                         .foregroundColor(Color(red: 1.0, green: 0.8431372549019608, blue: 0.0))
-                                        .padding(.top, 50)
-                                        .padding(.leading, 20)
                                         ),
                                         constraints: [
                                         ],

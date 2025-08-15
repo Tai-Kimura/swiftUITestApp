@@ -219,7 +219,7 @@ module SjuiTools
             return # 残りの処理をスキップして、通常のText処理を避ける
           end
           
-          # Apply frame modifiers for weighted views
+          # Apply frame modifiers for weighted views FIRST
           # If this label has a weight in a horizontal/vertical container, make it fill the appropriate dimension
           if @component['weight'] && @component['weight'].to_f > 0
             parent_orientation = @component['parent_orientation']
@@ -233,10 +233,14 @@ module SjuiTools
             end
           end
           
+          # Apply frame size (width/height) - this should come AFTER weight handling
+          apply_frame_size
+          
           # Apply padding (internal spacing)
           apply_padding
           
-          # Apply background and corner radius
+          # Apply background and corner radius AFTER padding
+          # This ensures the background includes the padding area
           if @component['background']
             color = hex_to_swiftui_color(@component['background'])
             add_modifier_line ".background(#{color})"

@@ -43,7 +43,7 @@
         {
           "type": "Label",
           "width": 0,
-          "height": "matchParent",
+          "height": "wrapContent",
           "weight": 1,
           "text": "Weight: 1",
           "background": "#FFD0D0",

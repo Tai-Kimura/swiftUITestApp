@@ -31,6 +31,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed: 80")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 80)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                               ),
                               weight: 0.0
@@ -41,6 +43,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                               ),
                               weight: 1.0
@@ -51,6 +54,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 1.0))
                               ),
                               weight: 2.0
@@ -60,6 +64,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed: 60")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 60)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 1.0, blue: 0.8156862745098039))
                               ),
                               weight: 0.0
@@ -82,6 +88,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
                                 ),
                                 weight: 1.0
@@ -92,6 +99,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 1.0, green: 0.7529411764705882, blue: 0.7529411764705882))
                                 ),
                                 weight: 2.0
@@ -106,6 +114,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fix\n50")
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 50)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196))
                               ),
                               weight: 0.0
@@ -118,6 +128,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed 30")
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 30)
                                 .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
                                 ),
                                 weight: 0.0
@@ -128,6 +140,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 0.7529411764705882, green: 1.0, blue: 0.7529411764705882))
                                 ),
                                 weight: 1.0
@@ -151,6 +164,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("40")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 40)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                               ),
                               weight: 0.0
@@ -161,6 +176,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                               ),
                               weight: 1.0
@@ -170,6 +186,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("60")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 60)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                               ),
                               weight: 0.0
@@ -180,6 +198,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                               ),
                               weight: 1.0
@@ -189,6 +208,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("80")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 80)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                               ),
                               weight: 0.0
@@ -207,6 +228,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("W:0")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.6274509803921569, blue: 0.6274509803921569))
                               ),
                               weight: 0.0
@@ -217,6 +239,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.6274509803921569, green: 1.0, blue: 0.6274509803921569))
                               ),
                               weight: 1.0
@@ -226,6 +249,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed:100")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 100)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.6274509803921569, green: 0.6274509803921569, blue: 1.0))
                               ),
                               weight: 0.0
@@ -236,6 +261,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 1.0, blue: 0.6274509803921569))
                               ),
                               weight: 3.0
@@ -254,6 +280,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed: 30")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 30)
                                 .background(Color(red: 1.0, green: 0.8784313725490196, blue: 0.8784313725490196))
                               ),
                               weight: 0.0
@@ -264,6 +292,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 0.8784313725490196, green: 1.0, blue: 0.8784313725490196))
                               ),
                               weight: 1.0
@@ -273,6 +302,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed: 40")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 40)
                                 .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 1.0))
                               ),
                               weight: 0.0
@@ -283,6 +314,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 1.0, green: 1.0, blue: 0.8784313725490196))
                               ),
                               weight: 2.0
@@ -292,6 +324,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fixed: 50")
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
                                 .background(Color(red: 1.0, green: 0.8784313725490196, blue: 1.0))
                               ),
                               weight: 0.0
@@ -311,6 +345,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 25)
                                 .background(Color(red: 0.4, green: 0.4, blue: 0.4))
                               ),
                               weight: 0.0
@@ -324,6 +360,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                                 ),
                                 weight: 1.0
@@ -333,6 +370,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 Text("Fix:60")
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
+                                .frame(width: 60)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 0.8156862745098039))
                                 ),
                                 weight: 0.0
@@ -343,6 +382,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .multilineTextAlignment(.center)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                                 .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                                 ),
                                 weight: 2.0
@@ -358,6 +398,8 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 12))
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                                 .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 25)
                                 .background(Color(red: 0.4, green: 0.4, blue: 0.4))
                               ),
                               weight: 0.0
@@ -377,6 +419,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 1.0, green: 0.8, blue: 0.8))
                               ),
                               weight: 1.0
@@ -387,6 +430,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 0.8, green: 1.0, blue: 0.8))
                               ),
                               weight: 1.0
@@ -397,6 +441,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 0.8, green: 0.8, blue: 1.0))
                               ),
                               weight: 2.0
@@ -407,6 +452,7 @@ struct WeightTestWithFixedGeneratedView: View {
                                 .font(.system(size: 14))
                                 .multilineTextAlignment(.center)
                                 .frame(maxHeight: .infinity)
+                                .frame(maxWidth: .infinity)
                                 .background(Color(red: 1.0, green: 1.0, blue: 0.8))
                               ),
                               weight: 1.0

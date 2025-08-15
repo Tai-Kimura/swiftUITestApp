@@ -1,175 +1,353 @@
 {
-  "type": "View",
+  "type": "ScrollView",
   "width": "matchParent",
   "height": "matchParent",
-  "background": "#F5F5F5",
   "orientation": "vertical",
-  "child": [
-    {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Relative Positioning Test"
-        }
-      ]
-    },
-    {
-      "type": "Label",
-      "id": "title_label",
-      "width": "wrapContent",
-      "height": "wrapContent",
-      "topMargin": 20,
-      "text": "@{title}",
-      "fontSize": 24,
-      "fontColor": "#000000"
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 400,
-      "topMargin": 20,
-      "background": "#E0E0E0",
-      "child": [
-        {
-          "type": "Label",
-          "id": "anchor_view",
-          "width": 100,
-          "height": 50,
-          "text": "Anchor",
-          "background": "#FF6B6B",
-          "textAlign": "center",
-          "fontColor": "#FFFFFF",
-          "centerInParent": true
-        },
-        {
-          "type": "Label",
-          "id": "top_aligned",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignTopView",
-          "background": "#4ECDC4",
-          "padding": 5,
-          "alignTopView": "anchor_view",
-          "leftMargin": 120
-        },
-        {
-          "type": "Label",
-          "id": "bottom_aligned",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignBottomView",
-          "background": "#45B7D1",
-          "padding": 5,
-          "alignBottomView": "anchor_view",
-          "leftMargin": 120
-        },
-        {
-          "type": "Label",
-          "id": "left_aligned",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignLeftView",
-          "background": "#96CEB4",
-          "padding": 5,
-          "alignLeftView": "anchor_view",
-          "topMargin": 70
-        },
-        {
-          "type": "Label",
-          "id": "right_aligned",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignRightView",
-          "background": "#FFEAA7",
-          "padding": 5,
-          "alignRightView": "anchor_view",
-          "topMargin": 100
-        },
-        {
-          "type": "Label",
-          "id": "above_view",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignTopOfView",
-          "background": "#DFE6E9",
-          "padding": 5,
-          "alignTopOfView": "anchor_view",
-          "centerHorizontal": true
-        },
-        {
-          "type": "Label",
-          "id": "below_view",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignBottomOfView",
-          "background": "#B2BEC3",
-          "padding": 5,
-          "alignBottomOfView": "anchor_view",
-          "centerHorizontal": true
-        },
-        {
-          "type": "Label",
-          "id": "left_of_view",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignLeftOfView",
-          "background": "#FAB1A0",
-          "padding": 5,
-          "alignLeftOfView": "anchor_view",
-          "centerVertical": true
-        },
-        {
-          "type": "Label",
-          "id": "right_of_view",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "alignRightOfView",
-          "background": "#74B9FF",
-          "padding": 5,
-          "alignRightOfView": "anchor_view",
-          "centerVertical": true
-        }
-      ]
-    },
-    {
-      "type": "Label",
-      "text": "Offset Positioning",
-      "fontSize": 18,
-      "fontColor": "#333333",
-      "topMargin": 20,
-      "font": "bold"
-    },
-    {
-      "type": "View",
-      "width": "matchParent",
-      "height": 200,
-      "topMargin": 10,
-      "background": "#D0D0D0",
-      "child": [
-        {
-          "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "offsetX: 50, offsetY: 30",
-          "background": "#A29BFE",
-          "padding": 10,
-          "offsetX": 50,
-          "offsetY": 30
-        },
-        {
-          "type": "Label",
-          "width": "wrapContent",
-          "height": "wrapContent",
-          "text": "offsetX: -30, offsetY: 80",
-          "background": "#6C5CE7",
-          "fontColor": "#FFFFFF",
-          "padding": 10,
-          "offsetX": -30,
-          "offsetY": 80,
-          "alignRight": true
-        }
-      ]
-    }
-  ]
+  "child": {
+    "type": "View",
+    "width": "matchParent",
+    "height": "wrapContent",
+    "background": "#F5F5F5",
+    "orientation": "vertical",
+    "child": [
+      {
+        "data": [
+          {
+            "name": "title",
+            "class": "String",
+            "defaultValue": "Relative Positioning Test"
+          }
+        ]
+      },
+      {
+        "type": "Label",
+        "id": "title_label",
+        "width": "wrapContent",
+        "height": "wrapContent",
+        "topMargin": 20,
+        "text": "@{title}",
+        "fontSize": 24,
+        "fontColor": "#000000"
+      },
+      {
+        "type": "View",
+        "width": "matchParent",
+        "height": 400,
+        "topMargin": 20,
+        "background": "#E0E0E0",
+        "child": [
+          {
+            "type": "Label",
+            "id": "anchor_view",
+            "width": 100,
+            "height": 50,
+            "text": "Anchor",
+            "background": "#FF6B6B",
+            "textAlign": "center",
+            "fontColor": "#FFFFFF",
+            "centerInParent": true
+          },
+          {
+            "type": "Label",
+            "id": "top_aligned",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignTopView",
+            "background": "#4ECDC4",
+            "padding": 5,
+            "alignTopView": "anchor_view"
+          },
+          {
+            "type": "Label",
+            "id": "bottom_aligned",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignBottomView",
+            "background": "#45B7D1",
+            "padding": 5,
+            "alignBottomView": "anchor_view"
+          },
+          {
+            "type": "Label",
+            "id": "left_aligned",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignLeftView",
+            "background": "#96CEB4",
+            "padding": 5,
+            "alignLeftView": "anchor_view"
+          },
+          {
+            "type": "Label",
+            "id": "right_aligned",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignRightView",
+            "background": "#FFEAA7",
+            "padding": 5,
+            "alignRightView": "anchor_view"
+          },
+          {
+            "type": "Label",
+            "id": "above_view",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignTopOfView",
+            "background": "#DFE6E9",
+            "padding": 5,
+            "alignTopOfView": "anchor_view",
+            "centerHorizontal": true
+          },
+          {
+            "type": "Label",
+            "id": "below_view",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignBottomOfView",
+            "background": "#B2BEC3",
+            "padding": 5,
+            "alignBottomOfView": "anchor_view",
+            "centerHorizontal": true
+          },
+          {
+            "type": "Label",
+            "id": "left_of_view",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignLeftOfView",
+            "background": "#FAB1A0",
+            "padding": 5,
+            "alignLeftOfView": "anchor_view",
+            "centerVertical": true
+          },
+          {
+            "type": "Label",
+            "id": "right_of_view",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "alignRightOfView",
+            "background": "#74B9FF",
+            "padding": 5,
+            "alignRightOfView": "anchor_view",
+            "centerVertical": true
+          }
+        ]
+      },
+      {
+        "type": "Label",
+        "text": "Complex Positioning Tests",
+        "fontSize": 18,
+        "fontColor": "#333333",
+        "topMargin": 20,
+        "font": "bold"
+      },
+      {
+        "type": "View",
+        "width": "matchParent",
+        "height": 300,
+        "topMargin": 10,
+        "background": "#E8E8E8",
+        "child": [
+          {
+            "type": "Label",
+            "id": "complex_anchor",
+            "width": 80,
+            "height": 40,
+            "text": "Anchor",
+            "background": "#FF6B6B",
+            "textAlign": "center",
+            "fontColor": "#FFFFFF",
+            "centerInParent": true
+          },
+          {
+            "type": "Label",
+            "id": "both_align",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Top+Left",
+            "background": "#4ECDC4",
+            "padding": 5,
+            "alignTopView": "complex_anchor",
+            "alignLeftView": "complex_anchor"
+          },
+          {
+            "type": "Label",
+            "id": "both_align2",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Bottom+Right",
+            "background": "#45B7D1",
+            "padding": 5,
+            "alignBottomView": "complex_anchor",
+            "alignRightView": "complex_anchor"
+          },
+          {
+            "type": "Label",
+            "id": "multi_align",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Top+Right",
+            "background": "#96CEB4",
+            "padding": 5,
+            "alignTopView": "complex_anchor",
+            "alignRightView": "complex_anchor"
+          },
+          {
+            "type": "Label",
+            "id": "chain1",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Chain1",
+            "background": "#FFEAA7",
+            "padding": 5,
+            "alignRightOfView": "complex_anchor",
+            "alignTopView": "complex_anchor"
+          },
+          {
+            "type": "Label",
+            "id": "chain2",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Chain2",
+            "background": "#FD79A8",
+            "padding": 5,
+            "alignRightOfView": "chain1",
+            "alignTopView": "chain1"
+          },
+          {
+            "type": "Label",
+            "id": "double_ref",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Below+RightOf",
+            "background": "#A29BFE",
+            "fontColor": "#FFFFFF",
+            "padding": 5,
+            "alignBottomOfView": "complex_anchor",
+            "alignRightOfView": "complex_anchor"
+          }
+        ]
+      },
+      {
+        "type": "Label",
+        "text": "Multiple Reference Points",
+        "fontSize": 18,
+        "fontColor": "#333333",
+        "topMargin": 20,
+        "font": "bold"
+      },
+      {
+        "type": "View",
+        "width": "matchParent",
+        "height": 250,
+        "topMargin": 10,
+        "background": "#D8D8D8",
+        "child": [
+          {
+            "type": "Label",
+            "id": "ref1",
+            "width": 60,
+            "height": 30,
+            "text": "Ref1",
+            "background": "#FF6B6B",
+            "textAlign": "center",
+            "fontColor": "#FFFFFF",
+            "alignLeft": true,
+            "alignTop": true,
+            "leftMargin": 20,
+            "topMargin": 20
+          },
+          {
+            "type": "Label",
+            "id": "ref2",
+            "width": 60,
+            "height": 30,
+            "text": "Ref2",
+            "background": "#4ECDC4",
+            "textAlign": "center",
+            "fontColor": "#FFFFFF",
+            "alignRight": true,
+            "alignTop": true,
+            "rightMargin": 20,
+            "topMargin": 20
+          },
+          {
+            "type": "Label",
+            "id": "between_refs",
+            "width": "matchParent",
+            "height": "wrapContent",
+            "text": "Between",
+            "background": "#FFD93D",
+            "padding": 5,
+            "alignLeftOfView": "ref2",
+            "alignRightOfView": "ref1",
+            "centerVertical": true
+          },
+          {
+            "type": "Label",
+            "id": "aligned_both",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "AlignBoth",
+            "background": "#6BCB77",
+            "padding": 5,
+            "alignTopView": "ref1",
+            "alignRightView": "ref2"
+          },
+          {
+            "type": "Label",
+            "id": "complex_chain",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "Complex",
+            "background": "#FF6B9D",
+            "fontColor": "#FFFFFF",
+            "padding": 5,
+            "below": "ref1",
+            "alignLeftView": "ref1",
+            "topMargin": 10
+          }
+        ]
+      },
+      {
+        "type": "Label",
+        "text": "Offset Positioning",
+        "fontSize": 18,
+        "fontColor": "#333333",
+        "topMargin": 20,
+        "font": "bold"
+      },
+      {
+        "type": "View",
+        "width": "matchParent",
+        "height": 200,
+        "topMargin": 10,
+        "background": "#D0D0D0",
+        "child": [
+          {
+            "type": "Label",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "offsetX: 50, offsetY: 30",
+            "background": "#A29BFE",
+            "padding": 10,
+            "offsetX": 50,
+            "offsetY": 30
+          },
+          {
+            "type": "Label",
+            "width": "wrapContent",
+            "height": "wrapContent",
+            "text": "offsetX: -30, offsetY: 80",
+            "background": "#6C5CE7",
+            "fontColor": "#FFFFFF",
+            "padding": 10,
+            "offsetX": -30,
+            "offsetY": 80,
+            "alignRight": true
+          }
+        ]
+      }
+    ]
+  }
 }

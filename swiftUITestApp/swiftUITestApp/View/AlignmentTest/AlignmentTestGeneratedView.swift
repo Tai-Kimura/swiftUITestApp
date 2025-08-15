@@ -34,8 +34,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("alignTop")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8156862745098039, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentTop, targetId: "")
@@ -57,8 +57,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("alignBottom")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 1.0, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentBottom, targetId: "")
@@ -80,8 +80,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("alignLeft")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentLeft, targetId: "")
@@ -103,8 +103,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("alignRight")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 1.0, blue: 0.8156862745098039))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 1.0, blue: 0.8156862745098039))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentRight, targetId: "")
@@ -126,8 +126,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("centerHorizontal")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8156862745098039, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8156862745098039, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenterHorizontal, targetId: "")
@@ -149,8 +149,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("centerVertical")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 0.8156862745098039, green: 1.0, blue: 1.0))
+                                            .padding(8)
+                                            .background(Color(red: 0.8156862745098039, green: 1.0, blue: 1.0))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenterVertical, targetId: "")
@@ -172,8 +172,8 @@ struct AlignmentTestGeneratedView: View {
                                     view: AnyView(
                                         Text("centerInParent")
                                         .font(.system(size: 14))
-                                        .padding(8)
-                                        .background(Color(red: 1.0, green: 0.8, blue: 0.8))
+                                            .padding(8)
+                                            .background(Color(red: 1.0, green: 0.8, blue: 0.8))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenter, targetId: "")

@@ -15,7 +15,7 @@ struct swiftUITestAppApp: App {
     
     init() {
         HotLoaderSetup.configure()
-        ViewSwitcher.setDynamicMode(true)
+        ViewSwitcher.setDynamicMode(false)
     }
 
     var body: some Scene {

@@ -210,7 +210,7 @@
           "width": 200,
           "height": 150,
           "topMargin": 10,
-          "url": "https://picsum.photos/400/300",
+          "src": "https://picsum.photos/400/300",
           "defaultImage": "photo",
           "contentMode": "scaleAspectFill",
           "cornerRadius": 10

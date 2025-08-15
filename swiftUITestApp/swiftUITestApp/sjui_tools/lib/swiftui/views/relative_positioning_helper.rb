@@ -9,7 +9,7 @@ module SjuiTools
           return false unless child.is_a?(Hash)
           
           # 相対配置のプロパティをチェック
-          child['toLeftOf'] || child['toRightOf'] || child['above'] || child['below'] ||
+          child['above'] || child['below'] ||
           child['alignTop'] || child['alignBottom'] || child['alignLeft'] || child['alignRight'] ||
           child['alignTopView'] || child['alignBottomView'] || child['alignLeftView'] || child['alignRightView'] ||
           child['alignTopOfView'] || child['alignBottomOfView'] || child['alignLeftOfView'] || child['alignRightOfView'] ||
@@ -39,11 +39,7 @@ module SjuiTools
             constraints = []
             
             # 水平方向の制約
-            if child['toLeftOf']
-              constraints << { type: :toLeftOf, target: child['toLeftOf'] }
-            elsif child['toRightOf']
-              constraints << { type: :toRightOf, target: child['toRightOf'] }
-            elsif child['toStartOf']
+            if child['toStartOf']
               constraints << { type: :toStartOf, target: child['toStartOf'] }
             elsif child['toEndOf']
               constraints << { type: :toEndOf, target: child['toEndOf'] }
@@ -131,7 +127,7 @@ module SjuiTools
             # 親への制約のみ持つかチェック（他のビューへの制約がない）
             has_parent = child['alignTop'] || child['alignBottom'] || child['alignLeft'] || child['alignRight'] ||
                         child['centerHorizontal'] || child['centerVertical'] || child['centerInParent']
-            has_relative = child['toLeftOf'] || child['toRightOf'] || child['above'] || child['below'] ||
+            has_relative = child['above'] || child['below'] ||
                           child['toStartOf'] || child['toEndOf'] ||
                           child['alignTopView'] || child['alignBottomView'] || child['alignLeftView'] || child['alignRightView'] ||
                           child['alignTopOfView'] || child['alignBottomOfView'] || child['alignLeftOfView'] || child['alignRightOfView']
@@ -140,7 +136,7 @@ module SjuiTools
           
           if parent_only_children.any?
             # 親のみの制約を持つ最初の要素のアライメントを使用
-            alignment = get_zstack_alignment_for_child(parent_only_children.first) || '.center'
+            alignment = get_zstack_alignment_for_child(parent_only_children.first) || '.topLeading'
           else
             alignment = get_zstack_alignment
           end
@@ -161,11 +157,66 @@ module SjuiTools
                     # View
                     add_line "view: AnyView("
                     indent do
-                      child_converter = @converter_factory.create_converter(child, @indent_level + 2, @action_manager, @converter_factory, @view_registry)
-                      child_code = child_converter.convert
-                      child_lines = child_code.split("\n")
-                      child_lines.each do |line|
-                        add_line line.strip unless line.strip.empty?
+                      # Special handling for views with padding in relative positioning
+                      # We need to ensure padding doesn't affect the view's alignment edges
+                      if child['padding'] && child['background']
+                        # Extract padding value and remove it from the child temporarily
+                        padding_value = child['padding']
+                        background_color = child['background']
+                        child_without_padding = child.dup
+                        child_without_padding.delete('padding')
+                        child_without_padding.delete('background')
+                        # Also remove margin properties (they're handled separately by RelativePositionContainer)
+                        child_without_padding.delete('leftMargin')
+                        child_without_padding.delete('rightMargin')
+                        child_without_padding.delete('topMargin')
+                        child_without_padding.delete('bottomMargin')
+                        child_without_padding.delete('marginLeft')
+                        child_without_padding.delete('marginRight')
+                        child_without_padding.delete('marginTop')
+                        child_without_padding.delete('marginBottom')
+                        child_without_padding.delete('margins')
+                        child_without_padding.delete('startMargin')
+                        child_without_padding.delete('endMargin')
+                        child_without_padding.delete('marginStart')
+                        child_without_padding.delete('marginEnd')
+                        
+                        # Generate the view without padding and background
+                        child_converter = @converter_factory.create_converter(child_without_padding, @indent_level + 3, @action_manager, @converter_factory, @view_registry)
+                        child_code = child_converter.convert
+                        child_lines = child_code.split("\n")
+                        child_lines.each do |line|
+                          add_line line.strip unless line.strip.empty?
+                        end
+                        
+                        # Now apply padding and background together
+                        add_modifier_line ".padding(#{padding_value.to_i})"
+                        color = hex_to_swiftui_color(background_color)
+                        add_modifier_line ".background(#{color})"
+                      else
+                        # Normal conversion for views without padding or without background
+                        # Remove margin properties before conversion (they're handled separately by RelativePositionContainer)
+                        child_without_margins = child.dup
+                        child_without_margins.delete('leftMargin')
+                        child_without_margins.delete('rightMargin')
+                        child_without_margins.delete('topMargin')
+                        child_without_margins.delete('bottomMargin')
+                        child_without_margins.delete('marginLeft')
+                        child_without_margins.delete('marginRight')
+                        child_without_margins.delete('marginTop')
+                        child_without_margins.delete('marginBottom')
+                        child_without_margins.delete('margins')
+                        child_without_margins.delete('startMargin')
+                        child_without_margins.delete('endMargin')
+                        child_without_margins.delete('marginStart')
+                        child_without_margins.delete('marginEnd')
+                        
+                        child_converter = @converter_factory.create_converter(child_without_margins, @indent_level + 2, @action_manager, @converter_factory, @view_registry)
+                        child_code = child_converter.convert
+                        child_lines = child_code.split("\n")
+                        child_lines.each do |line|
+                          add_line line.strip unless line.strip.empty?
+                        end
                       end
                     end
                     add_line "),"
@@ -175,21 +226,6 @@ module SjuiTools
                     indent do
                       # 相対配置の制約を追加
                       constraint_added = false
-                      
-                      # toLeftOf/toRightOf
-                      if child['toLeftOf']
-                        add_line "RelativePositionConstraint(type: .toLeftOf, targetId: \"#{child['toLeftOf']}\"),"
-                        constraint_added = true
-                      elsif child['toRightOf']
-                        add_line "RelativePositionConstraint(type: .toRightOf, targetId: \"#{child['toRightOf']}\"),"
-                        constraint_added = true
-                      elsif child['toStartOf']
-                        add_line "RelativePositionConstraint(type: .toStartOf, targetId: \"#{child['toStartOf']}\"),"
-                        constraint_added = true
-                      elsif child['toEndOf']
-                        add_line "RelativePositionConstraint(type: .toEndOf, targetId: \"#{child['toEndOf']}\"),"
-                        constraint_added = true
-                      end
                       
                       # above/below
                       if child['above']
