@@ -35,8 +35,8 @@ struct Included1GeneratedView: View {
                     .padding(.top, 12)
                 Spacer(minLength: 0)
             }
-                .frame(maxWidth: .infinity)
                 .padding(16)
+                .frame(maxWidth: .infinity)
                 .background(Color(red: 0.9411764705882353, green: 0.9411764705882353, blue: 0.9411764705882353))
                 .cornerRadius(8)
             // >>> GENERATED_CODE_END

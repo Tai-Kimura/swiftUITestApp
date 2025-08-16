@@ -69,7 +69,8 @@ struct ConverterTestGeneratedView: View {
                                         )
                                         ],
                                         alignment: .center,
-                                        backgroundColor: nil
+                                        backgroundColor: nil,
+                                        parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                                         )
                                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                                     ),
@@ -95,7 +96,8 @@ struct ConverterTestGeneratedView: View {
                                 )
                             ],
                             alignment: .center,
-                            backgroundColor: Color(red: 0.2980392156862745, green: 0.6862745098039216, blue: 0.3137254901960784)
+                            backgroundColor: Color(red: 0.2980392156862745, green: 0.6862745098039216, blue: 0.3137254901960784),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 150)

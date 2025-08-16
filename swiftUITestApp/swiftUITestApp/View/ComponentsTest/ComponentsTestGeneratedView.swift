@@ -98,11 +98,11 @@ struct ComponentsTestGeneratedView: View {
                             .cornerRadius(10)
                         Spacer(minLength: 0)
                     }
-                        .frame(maxWidth: .infinity)
                         .padding(.top, 20)
                         .padding(.trailing, 20)
                         .padding(.bottom, 20)
                         .padding(.leading, 20)
+                        .frame(maxWidth: .infinity)
                     Spacer(minLength: 0)
                 }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

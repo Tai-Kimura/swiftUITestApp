@@ -9,7 +9,7 @@ module SjuiTools
           return false unless child.is_a?(Hash)
           
           # 相対配置のプロパティをチェック
-          child['above'] || child['below'] ||
+          child['toLeftOf'] || child['toRightOf'] || child['above'] || child['below'] ||
           child['alignTop'] || child['alignBottom'] || child['alignLeft'] || child['alignRight'] ||
           child['alignTopView'] || child['alignBottomView'] || child['alignLeftView'] || child['alignRightView'] ||
           child['alignTopOfView'] || child['alignBottomOfView'] || child['alignLeftOfView'] || child['alignRightOfView'] ||
@@ -39,7 +39,11 @@ module SjuiTools
             constraints = []
             
             # 水平方向の制約
-            if child['toStartOf']
+            if child['toLeftOf']
+              constraints << { type: :toLeftOf, target: child['toLeftOf'] }
+            elsif child['toRightOf']
+              constraints << { type: :toRightOf, target: child['toRightOf'] }
+            elsif child['toStartOf']
               constraints << { type: :toStartOf, target: child['toStartOf'] }
             elsif child['toEndOf']
               constraints << { type: :toEndOf, target: child['toEndOf'] }
@@ -127,7 +131,7 @@ module SjuiTools
             # 親への制約のみ持つかチェック（他のビューへの制約がない）
             has_parent = child['alignTop'] || child['alignBottom'] || child['alignLeft'] || child['alignRight'] ||
                         child['centerHorizontal'] || child['centerVertical'] || child['centerInParent']
-            has_relative = child['above'] || child['below'] ||
+            has_relative = child['toLeftOf'] || child['toRightOf'] || child['above'] || child['below'] ||
                           child['toStartOf'] || child['toEndOf'] ||
                           child['alignTopView'] || child['alignBottomView'] || child['alignLeftView'] || child['alignRightView'] ||
                           child['alignTopOfView'] || child['alignBottomOfView'] || child['alignLeftOfView'] || child['alignRightOfView']
@@ -139,6 +143,41 @@ module SjuiTools
             alignment = get_zstack_alignment_for_child(parent_only_children.first) || '.topLeading'
           else
             alignment = get_zstack_alignment
+          end
+          
+          # 親のpaddingを取得
+          parent_padding_top = 0
+          parent_padding_right = 0
+          parent_padding_bottom = 0
+          parent_padding_left = 0
+          
+          # paddingまたはpaddingsプロパティの処理
+          if @component['padding'] || @component['paddings']
+            padding = @component['padding'] || @component['paddings']
+            if padding.is_a?(Array)
+              case padding.length
+              when 1
+                parent_padding_top = parent_padding_right = parent_padding_bottom = parent_padding_left = padding[0].to_i
+              when 2
+                # 縦横のパディング
+                parent_padding_top = parent_padding_bottom = padding[0].to_i
+                parent_padding_left = parent_padding_right = padding[1].to_i
+              when 4
+                # 上、右、下、左の順
+                parent_padding_top = padding[0].to_i
+                parent_padding_right = padding[1].to_i
+                parent_padding_bottom = padding[2].to_i
+                parent_padding_left = padding[3].to_i
+              end
+            else
+              parent_padding_top = parent_padding_right = parent_padding_bottom = parent_padding_left = padding.to_i
+            end
+          else
+            # 個別のパディング設定
+            parent_padding_top = (@component['topPadding'] || @component['paddingTop'] || 0).to_i
+            parent_padding_right = (@component['rightPadding'] || @component['paddingRight'] || 0).to_i
+            parent_padding_bottom = (@component['bottomPadding'] || @component['paddingBottom'] || 0).to_i
+            parent_padding_left = (@component['leftPadding'] || @component['paddingLeft'] || 0).to_i
           end
           
           add_line "RelativePositionContainer("
@@ -159,14 +198,16 @@ module SjuiTools
                     indent do
                       # Special handling for views with padding in relative positioning
                       # We need to ensure padding doesn't affect the view's alignment edges
-                      if child['padding'] && child['background']
+                      if (child['padding'] || child['paddings']) && child['background']
                         # Extract padding value and remove it from the child temporarily
-                        padding_value = child['padding']
+                        padding_value = child['padding'] || child['paddings']
                         background_color = child['background']
                         child_without_padding = child.dup
                         child_without_padding.delete('padding')
+                        child_without_padding.delete('paddings')
                         child_without_padding.delete('background')
-                        # Also remove margin properties (they're handled separately by RelativePositionContainer)
+                        
+                        # Remove margin properties (they're handled separately by RelativePositionContainer)
                         child_without_padding.delete('leftMargin')
                         child_without_padding.delete('rightMargin')
                         child_without_padding.delete('topMargin')
@@ -190,7 +231,26 @@ module SjuiTools
                         end
                         
                         # Now apply padding and background together
-                        add_modifier_line ".padding(#{padding_value.to_i})"
+                        if padding_value.is_a?(Array)
+                          case padding_value.length
+                          when 1
+                            add_modifier_line ".padding(#{padding_value[0]})"
+                          when 2
+                            # [Vertical, Horizontal]
+                            add_modifier_line ".padding(.vertical, #{padding_value[0]})"
+                            add_modifier_line ".padding(.horizontal, #{padding_value[1]})"
+                          when 4
+                            # [Top, Right, Bottom, Left]
+                            add_modifier_line ".padding(.top, #{padding_value[0]})"
+                            add_modifier_line ".padding(.trailing, #{padding_value[1]})"
+                            add_modifier_line ".padding(.bottom, #{padding_value[2]})"
+                            add_modifier_line ".padding(.leading, #{padding_value[3]})"
+                          else
+                            add_modifier_line ".padding(0)"
+                          end
+                        else
+                          add_modifier_line ".padding(#{padding_value.to_i})"
+                        end
                         color = hex_to_swiftui_color(background_color)
                         add_modifier_line ".background(#{color})"
                       else
@@ -226,6 +286,7 @@ module SjuiTools
                     indent do
                       # 相対配置の制約を追加
                       constraint_added = false
+                      
                       
                       # above/below
                       if child['above']
@@ -328,17 +389,39 @@ module SjuiTools
                     add_line "],"
                     
                     # Margins
-                    margins = []
-                    margins << "top: #{child['topMargin'] || child['marginTop'] || 0}"
-                    margins << "leading: #{child['leftMargin'] || child['marginLeft'] || child['startMargin'] || child['marginStart'] || 0}"
-                    margins << "bottom: #{child['bottomMargin'] || child['marginBottom'] || 0}"
-                    margins << "trailing: #{child['rightMargin'] || child['marginRight'] || child['endMargin'] || child['marginEnd'] || 0}"
-                    
-                    # デフォルト値でない場合のみマージンを設定
-                    if margins.any? { |m| !m.end_with?(' 0') }
-                      add_line "margins: EdgeInsets(#{margins.join(', ')})"
+                    # Check for margins array first
+                    if child['margins']
+                      margin_values = Array(child['margins'])
+                      case margin_values.length
+                      when 1
+                        # All edges same value
+                        value = margin_values[0]
+                        add_line "margins: EdgeInsets(top: #{value}, leading: #{value}, bottom: #{value}, trailing: #{value})"
+                      when 2
+                        # [Vertical, Horizontal]
+                        v_value = margin_values[0]
+                        h_value = margin_values[1]
+                        add_line "margins: EdgeInsets(top: #{v_value}, leading: #{h_value}, bottom: #{v_value}, trailing: #{h_value})"
+                      when 4
+                        # [Top, Right, Bottom, Left]
+                        add_line "margins: EdgeInsets(top: #{margin_values[0]}, leading: #{margin_values[3]}, bottom: #{margin_values[2]}, trailing: #{margin_values[1]})"
+                      else
+                        add_line "margins: .init()"
+                      end
                     else
-                      add_line "margins: .init()"
+                      # Individual margin properties
+                      margins = []
+                      margins << "top: #{child['topMargin'] || child['marginTop'] || 0}"
+                      margins << "leading: #{child['leftMargin'] || child['marginLeft'] || child['startMargin'] || child['marginStart'] || 0}"
+                      margins << "bottom: #{child['bottomMargin'] || child['marginBottom'] || 0}"
+                      margins << "trailing: #{child['rightMargin'] || child['marginRight'] || child['endMargin'] || child['marginEnd'] || 0}"
+                      
+                      # デフォルト値でない場合のみマージンを設定
+                      if margins.any? { |m| !m.end_with?(' 0') }
+                        add_line "margins: EdgeInsets(#{margins.join(', ')})"
+                      else
+                        add_line "margins: .init()"
+                      end
                     end
                   end
                   add_line index < children.length - 1 ? ")," : ")"
@@ -351,10 +434,13 @@ module SjuiTools
             # 背景色
             if @component['background']
               bg_color = hex_to_swiftui_color(@component['background'])
-              add_line "backgroundColor: #{bg_color}"
+              add_line "backgroundColor: #{bg_color},"
             else
-              add_line "backgroundColor: nil"
+              add_line "backgroundColor: nil,"
             end
+            
+            # 親のpadding
+            add_line "parentPadding: EdgeInsets(top: #{parent_padding_top}, leading: #{parent_padding_left}, bottom: #{parent_padding_bottom}, trailing: #{parent_padding_right})"
           end
           add_line ")"
         end

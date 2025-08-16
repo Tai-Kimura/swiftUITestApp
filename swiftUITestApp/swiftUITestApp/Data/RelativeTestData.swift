@@ -4,7 +4,7 @@ import SwiftJsonUI
 
 struct RelativeTestData {
     // Data properties from JSON
-    var title: String = "Relative Positioning Test"
+    var title: String = "RelativePosition Test - Margins & Padding"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {

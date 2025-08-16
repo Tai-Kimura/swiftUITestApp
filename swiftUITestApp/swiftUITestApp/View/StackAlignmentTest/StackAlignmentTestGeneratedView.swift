@@ -152,8 +152,8 @@ struct StackAlignmentTestGeneratedView: View {
                             .padding(.top, 10)
                         Spacer(minLength: 0)
                     }
-                        .frame(maxWidth: .infinity)
                         .padding(20)
+                        .frame(maxWidth: .infinity)
                     Spacer(minLength: 0)
                 }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

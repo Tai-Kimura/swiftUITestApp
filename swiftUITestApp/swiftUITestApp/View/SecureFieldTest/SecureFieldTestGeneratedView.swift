@@ -24,9 +24,9 @@ struct SecureFieldTestGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .padding(.top, 30)
                 TextField("Enter regular text", text: $viewModel.data.regularText)
+                    .padding(10)
                     .frame(maxWidth: .infinity)
                     .frame(height: 44)
-                    .padding(10)
                     .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                     .cornerRadius(8)
                     .overlay(
@@ -41,9 +41,9 @@ struct SecureFieldTestGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .padding(.top, 20)
                 SecureField("Enter password", text: $viewModel.data.password)
+                    .padding(10)
                     .frame(maxWidth: .infinity)
                     .frame(height: 44)
-                    .padding(10)
                     .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                     .cornerRadius(8)
                     .overlay(
@@ -58,9 +58,9 @@ struct SecureFieldTestGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                     .padding(.top, 20)
                 SecureField("Confirm password", text: $viewModel.data.confirmPassword)
+                    .padding(10)
                     .frame(maxWidth: .infinity)
                     .frame(height: 44)
-                    .padding(10)
                     .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                     .cornerRadius(8)
                     .overlay(
@@ -89,8 +89,8 @@ struct SecureFieldTestGeneratedView: View {
                         .padding(.top, 5)
                     Spacer(minLength: 0)
                 }
-                    .frame(maxWidth: .infinity)
                     .padding(15)
+                    .frame(maxWidth: .infinity)
                     .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196))
                     .cornerRadius(8)
                     .padding(.top, 30)

@@ -27,9 +27,9 @@ struct BindingTestGeneratedView: View {
                             .fontWeight(.bold)
                             .padding(.top, 20)
                         TextField("Enter text", text: $viewModel.data.textValue)
+                            .padding(10)
                             .frame(maxWidth: .infinity)
                             .frame(height: 44)
-                            .padding(10)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(8)
                             .overlay(
@@ -131,7 +131,8 @@ struct BindingTestGeneratedView: View {
                                 )
                             ],
                             alignment: .center,
-                            backgroundColor: Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724)
+                            backgroundColor: Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)

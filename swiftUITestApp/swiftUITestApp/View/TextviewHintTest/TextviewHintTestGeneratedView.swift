@@ -57,8 +57,8 @@ struct TextViewHintTestGeneratedView: View {
                     .padding(.bottom, 20)
                 Spacer(minLength: 0)
             }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(20)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))
             // >>> GENERATED_CODE_END
         }

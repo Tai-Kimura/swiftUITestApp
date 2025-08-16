@@ -31,9 +31,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("Enter your first name", text: $viewModel.data.firstName)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -47,9 +47,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("Enter your last name", text: $viewModel.data.lastName)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -63,9 +63,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("email@example.com", text: $viewModel.data.email)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -79,9 +79,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("+1 234 567 8900", text: $viewModel.data.phone)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -99,9 +99,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("123 Main Street", text: $viewModel.data.address)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -115,9 +115,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("New York", text: $viewModel.data.city)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -131,9 +131,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("10001", text: $viewModel.data.zipCode)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -147,9 +147,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("United States", text: $viewModel.data.country)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -167,9 +167,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("Company Name", text: $viewModel.data.company)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -183,9 +183,9 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 6)
                         TextField("Software Engineer", text: $viewModel.data.jobTitle)
                             .font(.system(size: 16))
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 48)
-                            .padding(14)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(10)
                             .overlay(
@@ -214,7 +214,6 @@ struct FormTestGeneratedView: View {
                             maxHeight: 200
                         )
                             .frame(minHeight: 80, maxHeight: 200)
-                            .padding(14)
                             .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196), lineWidth: 1)
@@ -234,9 +233,9 @@ struct FormTestGeneratedView: View {
                             backgroundColor: Color(red: 1.0, green: 1.0, blue: 1.0),
                             cornerRadius: 10
                         )
+                            .padding(14)
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
-                            .padding(14)
                             .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196), lineWidth: 1)
@@ -260,7 +259,6 @@ struct FormTestGeneratedView: View {
                             maxHeight: 300
                         )
                             .frame(minHeight: 60, maxHeight: 300)
-                            .padding(14)
                             .overlay(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196), lineWidth: 1)
@@ -298,8 +296,8 @@ struct FormTestGeneratedView: View {
                             .padding(.bottom, 40)
                         Spacer(minLength: 0)
                     }
-                        .frame(maxWidth: .infinity)
                         .padding(16)
+                        .frame(maxWidth: .infinity)
                     Spacer(minLength: 0)
                 }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

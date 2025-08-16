@@ -250,8 +250,8 @@ struct TestMenuGeneratedView: View {
                             .padding(.bottom, 8)
                         Spacer(minLength: 0)
                     }
-                        .frame(maxWidth: .infinity)
                         .padding(20)
+                        .frame(maxWidth: .infinity)
                         .background(Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902))
                     Spacer(minLength: 0)
                 }

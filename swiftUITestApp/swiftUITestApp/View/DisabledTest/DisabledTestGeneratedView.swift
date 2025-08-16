@@ -72,9 +72,9 @@ struct DisabledTestGeneratedView: View {
                             .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
                             .padding(.top, 20)
                         TextField("Enabled - can type here", text: $viewModel.data.textFieldValue)
+                            .padding(10)
                             .frame(maxWidth: .infinity)
                             .frame(height: 44)
-                            .padding(10)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(8)
                             .overlay(
@@ -91,9 +91,9 @@ struct DisabledTestGeneratedView: View {
                         TextField("Disabled - cannot type", text: .constant(""))
                             .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                             .disabled(true)
+                            .padding(10)
                             .frame(maxWidth: .infinity)
                             .frame(height: 44)
-                            .padding(10)
                             .background(Color(red: 0.9411764705882353, green: 0.9411764705882353, blue: 0.9411764705882353))
                             .cornerRadius(8)
                             .overlay(

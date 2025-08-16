@@ -25,8 +25,8 @@ struct ConverterTestCellGeneratedView: View {
                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                 Spacer(minLength: 0)
             }
-                .frame(maxWidth: .infinity)
                 .padding(10)
+                .frame(maxWidth: .infinity)
                 .background(Color(red: 1.0, green: 1.0, blue: 1.0))
             // >>> GENERATED_CODE_END
         }

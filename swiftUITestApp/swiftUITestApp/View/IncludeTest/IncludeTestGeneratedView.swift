@@ -159,8 +159,8 @@ struct IncludeTestGeneratedView: View {
                             .frame(maxWidth: .infinity)
                         Spacer(minLength: 0)
                     }
-                        .frame(maxWidth: .infinity)
                         .padding(20)
+                        .frame(maxWidth: .infinity)
                         .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                     Spacer(minLength: 0)
                 }

@@ -152,8 +152,8 @@ struct DatePickerTestGeneratedView: View {
                                 .padding(.top, 5)
                             Spacer(minLength: 0)
                         }
-                            .frame(maxWidth: .infinity)
                             .padding(15)
+                            .frame(maxWidth: .infinity)
                             .background(Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196))
                             .cornerRadius(8)
                             .padding(.top, 30)

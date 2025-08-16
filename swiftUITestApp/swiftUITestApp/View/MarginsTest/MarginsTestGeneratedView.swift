@@ -53,9 +53,9 @@ struct MarginsTestGeneratedView: View {
                                     .zIndex(0)
                             }
                         }
-                            .frame(maxWidth: .infinity)
                             .padding(.leading, 20)
                             .padding(.trailing, 20)
+                            .frame(maxWidth: .infinity)
                             .background(Color(red: 0.8666666666666667, green: 0.8666666666666667, blue: 0.8666666666666667))
                             .padding(.top, 20)
                         ZStack(alignment: .topLeading) {

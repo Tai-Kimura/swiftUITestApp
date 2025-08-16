@@ -44,7 +44,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .topLeading,
-                            backgroundColor: Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196)
+                            backgroundColor: Color(red: 0.8784313725490196, green: 0.8784313725490196, blue: 0.8784313725490196),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -67,7 +68,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .bottomLeading,
-                            backgroundColor: Color(red: 0.8470588235294118, green: 0.8470588235294118, blue: 0.8470588235294118)
+                            backgroundColor: Color(red: 0.8470588235294118, green: 0.8470588235294118, blue: 0.8470588235294118),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -90,7 +92,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .topLeading,
-                            backgroundColor: Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 0.8156862745098039)
+                            backgroundColor: Color(red: 0.8156862745098039, green: 0.8156862745098039, blue: 0.8156862745098039),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -113,7 +116,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .topTrailing,
-                            backgroundColor: Color(red: 0.7843137254901961, green: 0.7843137254901961, blue: 0.7843137254901961)
+                            backgroundColor: Color(red: 0.7843137254901961, green: 0.7843137254901961, blue: 0.7843137254901961),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -136,7 +140,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .top,
-                            backgroundColor: Color(red: 0.7529411764705882, green: 0.7529411764705882, blue: 0.7529411764705882)
+                            backgroundColor: Color(red: 0.7529411764705882, green: 0.7529411764705882, blue: 0.7529411764705882),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -159,7 +164,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .center,
-                            backgroundColor: Color(red: 0.7215686274509804, green: 0.7215686274509804, blue: 0.7215686274509804)
+                            backgroundColor: Color(red: 0.7215686274509804, green: 0.7215686274509804, blue: 0.7215686274509804),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -182,7 +188,8 @@ struct AlignmentTestGeneratedView: View {
                                 )
                             ],
                             alignment: .center,
-                            backgroundColor: Color(red: 0.6901960784313725, green: 0.6901960784313725, blue: 0.6901960784313725)
+                            backgroundColor: Color(red: 0.6901960784313725, green: 0.6901960784313725, blue: 0.6901960784313725),
+                            parentPadding: EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
                         )
                             .frame(maxWidth: .infinity)
                             .frame(height: 120)
@@ -250,7 +257,6 @@ struct AlignmentTestGeneratedView: View {
                         Spacer(minLength: 0)
                     }
                         .frame(maxWidth: .infinity)
-                        .padding(20)
                     Spacer(minLength: 0)
                 }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

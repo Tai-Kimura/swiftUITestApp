@@ -111,17 +111,17 @@ module SjuiTools
         end
 
         # 共通のモディファイア適用メソッド
-        def apply_modifiers
+        def apply_modifiers(skip_padding: false)
           # アライメント処理を先に適用
           apply_center_alignment
           apply_edge_alignment
           
-          # サイズ制約とサイズの適用
+          # パディング（内側のスペース）を先に適用
+          apply_padding unless skip_padding
+          
+          # サイズ制約とサイズをパディングの後に適用
           apply_frame_constraints
           apply_frame_size
-          
-          # パディング（内側のスペース）を先に適用
-          apply_padding
           
           # insetsとinsetHorizontalの処理
           apply_insets
@@ -286,7 +286,6 @@ module SjuiTools
             end
           end
         end
-        
 
         # ヘルパーメソッド
       end
