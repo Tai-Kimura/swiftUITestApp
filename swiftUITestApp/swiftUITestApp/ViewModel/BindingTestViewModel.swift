@@ -34,4 +34,9 @@ class BindingTestViewModel: ObservableObject {
     func sliderChanged(_ value: Double) {
         data.sliderValue = value
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

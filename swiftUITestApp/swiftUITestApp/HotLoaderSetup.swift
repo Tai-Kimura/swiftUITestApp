@@ -14,6 +14,7 @@ import SwiftJsonUI
 public struct HotLoaderSetup {
     public static func configure() {
         #if DEBUG
+        JSONLayoutLoader.clearCache()
         // Copy JSON files to cache directory
         JSONLayoutLoader.copyResourcesToCache()
         

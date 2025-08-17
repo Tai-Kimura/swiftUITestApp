@@ -6,28 +6,8 @@
   "orientation": "vertical",
   "child": [
     {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Secure Field Test"
-        },
-        {
-          "name": "password",
-          "class": "String",
-          "defaultValue": ""
-        },
-        {
-          "name": "confirmPassword",
-          "class": "String",
-          "defaultValue": ""
-        },
-        {
-          "name": "regularText",
-          "class": "String",
-          "defaultValue": ""
-        }
-      ]
+      "type": "Button",
+      "style": "dynamic_toggle"
     },
     {
       "type": "Label",
@@ -152,6 +132,33 @@
           "topMargin": 5
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "confirmPassword",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "password",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "regularText",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Secure Field Test"
     }
   ]
 }

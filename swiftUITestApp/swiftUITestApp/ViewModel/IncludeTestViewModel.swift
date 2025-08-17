@@ -46,4 +46,9 @@ class IncludeTestViewModel: ObservableObject {
     func toggleStatus() {
         data.mainStatus = data.mainStatus == "Main Active" ? "Main Inactive" : "Main Active"
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

@@ -13,83 +13,8 @@
       "padding": 16,
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Form & Keyboard Test"
-            },
-            {
-              "name": "firstName",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "lastName",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "email",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "phone",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "address",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "city",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "zipCode",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "country",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "company",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "jobTitle",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "bio",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "notes",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "comments",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "agreeToTerms",
-              "class": "Bool",
-              "defaultValue": false
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -486,6 +411,88 @@
           "bottomMargin": 40
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "address",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "agreeToTerms",
+      "class": "Bool",
+      "defaultValue": false
+    },
+    {
+      "name": "bio",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "city",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "comments",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "company",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "country",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "email",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "firstName",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "jobTitle",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "lastName",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "notes",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "phone",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Form & Keyboard Test"
+    },
+    {
+      "name": "zipCode",
+      "class": "String",
+      "defaultValue": ""
     }
   ]
 }

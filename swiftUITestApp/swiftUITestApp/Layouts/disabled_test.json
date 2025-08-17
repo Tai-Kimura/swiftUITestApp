@@ -11,23 +11,8 @@
       "orientation": "vertical",
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Disabled State Test"
-            },
-            {
-              "name": "textFieldValue",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "isEnabled",
-              "class": "Bool",
-              "defaultValue": "true"
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -199,6 +184,28 @@
           "centerHorizontal": true
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "isEnabled",
+      "class": "Bool",
+      "defaultValue": "true"
+    },
+    {
+      "name": "textFieldValue",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Disabled State Test"
     }
   ]
 }

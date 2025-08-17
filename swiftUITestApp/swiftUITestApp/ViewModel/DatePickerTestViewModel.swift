@@ -18,4 +18,9 @@ class DatePickerTestViewModel: ObservableObject {
     func onTap() {
         // Handle tap events
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

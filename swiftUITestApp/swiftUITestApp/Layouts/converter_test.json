@@ -11,18 +11,8 @@
       "orientation": "vertical",
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Converter Components Test"
-            },
-            {
-              "name": "items",
-              "class": "CollectionDataSource",
-              "defaultValue": "CollectionDataSource()"
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -44,9 +34,19 @@
           "width": "matchParent",
           "height": 100,
           "topMargin": 10,
-          "colors": ["#FF0000", "#00FF00", "#0000FF"],
-          "startPoint": {"x": 0, "y": 0},
-          "endPoint": {"x": 1, "y": 1},
+          "colors": [
+            "#FF0000",
+            "#00FF00",
+            "#0000FF"
+          ],
+          "startPoint": {
+            "x": 0,
+            "y": 0
+          },
+          "endPoint": {
+            "x": 1,
+            "y": 1
+          },
           "child": [
             {
               "type": "Label",
@@ -179,7 +179,11 @@
           "width": "matchParent",
           "height": 300,
           "topMargin": 10,
-          "cellClasses": ["ConverterTestCell"],
+          "columns": 3,
+          "itemSpacing": 15,
+          "cellClasses": [
+            "ConverterTestCell"
+          ],
           "items": "@{items}"
         },
         {
@@ -216,6 +220,23 @@
           "cornerRadius": 10
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "items",
+      "class": "CollectionDataSource",
+      "defaultValue": "CollectionDataSource()"
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Converter Components Test"
     }
   ]
 }

@@ -57,4 +57,9 @@ class FormTestViewModel: ObservableObject {
         commentsText = ""
         agreeToggleIsOn = false
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

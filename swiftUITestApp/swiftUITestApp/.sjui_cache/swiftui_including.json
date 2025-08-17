@@ -1,0 +1,9 @@
+{
+  "include_test": [
+    "included1",
+    "included2",
+    "included2",
+    "included2",
+    "included1"
+  ]
+}

@@ -4,15 +4,21 @@ import SwiftJsonUI
 
 struct DisabledTestData {
     // Data properties from JSON
-    var title: String = "Disabled State Test"
-    var textFieldValue: String = ""
+    var dynamicModeStatus: String = "OFF"
     var isEnabled: Bool = true
+    var textFieldValue: String = ""
+    var title: String = "Disabled State Test"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.title = stringValue
+                self.dynamicModeStatus = stringValue
+            }
+        }
+        if let value = dictionary["isEnabled"] {
+            if let boolValue = value as? Bool {
+                self.isEnabled = boolValue
             }
         }
         if let value = dictionary["textFieldValue"] {
@@ -20,9 +26,9 @@ struct DisabledTestData {
                 self.textFieldValue = stringValue
             }
         }
-        if let value = dictionary["isEnabled"] {
-            if let boolValue = value as? Bool {
-                self.isEnabled = boolValue
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
             }
         }
     }
@@ -32,9 +38,10 @@ struct DisabledTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
-        dict["textFieldValue"] = textFieldValue
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["isEnabled"] = isEnabled
+        dict["textFieldValue"] = textFieldValue
+        dict["title"] = title
         
         // Add onclick action closures if viewModel is provided
         if let viewModel = viewModel {

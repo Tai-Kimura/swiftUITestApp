@@ -4,19 +4,20 @@ import SwiftJsonUI
 
 struct KeyboardAvoidanceTestData {
     // Data properties from JSON
-    var title: String = "Keyboard Avoidance Test"
+    var dynamicModeStatus: String = "OFF"
     var textField1: String = ""
     var textField2: String = ""
     var textField3: String = ""
     var textField4: String = ""
     var textField5: String = ""
     var textView: String = ""
+    var title: String = "Keyboard Avoidance Test"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.title = stringValue
+                self.dynamicModeStatus = stringValue
             }
         }
         if let value = dictionary["textField1"] {
@@ -49,6 +50,11 @@ struct KeyboardAvoidanceTestData {
                 self.textView = stringValue
             }
         }
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
+            }
+        }
     }
 
     // Convert properties to dictionary for Dynamic mode
@@ -56,13 +62,14 @@ struct KeyboardAvoidanceTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["textField1"] = textField1
         dict["textField2"] = textField2
         dict["textField3"] = textField3
         dict["textField4"] = textField4
         dict["textField5"] = textField5
         dict["textView"] = textView
+        dict["title"] = title
         
         // Add onclick action closures if viewModel is provided
         if let viewModel = viewModel {

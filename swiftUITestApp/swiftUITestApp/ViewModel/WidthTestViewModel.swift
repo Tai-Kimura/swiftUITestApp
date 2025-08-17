@@ -2,12 +2,12 @@ import Foundation
 import Combine
 import SwiftJsonUI
 
-class StackAlignmentTestViewModel: ObservableObject {
+class WidthTestViewModel: ObservableObject {
     // JSON file reference for hot reload
-    let jsonFileName = "stack_alignment_test"
+    let jsonFileName = "width_test"
     
     // Data model
-    @Published var data = StackAlignmentTestData()
+    @Published var data = WidthTestData()
     
     // Action handlers
     func onAppear() {
@@ -17,5 +17,10 @@ class StackAlignmentTestViewModel: ObservableObject {
     // Add more action handlers as needed
     func onTap() {
         // Handle tap events
+    }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
     }
 }

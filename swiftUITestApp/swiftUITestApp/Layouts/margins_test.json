@@ -11,13 +11,8 @@
       "orientation": "vertical",
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Margins & Padding Test"
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -34,7 +29,12 @@
           "width": "wrapContent",
           "height": "wrapContent",
           "text": "All margins: [20, 20, 20, 20]",
-          "margins": [20, 20, 20, 20],
+          "margins": [
+            20,
+            20,
+            20,
+            20
+          ],
           "background": "#FFE0E0",
           "fontSize": 16
         },
@@ -125,6 +125,18 @@
           }
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Margins & Padding Test"
     }
   ]
 }

@@ -11,38 +11,8 @@
       "orientation": "vertical",
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Data Binding Test"
-            },
-            {
-              "name": "textValue",
-              "class": "String",
-              "defaultValue": "Type something here"
-            },
-            {
-              "name": "sliderValue",
-              "class": "Double",
-              "defaultValue": "50.0"
-            },
-            {
-              "name": "toggleValue",
-              "class": "Bool",
-              "defaultValue": "false"
-            },
-            {
-              "name": "counter",
-              "class": "Int",
-              "defaultValue": "0"
-            },
-            {
-              "name": "selectedOption",
-              "class": "String",
-              "defaultValue": "Option 1"
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -251,7 +221,12 @@
           "leftMargin": 20,
           "rightMargin": 20,
           "selectedItem": "@{selectedOption}",
-          "items": ["Option 1", "Option 2", "Option 3", "Option 4"],
+          "items": [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4"
+          ],
           "background": "#FFFFFF",
           "cornerRadius": 8,
           "borderColor": "#CCCCCC",
@@ -267,6 +242,43 @@
           "bottomMargin": 30
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "counter",
+      "class": "Int",
+      "defaultValue": "0"
+    },
+    {
+      "name": "selectedOption",
+      "class": "String",
+      "defaultValue": "Option 1"
+    },
+    {
+      "name": "sliderValue",
+      "class": "Double",
+      "defaultValue": "50.0"
+    },
+    {
+      "name": "textValue",
+      "class": "String",
+      "defaultValue": "Type something here"
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Data Binding Test"
+    },
+    {
+      "name": "toggleValue",
+      "class": "Bool",
+      "defaultValue": "false"
     }
   ]
 }

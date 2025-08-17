@@ -13,43 +13,8 @@
       "padding": 16,
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Keyboard Avoidance Test"
-            },
-            {
-              "name": "textField1",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "textField2",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "textField3",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "textField4",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "textField5",
-              "class": "String",
-              "defaultValue": ""
-            },
-            {
-              "name": "textView",
-              "class": "String",
-              "defaultValue": ""
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -192,6 +157,48 @@
           "onclick": "submitForm"
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "textField1",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "textField2",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "textField3",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "textField4",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "textField5",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "textView",
+      "class": "String",
+      "defaultValue": ""
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Keyboard Avoidance Test"
     }
   ]
 }

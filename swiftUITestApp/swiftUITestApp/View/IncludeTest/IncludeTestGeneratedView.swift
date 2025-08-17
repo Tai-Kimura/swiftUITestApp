@@ -17,6 +17,17 @@ struct IncludeTestGeneratedView: View {
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Dynamic: \(viewModel.data.dynamicModeStatus)")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                        }
+                            .frame(height: 32)
+                            .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
+                            .cornerRadius(6)
                         VStack(alignment: .leading, spacing: 0) {
                             Text("\(viewModel.data.title)")
                                 .font(.system(size: 24))
@@ -104,7 +115,7 @@ struct IncludeTestGeneratedView: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                                 // Component will be replaced by IncludeConverter
-                                // include: included_1
+                                // include: included1
                                 // data: {"title":"Included View 1","message":"This is the first included view","count":1}
                                 Included1View(data: ["title": "Included View 1", "message": "This is the first included view", "count": 1])
                                 Spacer(minLength: 0)
@@ -114,7 +125,7 @@ struct IncludeTestGeneratedView: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                                 // Component will be replaced by IncludeConverter
-                                // include: included_2
+                                // include: included2
                                 // data: {"viewTitle":"Static Title","viewStatus":"Static Status","viewCount":42}
                                 Included2View(data: ["viewTitle": "Static Title", "viewStatus": "Static Status", "viewCount": 42])
                                 Spacer(minLength: 0)
@@ -124,7 +135,7 @@ struct IncludeTestGeneratedView: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                                 // Component will be replaced by IncludeConverter
-                                // include: included_2
+                                // include: included2
                                 // data: {"viewTitle":"@{userName}","viewStatus":"@{mainStatus}","viewCount":"@{mainCount}"}
                                 Included2View(data: ["viewTitle": viewModel.data.userName, "viewStatus": viewModel.data.mainStatus, "viewCount": viewModel.data.mainCount])
                                     .id("\(viewModel.data.userName)_\(viewModel.data.mainStatus)_\(viewModel.data.mainCount)")
@@ -135,7 +146,7 @@ struct IncludeTestGeneratedView: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                                 // Component will be replaced by IncludeConverter
-                                // include: included_2
+                                // include: included2
                                 // shared_data: {"viewTitle":"@{userName}","viewStatus":"@{mainStatus}","viewCount":"@{mainCount}"}
                                 // data: {"viewStatus":"Overridden Status"}
                                 Included2View(data: ["viewTitle": viewModel.data.userName, "viewStatus": "Overridden Status", "viewCount": viewModel.data.mainCount])
@@ -148,7 +159,7 @@ struct IncludeTestGeneratedView: View {
                                     .font(.system(size: 16))
                                     .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
                                 // Component will be replaced by IncludeConverter
-                                // include: included_1
+                                // include: included1
                                 // data: {"title":"@{userName}","message":"@{mainStatus}","count":"@{mainCount}"}
                                 Included1View(data: ["title": viewModel.data.userName, "message": viewModel.data.mainStatus, "count": viewModel.data.mainCount])
                                     .id("\(viewModel.data.userName)_\(viewModel.data.mainStatus)_\(viewModel.data.mainCount)")

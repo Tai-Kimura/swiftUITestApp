@@ -37,6 +37,18 @@ struct TestMenuGeneratedView: View {
                             .padding(15)
                             .background(Color(red: 0.9098039215686274, green: 0.9568627450980393, blue: 1.0))
                             .cornerRadius(8)
+                            .padding(.bottom, 10)
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Toggle Dynamic Mode")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
+                        }
+                            .frame(height: 44)
+                            .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
+                            .cornerRadius(8)
                             .padding(.bottom, 20)
                         Text("Layout & Positioning")
                             .font(.system(size: 20))
@@ -48,8 +60,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Margins & Padding Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -58,8 +72,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Alignment Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -68,8 +84,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Alignment Combo Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -78,8 +96,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Weight Distribution Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -88,8 +108,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Weight + Fixed Size Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(8)
                             .padding(.bottom, 20)
@@ -103,8 +125,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Visibility & Opacity Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -113,8 +137,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Disabled States Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724))
                             .cornerRadius(8)
                             .padding(.bottom, 20)
@@ -128,8 +154,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Text Styling Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.5843137254901961, blue: 0.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -138,8 +166,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("New Components Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.5843137254901961, blue: 0.0))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -148,8 +178,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Line Break & Spacing Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.5843137254901961, blue: 0.0))
                             .cornerRadius(8)
                             .padding(.bottom, 20)
@@ -163,8 +195,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Secure Field Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.6862745098039216, green: 0.3215686274509804, blue: 0.8705882352941177))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -173,8 +207,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Date Picker Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.6862745098039216, green: 0.3215686274509804, blue: 0.8705882352941177))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -183,9 +219,11 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("TextView Hint Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
-                            .background(Color(red: 0.5568627450980392, green: 0.5568627450980392, blue: 0.5764705882352941))
+                            .frame(height: 44)
+                            .background(Color(red: 0.6862745098039216, green: 0.3215686274509804, blue: 0.8705882352941177))
                             .cornerRadius(8)
                             .padding(.bottom, 20)
                         Text("Advanced Features")
@@ -198,8 +236,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Relative Positioning Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -208,8 +248,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Binding Properties Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -218,8 +260,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Converter Components Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                             .cornerRadius(8)
                             .padding(.bottom, 8)
@@ -228,8 +272,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Include Component Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                             .cornerRadius(8)
                             .padding(.bottom, 20)
@@ -243,8 +289,10 @@ struct TestMenuGeneratedView: View {
                         }) {
                             Text("Form & Keyboard Avoidance Test")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
-                                .padding(15)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 12)
                         }
+                            .frame(height: 44)
                             .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
                             .cornerRadius(8)
                             .padding(.bottom, 8)

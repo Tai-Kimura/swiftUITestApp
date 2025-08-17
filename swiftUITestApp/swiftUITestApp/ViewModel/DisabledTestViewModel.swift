@@ -34,4 +34,9 @@ class DisabledTestViewModel: ObservableObject {
     func onDynamicButtonTap() {
         print("Dynamic button tapped - enabled: \(data.isEnabled)")
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

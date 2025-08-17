@@ -4,19 +4,25 @@ import SwiftJsonUI
 
 struct TextViewHintTestData {
     // Data properties from JSON
-    var simpleText: String = ""
+    var dynamicModeStatus: String = "OFF"
     var flexibleText: String = ""
+    var simpleText: String = ""
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["simpleText"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.simpleText = stringValue
+                self.dynamicModeStatus = stringValue
             }
         }
         if let value = dictionary["flexibleText"] {
             if let stringValue = value as? String {
                 self.flexibleText = stringValue
+            }
+        }
+        if let value = dictionary["simpleText"] {
+            if let stringValue = value as? String {
+                self.simpleText = stringValue
             }
         }
     }
@@ -26,8 +32,9 @@ struct TextViewHintTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["simpleText"] = simpleText
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["flexibleText"] = flexibleText
+        dict["simpleText"] = simpleText
         
         return dict
     }

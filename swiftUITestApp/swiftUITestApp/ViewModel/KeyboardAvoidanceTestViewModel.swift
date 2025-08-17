@@ -26,4 +26,9 @@ class KeyboardAvoidanceTestViewModel: ObservableObject {
         print("TextField5: \(data.textField5)")
         print("TextView: \(textviewText)")
     }
+
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        data.dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
+    }
 }

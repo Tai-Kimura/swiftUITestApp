@@ -6,15 +6,6 @@
   "orientation": "vertical",
   "child": [
     {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Included1"
-        }
-      ]
-    },
-    {
       "type": "Label",
       "id": "title_label",
       "width": "wrapContent",
@@ -23,6 +14,13 @@
       "text": "@{title}",
       "fontSize": 24,
       "fontColor": "#000000"
+    }
+  ],
+  "data": [
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Included1"
     }
   ]
 }

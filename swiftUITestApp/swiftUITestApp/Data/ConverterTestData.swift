@@ -4,19 +4,25 @@ import SwiftJsonUI
 
 struct ConverterTestData {
     // Data properties from JSON
-    var title: String = "Converter Components Test"
+    var dynamicModeStatus: String = "OFF"
     var items: CollectionDataSource = CollectionDataSource()
+    var title: String = "Converter Components Test"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.title = stringValue
+                self.dynamicModeStatus = stringValue
             }
         }
         if let value = dictionary["items"] {
             if let typedValue = value as? CollectionDataSource {
                 self.items = typedValue
+            }
+        }
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
             }
         }
     }
@@ -26,8 +32,9 @@ struct ConverterTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["items"] = items
+        dict["title"] = title
         
         return dict
     }

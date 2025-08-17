@@ -1411,7 +1411,7 @@
 			repositoryURL = "https://github.com/Tai-Kimura/SwiftJsonUI.git";
 			requirement = {
 				kind = revision;
-				revision = a41aab06236d09e3ba20c60c400501426d0e40e6;
+				revision = 4f25d9d14fcdc99cfb8ad7f2cc8216e2dc63d269;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

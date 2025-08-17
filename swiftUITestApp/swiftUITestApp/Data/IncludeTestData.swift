@@ -4,16 +4,22 @@ import SwiftJsonUI
 
 struct IncludeTestData {
     // Data properties from JSON
-    var title: String = "Include Component Test"
-    var mainStatus: String = "Main Active"
+    var dynamicModeStatus: String = "OFF"
     var mainCount: Int = 100
+    var mainStatus: String = "Main Active"
+    var title: String = "Include Component Test"
     var userName: String = "Test User"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.title = stringValue
+                self.dynamicModeStatus = stringValue
+            }
+        }
+        if let value = dictionary["mainCount"] {
+            if let intValue = value as? Int {
+                self.mainCount = intValue
             }
         }
         if let value = dictionary["mainStatus"] {
@@ -21,9 +27,9 @@ struct IncludeTestData {
                 self.mainStatus = stringValue
             }
         }
-        if let value = dictionary["mainCount"] {
-            if let intValue = value as? Int {
-                self.mainCount = intValue
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
             }
         }
         if let value = dictionary["userName"] {
@@ -38,9 +44,10 @@ struct IncludeTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
-        dict["mainStatus"] = mainStatus
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["mainCount"] = mainCount
+        dict["mainStatus"] = mainStatus
+        dict["title"] = title
         dict["userName"] = userName
         
         // Add onclick action closures if viewModel is provided

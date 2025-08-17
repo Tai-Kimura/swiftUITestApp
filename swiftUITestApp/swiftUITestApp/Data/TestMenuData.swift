@@ -24,6 +24,7 @@ struct TestMenuData {
         
         // Add onclick action closures if viewModel is provided
         if let viewModel = viewModel {
+            dict["toggleDynamicMode"] = { [weak viewModel] in viewModel?.toggleDynamicMode() }
             dict["navigateToMarginsTest"] = { [weak viewModel] in viewModel?.navigateToMarginsTest() }
             dict["navigateToAlignmentTest"] = { [weak viewModel] in viewModel?.navigateToAlignmentTest() }
             dict["navigateToAlignmentComboTest"] = { [weak viewModel] in viewModel?.navigateToAlignmentComboTest() }

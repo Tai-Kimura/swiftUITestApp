@@ -17,6 +17,17 @@ struct AlignmentComboTestGeneratedView: View {
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .center, spacing: 0) {
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Dynamic: \(viewModel.data.dynamicModeStatus)")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                        }
+                            .frame(height: 32)
+                            .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
+                            .cornerRadius(6)
                         HStack {
                             Text("\(viewModel.data.title)")
                             .font(.system(size: 24))

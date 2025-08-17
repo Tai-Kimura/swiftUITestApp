@@ -17,6 +17,17 @@ struct ConverterTestGeneratedView: View {
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Dynamic: \(viewModel.data.dynamicModeStatus)")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                        }
+                            .frame(height: 32)
+                            .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
+                            .cornerRadius(6)
                         Text("\(viewModel.data.title)")
                             .font(.system(size: 24))
                             .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
@@ -87,7 +98,7 @@ struct ConverterTestGeneratedView: View {
                                         .background(.ultraThinMaterial)
                                         .frame(maxWidth: .infinity)
                                         .frame(height: 60)
-                                        .background(Color(red: 0.0, green: 0.0, blue: 0.2, opacity: 0.0))
+                                        .background(Color(red: 0.0, green: 0.0, blue: 0.0).opacity(0.2))
                                     ),
                                     constraints: [
                                         RelativePositionConstraint(type: .parentCenter, targetId: "")
@@ -138,9 +149,10 @@ struct ConverterTestGeneratedView: View {
                             .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
                             .padding(.top, 20)
                         ScrollView {
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 2), spacing: 10) {
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 15), count: 3), spacing: 15) {
                                 ForEach(Array(viewModel.data.items.getCellData(for: "ConverterTestCell").enumerated()), id: \.offset) { index, item in
                                     ConverterTestCellView(data: item)
+                                        .frame(maxWidth: .infinity)
                                 }
                             }
                                 .padding(.horizontal)

@@ -4,19 +4,19 @@ import SwiftJsonUI
 
 struct ConverterTestCellData {
     // Data properties from JSON
-    var title: String = "Item"
     var subtitle: String = "Description"
+    var title: String = "Item"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
-            if let stringValue = value as? String {
-                self.title = stringValue
-            }
-        }
         if let value = dictionary["subtitle"] {
             if let stringValue = value as? String {
                 self.subtitle = stringValue
+            }
+        }
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
             }
         }
     }
@@ -26,8 +26,8 @@ struct ConverterTestCellData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
         dict["subtitle"] = subtitle
+        dict["title"] = title
         
         return dict
     }

@@ -1,28 +1,62 @@
 {
   "type": "View",
-  "width": "matchParent",
-  "height": "matchParent",
-  "background": "#FFFFFF",
+  "background": "#FFF4E6",
+  "padding": 15,
+  "cornerRadius": 10,
   "orientation": "vertical",
   "child": [
     {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Included2"
-        }
-      ]
+      "type": "Label",
+      "text": "Included View 2",
+      "fontSize": 18,
+      "fontColor": "#FF6600",
+      "marginBottom": 10
     },
     {
-      "type": "Label",
-      "id": "title_label",
-      "width": "wrapContent",
-      "height": "wrapContent",
-      "topMargin": 20,
-      "text": "@{title}",
-      "fontSize": 24,
-      "fontColor": "#000000"
+      "type": "View",
+      "background": "#FFFFFF",
+      "padding": 10,
+      "cornerRadius": 5,
+      "orientation": "vertical",
+      "child": [
+        {
+          "type": "Label",
+          "text": "Title: @{viewTitle}",
+          "fontSize": 14,
+          "fontColor": "#333333",
+          "marginBottom": 5
+        },
+        {
+          "type": "Label",
+          "text": "Status: @{viewStatus}",
+          "fontSize": 14,
+          "fontColor": "#333333",
+          "marginBottom": 5
+        },
+        {
+          "type": "Label",
+          "text": "Count: @{viewCount}",
+          "fontSize": 14,
+          "fontColor": "#333333"
+        }
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "viewCount",
+      "class": "Int",
+      "defaultValue": "0"
+    },
+    {
+      "name": "viewStatus",
+      "class": "String",
+      "defaultValue": "Default Status"
+    },
+    {
+      "name": "viewTitle",
+      "class": "String",
+      "defaultValue": "Default Title"
     }
   ]
 }

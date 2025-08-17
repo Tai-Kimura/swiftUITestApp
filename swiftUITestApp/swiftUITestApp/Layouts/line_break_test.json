@@ -11,18 +11,8 @@
       "orientation": "vertical",
       "child": [
         {
-          "data": [
-            {
-              "name": "title",
-              "class": "String",
-              "defaultValue": "Line Break Mode Test"
-            },
-            {
-              "name": "longText",
-              "class": "String",
-              "defaultValue": "This is a very long text that will be used to demonstrate different line break modes in SwiftJsonUI. The text should be long enough to test truncation and wrapping behaviors."
-            }
-          ]
+          "type": "Button",
+          "style": "dynamic_toggle"
         },
         {
           "type": "Label",
@@ -231,6 +221,23 @@
           "rightMargin": 20
         }
       ]
+    }
+  ],
+  "data": [
+    {
+      "name": "dynamicModeStatus",
+      "class": "String",
+      "defaultValue": "OFF"
+    },
+    {
+      "name": "longText",
+      "class": "String",
+      "defaultValue": "This is a very long text that will be used to demonstrate different line break modes in SwiftJsonUI. The text should be long enough to test truncation and wrapping behaviors."
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Line Break Mode Test"
     }
   ]
 }

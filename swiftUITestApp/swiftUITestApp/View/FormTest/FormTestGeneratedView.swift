@@ -17,6 +17,17 @@ struct FormTestGeneratedView: View {
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Dynamic: \(viewModel.data.dynamicModeStatus)")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                        }
+                            .frame(height: 32)
+                            .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
+                            .cornerRadius(6)
                         Text("\(viewModel.data.title)")
                             .font(.system(size: 28))
                             .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -282,6 +293,8 @@ struct FormTestGeneratedView: View {
                             Text("Submit Form")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                         }
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 54)
                             .background(Color(red: 0.0, green: 0.47843137254901963, blue: 1.0))
                             .cornerRadius(12)
                             .padding(.bottom, 16)
@@ -291,6 +304,8 @@ struct FormTestGeneratedView: View {
                             Text("Clear All Fields")
                                 .foregroundColor(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                         }
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 54)
                             .background(Color(red: 1.0, green: 1.0, blue: 1.0))
                             .cornerRadius(12)
                             .padding(.bottom, 40)

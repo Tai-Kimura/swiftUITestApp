@@ -4,19 +4,25 @@ import SwiftJsonUI
 
 struct LineBreakTestData {
     // Data properties from JSON
-    var title: String = "Line Break Mode Test"
+    var dynamicModeStatus: String = "OFF"
     var longText: String = "This is a very long text that will be used to demonstrate different line break modes in SwiftJsonUI. The text should be long enough to test truncation and wrapping behaviors."
+    var title: String = "Line Break Mode Test"
 
     // Update properties from dictionary
     mutating func update(dictionary: [String: Any]) {
-        if let value = dictionary["title"] {
+        if let value = dictionary["dynamicModeStatus"] {
             if let stringValue = value as? String {
-                self.title = stringValue
+                self.dynamicModeStatus = stringValue
             }
         }
         if let value = dictionary["longText"] {
             if let stringValue = value as? String {
                 self.longText = stringValue
+            }
+        }
+        if let value = dictionary["title"] {
+            if let stringValue = value as? String {
+                self.title = stringValue
             }
         }
     }
@@ -26,8 +32,9 @@ struct LineBreakTestData {
         var dict: [String: Any] = [:]
         
         // Data properties
-        dict["title"] = title
+        dict["dynamicModeStatus"] = dynamicModeStatus
         dict["longText"] = longText
+        dict["title"] = title
         
         return dict
     }

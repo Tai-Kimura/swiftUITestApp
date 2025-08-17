@@ -47,6 +47,11 @@ class TestMenuViewModel: ObservableObject {
         dynamicModeStatus = ViewSwitcher.isDynamicMode ? "ON" : "OFF"
     }
     
+    func toggleDynamicMode() {
+        ViewSwitcher.toggleDynamicMode()
+        updateDynamicModeStatus()
+    }
+    
     // Navigation methods
     func navigateToMarginsTest() {
         navigationPath.append(TestDestination.marginsTest)

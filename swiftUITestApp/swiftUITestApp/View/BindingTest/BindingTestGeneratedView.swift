@@ -17,6 +17,17 @@ struct BindingTestGeneratedView: View {
             AdvancedKeyboardAvoidingScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
+                        Button(action: {
+                            viewModel.toggleDynamicMode()
+                        }) {
+                            Text("Dynamic: \(viewModel.data.dynamicModeStatus)")
+                                .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 8)
+                        }
+                            .frame(height: 32)
+                            .background(Color(red: 0.34509803921568627, green: 0.33725490196078434, blue: 0.8392156862745098))
+                            .cornerRadius(6)
                         Text("\(viewModel.data.title)")
                             .font(.system(size: 24))
                             .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
@@ -58,6 +69,7 @@ struct BindingTestGeneratedView: View {
                                 Text("Decrease")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                                 }
+                                .frame(height: 44)
                                 .background(Color(red: 1.0, green: 0.23137254901960785, blue: 0.18823529411764706))
                                 .cornerRadius(8)
                                 .padding(.trailing, 5)
@@ -86,6 +98,7 @@ struct BindingTestGeneratedView: View {
                                 Text("Increase")
                                 .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0))
                                 }
+                                .frame(height: 44)
                                 .background(Color(red: 0.20392156862745098, green: 0.7803921568627451, blue: 0.34901960784313724))
                                 .cornerRadius(8)
                                 .padding(.leading, 5)

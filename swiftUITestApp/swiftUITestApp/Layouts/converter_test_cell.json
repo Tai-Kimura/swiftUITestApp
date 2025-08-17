@@ -7,20 +7,6 @@
   "orientation": "vertical",
   "child": [
     {
-      "data": [
-        {
-          "name": "title",
-          "class": "String",
-          "defaultValue": "Item"
-        },
-        {
-          "name": "subtitle",
-          "class": "String",
-          "defaultValue": "Description"
-        }
-      ]
-    },
-    {
       "type": "Label",
       "text": "@{title}",
       "fontSize": 16,
@@ -33,6 +19,18 @@
       "text": "@{subtitle}",
       "fontSize": 12,
       "fontColor": "#666666"
+    }
+  ],
+  "data": [
+    {
+      "name": "subtitle",
+      "class": "String",
+      "defaultValue": "Description"
+    },
+    {
+      "name": "title",
+      "class": "String",
+      "defaultValue": "Item"
     }
   ]
 }
